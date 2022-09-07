@@ -38,3 +38,37 @@
 .firstpage_p{
     margin: 5px;
 }
+.firstpage_button{
+    position: absolute;
+    bottom: 15%;
+    flex: 1;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.firstpage_button1{
+    border-left: 50px solid;
+    border-right: 50px solid;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-radius: 18px;
+    font-size: large;
+    background: #F19D6E;
+    border-color: #F19D6E;
+    color: white;
+    font-weight: bold;
+}
+.firstpage_button2{
+    border-left: 50px solid;
+    border-right: 50px solid;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-radius: 18px;
+    font-size: large;
+    background: #F19D6E;
+    border-color: #F19D6E;
+    color: white;
+    font-weight: bold;
+}
