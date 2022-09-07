@@ -21,3 +21,20 @@
     top: 0;
     width: 75%;
 }
+.firstpage_word{
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.firstpage_title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.firstpage_p{
+    margin: 5px;
+}
