@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { CommunityComponent } from './community/community.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FirstpageComponent } from './firstpage/firstpage.component';
+import { LoginComponent } from './login/login.component';
 import { MyComponent } from './my/my.component';
 import { PlanComponent } from './plan/plan.component';
 
@@ -11,6 +12,10 @@ const routes: Routes = [
     path: 'firstpage',
     component: FirstpageComponent
     // loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'dashboard',

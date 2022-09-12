@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { FirstpageComponent } from './firstpage/firstpage.component';
+import { BgComponent } from './bg/bg.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,7 +22,7 @@ import { MyComponent } from './my/my.component';
 
 
 @NgModule({
-  declarations: [AppComponent, FirstpageComponent, NavbarComponent, LoginComponent, DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,  
+  declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,  
     PlanComponent, MyComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

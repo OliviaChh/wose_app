@@ -1,5 +1,4 @@
-
-.firstpage_person{
+.login_person{
     position: absolute;
     top: 0;
     right: 0;
@@ -8,49 +7,73 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-}
-
-#img_person{
-    transform: translateY(-30px);
+  }
+  
+  #login_img_person{
+    transform: translateY(50px);
     width: 85%;
-}
-
-#img_circle{
+  }
+  
+  .login_title{
+    font-size: 40px;
+    font-weight:800;
     position: absolute;
+    bottom: 50%;
     left: 0;
-    top: 0;
-    width: 75%;
-}
-.firstpage_word{
+    right: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login_input{
     position: absolute;
-    bottom: 25%;
+    bottom: 15%;
+    position: absolute;
+    bottom: 30%;
     left: 0;
     right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.firstpage_title{
-    font-size: 25px;
-    font-weight: bold;
-}
-.firstpage_p{
-    margin: 5px;
-}
-.firstpage_button{
+  }
+
+  #login_input_inside{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+  }
+
+  .forgot_password_button{
     position: absolute;
-    bottom: 15%;
+    bottom: 28%;
+    left: 50%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .forgot_password_button_inside{
+    color: #0085FF;
+  }
+
+  .firstpage_button{
+    position: absolute;
+    bottom: 20%;
     flex: 1;
     left: 0;
     right: 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-.firstpage_button1{
-    border-left: 50px solid;
-    border-right: 50px solid;
+  }
+  .firstpage_button1{
+    border-left: 100px solid;
+    border-right: 100px solid;
     border-top: 10px solid;
     border-bottom: 10px solid;
     border-radius: 18px;
@@ -59,16 +82,43 @@
     border-color: #F19D6E;
     color: white;
     font-weight: bold;
-}
-.firstpage_button2{
-    border-left: 50px solid;
-    border-right: 50px solid;
-    border-top: 10px solid;
-    border-bottom: 10px solid;
-    border-radius: 18px;
-    font-size: large;
-    background: #F19D6E;
-    border-color: #F19D6E;
-    color: white;
-    font-weight: bold;
-}
+  }
+
+  hr{
+    background-color: gray;
+  }
+
+  .or_word{
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    display: flex;
+    color: gray;
+  }
+
+  .google_button{
+    position: absolute;
+    bottom: 6%;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #google_button_word{
+    color: gray !important;
+  }
+
+  .bottom_word{
+    position: absolute;
+    bottom: 3%;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    font-size: 12px;
+  }
