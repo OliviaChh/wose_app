@@ -1,0 +1,39 @@
+<app-bg></app-bg>
+<div class="signup">
+    <div class="switch">
+        <img id="switch_on" src="../../assets/image/signup_login/page_switch_on.svg" alt="">
+        <img id="switch_on" src="../../assets/image/signup_login/page_switch_off.svg" alt="">
+        <img id="switch_on" src="../../assets/image/signup_login/page_switch_off.svg" alt="">
+    </div>
+    <div class="signup_person">
+        <img id="signup_img_person" src="../../assets/image/signup_login/signup_person.svg" alt="">
+    </div>
+    <div class="signup_title">Sign up</div>
+
+    <div class="signup_input">
+        <div id="signup_input_inside">
+            <img src="../../assets/image/signup_login/email_icon.svg">
+            <ion-item>
+            <ion-input placeholder="Email ID"></ion-input>
+            </ion-item>
+        </div>
+        <div id="signup_input_inside">
+            <img src="../../assets/image/signup_login/username_icon.svg">
+            <ion-item>
+            <ion-input placeholder="Username"></ion-input>
+            </ion-item>
+        </div>
+        <div id="signup_input_inside">
+            <img src="../../assets/image/signup_login/password_icon.svg">
+            <ion-item>
+            <ion-input placeholder="Password"></ion-input>
+            </ion-item>
+        </div>
+    </div>
+    <div class="bottom_word">By signing up, you’re agree to our 
+        <a routerLink="/">Terms & Conditions</a> and <a routerLink="/">Privacy Policy</a>
+    </div>
+    <div class="firstpage_button">
+        <div class="firstpage_button1" [routerLink]="['/signup2']" >NEXT</div>
+    </div>
+</div>

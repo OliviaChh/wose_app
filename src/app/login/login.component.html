@@ -1,5 +1,6 @@
 <app-bg></app-bg>
 <div class="login">
+    <img id="login_img_back_arrow" src="../../assets/image/signup_login/back_arrow.svg">
     <div class="login_person">
         <img id="login_img_person" src="../../assets/image/signup_login/login_person.svg" alt="">
     </div>
@@ -35,5 +36,7 @@
         <img style="position: absolute; left: 0%; right: 20%;" src="../../assets/image/signup_login/google_icon.svg">
         <div id="google_button_word">Login with Google</div>
     </ion-button>
-    <div class="bottom_word">Don't hava an account yet?&nbsp;<a routerLink="/signup">Register</a></div>
+    <div class="bottom_word">Don't hava an account yet?&nbsp;
+        <a [routerLink]="['/signup']"> Register</a>
+    </div>
 </div>

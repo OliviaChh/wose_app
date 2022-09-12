@@ -1,0 +1,55 @@
+.signup2_word{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup2_title{
+    position: absolute;
+    font-size: 30px;
+    font-weight:900;
+    top:15%;
+}
+
+.signup2_gender{
+    position: absolute;
+    font-size: 20px;
+    top: 23%;
+}
+
+.signup2_height{
+    position: absolute;
+    font-size: 20px;
+    top: 45%;
+}
+
+.signup2_weight{
+    position: absolute;
+    font-size: 20px;
+    bottom: 30%;
+}
+
+.firstpage_button{
+    position: absolute;
+    bottom: 8%;
+    flex: 1;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .firstpage_button1{
+    border-left: 100px solid;
+    border-right: 100px solid;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-radius: 18px;
+    font-size: large;
+    background: #F19D6E;
+    border-color: #F19D6E;
+    color: white;
+    font-weight: bold;
+  }

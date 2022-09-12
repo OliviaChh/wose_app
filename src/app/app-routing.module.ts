@@ -4,8 +4,11 @@ import { CommunityComponent } from './community/community.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FirstpageComponent } from './firstpage/firstpage.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { Signup2Component } from './signup2/signup2.component';
 import { MyComponent } from './my/my.component';
 import { PlanComponent } from './plan/plan.component';
+
 
 const routes: Routes = [
   {
@@ -16,6 +19,14 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
+  {
+    path: 'signup2',
+    component: Signup2Component
   },
   {
     path: 'dashboard',
