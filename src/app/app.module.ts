@@ -15,16 +15,18 @@ import { DashboardLiveWorkoutComponent } from './dashboard-live-workout/dashboar
 import { CommunityComponent } from './community/community.component';
 import { PlanComponent } from './plan/plan.component';
 import { MyComponent } from './my/my.component';
+import { AchievementComponent } from './achievement/achievement.component';
+import { SuggestionsComponent } from './suggestions/suggestions.component';
 
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, FirstpageComponent, NavbarComponent, LoginComponent, DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,  
-    PlanComponent, MyComponent],
+  declarations: [AppComponent, FirstpageComponent, NavbarComponent, LoginComponent, DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,
+    PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
