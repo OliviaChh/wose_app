@@ -1,0 +1,30 @@
+.setting {
+    position: relative;
+    top: 20px;
+    left: 320px;
+    width: 30px;
+    height: 30px;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.records {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-hours,
+.workout-days,
+.total-points {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}

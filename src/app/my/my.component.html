@@ -1,5 +1,39 @@
-<ion-content>
-  <div>My page</div>
+<ion-content class="body">
+  <app-bg></app-bg>
+  <div>
+    <ion-icon name="settings-outline" class="setting"></ion-icon>
+  </div>
+
+  <div class="avatar-container">
+    <img src="assets/avatar.svg" alt="avatar" class="avatar">
+    <div class="user-id">User id</div>
+  </div>
+
+  <div class="records">
+    <div class="total-hours">
+      <div>Total Hours</div>
+      <div id="hours"> 10</div>
+    </div>
+
+    <div class="workout-days">
+      <div>Workout days</div>
+      <div id="days"> 20</div>
+    </div>
+
+    <div class="total-points">
+      <div>Total Points</div>
+      <div id="points"> 1000</div>
+    </div>
+  </div>
+
+  <div class="achievements">
+    <div>Achievements</div>
+    <div class="achievements-container">
+      <app-achievement></app-achievement>
+    </div>
+  </div>
+
   <app-suggestions></app-suggestions>
   <app-navbar></app-navbar>
+
 </ion-content>
