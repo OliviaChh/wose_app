@@ -16,16 +16,26 @@ import { DashboardLiveWorkoutComponent } from './dashboard-live-workout/dashboar
 import { CommunityComponent } from './community/community.component';
 import { PlanComponent } from './plan/plan.component';
 import { MyComponent } from './my/my.component';
+<<<<<<< Updated upstream
 import { AchievementComponent } from './achievement/achievement.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
+=======
+import { SignupComponent } from './signup/signup.component';
+import { Signup2Component } from './signup2/signup2.component';
+>>>>>>> Stashed changes
 
 
 
 
 
 @NgModule({
+<<<<<<< Updated upstream
   declarations: [AppComponent, FirstpageComponent, NavbarComponent, LoginComponent, DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,
     PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent],
+=======
+  declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, SignupComponent, Signup2Component ,DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,  
+    PlanComponent, MyComponent],
+>>>>>>> Stashed changes
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
