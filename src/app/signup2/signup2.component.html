@@ -1,11 +1,26 @@
 <app-bg></app-bg>
+<div class="switch">
+  <img [routerLink]="['/signup']" src="../../assets/image/signup_login/page_switch_arrow.svg" alt="">
+  <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
+  <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
+  <img src="../../assets/image/signup_login/page_switch_off.svg" alt="">
+</div>
 <div class="signup2_word">
   <div class="signup2_title">May I have your info?</div>
   <div class="signup2_gender">GENDER?</div>
+  <ion-item>
+    <ion-input placeholder="CM"></ion-input>
+    <ion-input placeholder="KG"></ion-input>
+  </ion-item>
   <div class="signup2_height">HEIGHT?</div>
   <div class="signup2_weight">WEIGHT?</div>
 </div>
-
+<div class="posi">
+<div class="signup2_gender_img">
+    <img src="../../assets/image/signup_login/signup2_male.svg">
+    <img src="../../assets/image/signup_login/signup2_fm.svg">
+</div>
+</div>
 <div class="firstpage_button">
   <div class="firstpage_button1" [routerLink]="['/signup2']" >NEXT</div>
 </div>

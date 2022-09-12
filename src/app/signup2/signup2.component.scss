@@ -30,6 +30,18 @@
     bottom: 30%;
 }
 
+.signup2_gender_img{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    position:absolute;
+    right:0;
+    left:0;
+    top:0;
+    bottom:30%;
+}
+
 .firstpage_button{
     position: absolute;
     bottom: 8%;
@@ -52,4 +64,16 @@
     border-color: #F19D6E;
     color: white;
     font-weight: bold;
+  }
+
+  .switch{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position:absolute;
+    right:0;
+    left:0;
+    top:0;
+    bottom:85%;
+    z-index: 1;
   }

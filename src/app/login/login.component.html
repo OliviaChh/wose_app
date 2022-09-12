@@ -1,6 +1,6 @@
 <app-bg></app-bg>
 <div class="login">
-    <img id="login_img_back_arrow" src="../../assets/image/signup_login/back_arrow.svg">
+        <img [routerLink]="['/']" id="login_img_back_arrow" src="../../assets/image/signup_login/back_arrow.svg">
     <div class="login_person">
         <img id="login_img_person" src="../../assets/image/signup_login/login_person.svg" alt="">
     </div>
@@ -25,7 +25,7 @@
         <div class="forgot_password_button_inside" [routerLink]="['/']" >Forgot Password?</div>
     </div>
     <div class="firstpage_button">
-        <div class="firstpage_button1" [routerLink]="['/login']" >LOGIN</div>
+        <div class="firstpage_button1" [routerLink]="['/']" >LOGIN</div>
     </div>
     <div class="or_word">
         <hr width="25%">
