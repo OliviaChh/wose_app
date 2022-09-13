@@ -1,5 +1,5 @@
 <ion-content class="body">
-  <app-bg></app-bg>
+  <app-bg-interfaces></app-bg-interfaces>
   <div>
     <ion-icon name="settings-outline" class="setting"></ion-icon>
   </div>
@@ -11,29 +11,49 @@
 
   <div class="records">
     <div class="total-hours">
-      <div>Total Hours</div>
+      <div class="info">Total Hours</div>
       <div id="hours"> 10</div>
     </div>
 
     <div class="workout-days">
-      <div>Workout days</div>
+      <div class="info">Workout days</div>
       <div id="days"> 20</div>
     </div>
 
     <div class="total-points">
-      <div>Total Points</div>
+      <div class="info">Total Points</div>
       <div id="points"> 1000</div>
     </div>
   </div>
 
   <div class="achievements">
-    <div>Achievements</div>
-    <div class="achievements-container">
-      <app-achievement></app-achievement>
+    <p class="title">Achievements</p>
+    <div class="achievements-container" [routerLink]="['/achievement-page']">
+      <div class="container">
+        <div class="achievement">
+          <img src="assets/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Upload data once</div>
+        </div>
+        <div class="achievement">
+          <img src="assets/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Do a workout</div>
+        </div>
+        <div class="achievement">
+          <img src="assets/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Set a goal</div>
+        </div>
+        <div class="achievement">
+          <img src="assets/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Enter the leaderboard</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <app-suggestions></app-suggestions>
+  <div class="suggestions">
+    <p class="title">Meal suggestions</p>
+    <app-suggestions></app-suggestions>
+  </div>
   <app-navbar></app-navbar>
 
 </ion-content>

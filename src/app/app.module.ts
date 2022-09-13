@@ -21,7 +21,9 @@ import { AchievementComponent } from './achievement/achievement.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { SignupComponent } from './signup/signup.component';
 import { Signup2Component } from './signup2/signup2.component';
-
+import { BgInterfacesComponent } from './bg-interfaces/bg-interfaces.component';
+import { AchievementPageComponent } from './achievement-page/achievement-page.component';
+import { BackComponent } from './back/back.component';
 
 
 
@@ -30,7 +32,7 @@ import { Signup2Component } from './signup2/signup2.component';
 @NgModule({
 
   declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, SignupComponent, Signup2Component, DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,
-    PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent],
+    PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent, BgInterfacesComponent, AchievementPageComponent, BackComponent],
 
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

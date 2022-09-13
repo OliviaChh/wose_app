@@ -8,6 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { Signup2Component } from './signup2/signup2.component';
 import { MyComponent } from './my/my.component';
 import { PlanComponent } from './plan/plan.component';
+import { AchievementPageComponent } from './achievement-page/achievement-page.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,10 @@ const routes: Routes = [
     redirectTo: 'firstpage',
     pathMatch: 'full'
   },
+  {
+    path: 'achievement-page',
+    component: AchievementPageComponent
+  }
 ];
 
 @NgModule({

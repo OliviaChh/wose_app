@@ -1,0 +1,39 @@
+// .body {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+// }
+
+.achievements-container {
+    background-color: white;
+    border-radius: 25px;
+}
+
+.my-ach {
+    top: 60px;
+    position: relative;
+    margin: 10px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 150%;
+    margin-bottom: 5px;
+}
+
+.waiting {
+
+    position: relative;
+    margin-top: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 80px;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

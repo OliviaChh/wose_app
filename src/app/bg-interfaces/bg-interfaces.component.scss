@@ -1,0 +1,19 @@
+#img_circle {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 75%;
+    z-index: -1;
+}
+
+#img_circle2 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+body {
+    background-color: #eaeaea;
+    z-index: -1;
+}
