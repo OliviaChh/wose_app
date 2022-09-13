@@ -7,20 +7,26 @@
 </div>
 <div class="signup2_word">
   <div class="signup2_title">May I have your info?</div>
+
   <div class="signup2_gender">GENDER?</div>
-  <ion-item>
-    <ion-input placeholder="CM"></ion-input>
-    <ion-input placeholder="KG"></ion-input>
-  </ion-item>
+  <div class="posi">
+    <div class="signup2_gender_img">
+        <img src="../../assets/image/signup_login/signup2_male.svg">
+        <img src="../../assets/image/signup_login/signup2_fm.svg">
+    </div>
+  </div>
+
   <div class="signup2_height">HEIGHT?</div>
+  <ion-item lines="none" class ="itemformcm">
+    <ion-input class ="inputClass" type="number" placeholder="CM" required></ion-input>
+  </ion-item>
+
   <div class="signup2_weight">WEIGHT?</div>
+  <ion-item lines="none" class ="itemformkg">
+    <ion-input class ="inputClass" type="number" placeholder="KG" required></ion-input>
+  </ion-item>
 </div>
-<div class="posi">
-<div class="signup2_gender_img">
-    <img src="../../assets/image/signup_login/signup2_male.svg">
-    <img src="../../assets/image/signup_login/signup2_fm.svg">
-</div>
-</div>
+
 <div class="firstpage_button">
-  <div class="firstpage_button1" [routerLink]="['/signup2']" >NEXT</div>
+  <div class="firstpage_button1" [routerLink]="['/signup3']" >NEXT</div>
 </div>
