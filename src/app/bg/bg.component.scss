@@ -1,6 +1,7 @@
-#img_circle{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 75%;
-  }
+#img_circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 75%;
+  z-index: -1;
+}
