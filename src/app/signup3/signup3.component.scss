@@ -1,3 +1,15 @@
+.switch{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position:absolute;
+    right:0;
+    left:0;
+    top:0;
+    bottom:85%;
+    z-index: 1;
+  }
+
 .signup2_word{
     display: flex;
     flex-direction: column;
@@ -12,34 +24,22 @@
     top:15%;
 }
 
-.signup2_gender{
+.signup3_goal{
     position: absolute;
     font-size: 20px;
     top: 23%;
 }
 
-.signup2_height{
+.signup3_diet{
     position: absolute;
     font-size: 20px;
     top: 45%;
 }
 
-.signup2_weight{
+.signup3_allergy{
     position: absolute;
     font-size: 20px;
     bottom: 32%;
-}
-
-.signup2_gender_img{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    position:absolute;
-    right:0;
-    left:0;
-    top:0;
-    bottom:30%;
 }
 
 .firstpage_button{
@@ -66,37 +66,9 @@
     font-weight: bold;
   }
 
-  .switch{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    position:absolute;
-    right:0;
-    left:0;
-    top:0;
-    bottom:85%;
-    z-index: 1;
-  }
-
-  .itemformcm{
-    position: absolute;
-    right:0;
-    left:15%;
-    top:52%;
-    bottom:0;
-  }
-
-  .itemformkg{
-    position: absolute;
-    right:0;
-    left:15%;
-    top:72%;
-    bottom:0;
-  }
-
   ion-input{
+    margin: 0;
     border-radius: 10px !important;
-    padding-right: 30px;
     font-size: 40px;
     border: 1px solid #000000 !important;
     --background: #E6E6E6 !important;
@@ -104,4 +76,14 @@
     height: 5.5rem;
     text-align: center;
   }
- 
+
+  .itemformkg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .goalInput{
+    position: absolute;
+    top: 30%;
+  }

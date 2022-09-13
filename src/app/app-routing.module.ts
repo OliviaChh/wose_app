@@ -6,6 +6,7 @@ import { FirstpageComponent } from './firstpage/firstpage.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { Signup2Component } from './signup2/signup2.component';
+import { Signup3Component } from './signup3/signup3.component';
 import { MyComponent } from './my/my.component';
 import { PlanComponent } from './plan/plan.component';
 import { AchievementPageComponent } from './achievement-page/achievement-page.component';
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'signup2',
     component: Signup2Component
+  },
+  {
+    path: 'signup3',
+    component: Signup3Component
   },
   {
     path: 'dashboard',
