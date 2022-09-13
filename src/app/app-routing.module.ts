@@ -9,6 +9,7 @@ import { Signup2Component } from './signup2/signup2.component';
 import { MyComponent } from './my/my.component';
 import { PlanComponent } from './plan/plan.component';
 import { AchievementPageComponent } from './achievement-page/achievement-page.component';
+import { MealComponent } from './meal/meal.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'achievement-page',
     component: AchievementPageComponent
+  },
+  {
+    path: 'meal',
+    component: MealComponent
   }
 ];
 

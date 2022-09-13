@@ -1,0 +1,32 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.calendar {
+    margin-top: 100px;
+    margin-left: 5%;
+}
+
+.record {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5%;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+p {
+    font-weight: bold;
+}
+
+#time-cal,
+#caloris-cal,
+#step-cal {
+    color: rgb(26, 138, 190);
+}

@@ -1,3 +1,23 @@
-<p>
-  plan works!
-</p>
+<ion-content class="body">
+  <app-bg-interfaces></app-bg-interfaces>
+  <app-back></app-back>
+  <div class="calendar">
+    <ion-datetime [showDefaultButtons]="true"></ion-datetime>
+  </div>
+
+  <div class="record">
+    <div class="time">
+      <p>Workout time</p>
+      <div id="time-cal"> 20/30 min</div>
+    </div>
+    <div class="caloris">
+      <p>Calorie Consumption</p>
+      <div id="caloris-cal"> 450/600 KCAL</div>
+    </div>
+    <div class="step">
+      <p>Steps</p>
+      <div id="step-cal"> 2468</div>
+    </div>
+  </div>
+  <app-navbar></app-navbar>
+</ion-content>

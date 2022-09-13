@@ -9,7 +9,7 @@ describe('PlanComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlanComponent ],
+      declarations: [PlanComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
@@ -21,4 +21,10 @@ describe('PlanComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+mobiscroll.datepicker('#inline-picker', {
+  controls: ['calendar'],
+  display: 'inline',
+  touchUi: true
 });

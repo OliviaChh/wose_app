@@ -64,7 +64,7 @@
             <path d="M17.3628 5.11768V13.3965M34.1153 5.11768V13.3965" stroke="#0085FF" stroke-width="4"
                 stroke-linecap="round" />
         </svg>
-        <div *ngIf="arr_boolNav[4]">PLAN</div>
+        <div *ngIf="arr_boolNav[4]" [routerLink]="['/plan']">PLAN</div>
     </div>
     <div id="nav5" class="nav-button" (click)="navClick(5)">
         <svg *ngIf="!arr_boolNav[5]" width="49" height="49" viewBox="0 0 49 49" fill="none"
