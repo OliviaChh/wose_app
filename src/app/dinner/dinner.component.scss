@@ -1,0 +1,23 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 150%;
+    margin-bottom: 0px;
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.cards {
+    margin-bottom: 80px;
+}
+
+ion-card {
+    background-color: whitesmoke;
+    color: black;
+}

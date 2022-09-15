@@ -11,6 +11,11 @@ import { MyComponent } from './my/my.component';
 import { PlanComponent } from './plan/plan.component';
 import { AchievementPageComponent } from './achievement-page/achievement-page.component';
 import { MealComponent } from './meal/meal.component';
+import { BreakfastComponent } from './breakfast/breakfast.component';
+import { LunchComponent } from './lunch/lunch.component';
+import { DinnerComponent } from './dinner/dinner.component';
+import { SnackComponent } from './snack/snack.component';
+
 
 
 const routes: Routes = [
@@ -63,6 +68,22 @@ const routes: Routes = [
   {
     path: 'meal',
     component: MealComponent
+  },
+  {
+    path: 'breakfast',
+    component: BreakfastComponent
+  },
+  {
+    path: 'lunch',
+    component: LunchComponent
+  },
+  {
+    path: 'dinner',
+    component: DinnerComponent
+  },
+  {
+    path: 'snack',
+    component: SnackComponent
   }
 ];
 
