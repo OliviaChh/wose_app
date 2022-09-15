@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '../service/global.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,19 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  arr_boolNav: boolean[] = [true, false, false, false, false, false];
-  constructor() { }
+  arr_boolNav: boolean[] ;
+  constructor(
+    private gs: GlobalService,
+  ) { }
 
   ngOnInit() {
+    this.arr_boolNav = this.gs.curPage;
   }
 
-  navClick(item: number){
-    for( var i = 1; i <= 5 ; i ++ ){
-      if (item != i) this.arr_boolNav[i] = false;
-      else this.arr_boolNav[i] = true;
-    }
-    
-    console.log(`[navClick]: Click nav ${item}`);
+  navClick(val: number){
+    this.gs.setCurPage(val);
+    console.log(`[navClick]:${this.gs.curPage}`);
   }
-
 }
