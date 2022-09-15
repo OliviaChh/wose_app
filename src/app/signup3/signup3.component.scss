@@ -1,3 +1,10 @@
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .switch{
     display: flex;
     align-items: center;
@@ -86,4 +93,12 @@
   .goalInput{
     position: absolute;
     top: 30%;
+  }
+
+  .dietaryitem{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F19D6E;
+
   }
