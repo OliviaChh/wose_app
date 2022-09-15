@@ -1,0 +1,57 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#confirm-button {
+    border-left: 100px solid;
+    border-right: 100px solid;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-radius: 18px;
+    font-size: large;
+    background: #F19D6E;
+    border-color: #F19D6E;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    border-radius: 25px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    font-size: 200%;
+    font-weight: bold;
+    margin-bottom: 10%;
+}
+
+ion-input {
+    border: 0.5px solid !important;
+}
+
+.elements {
+    margin-top: 10%;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

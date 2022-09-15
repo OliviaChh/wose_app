@@ -34,6 +34,7 @@ import { DinnerComponent } from './dinner/dinner.component';
 import { SnackComponent } from './snack/snack.component';
 
 import { VideosComponent } from './videos/videos.component';
+import { SetGoalComponent } from './set-goal/set-goal.component';
 
 
 
@@ -44,7 +45,7 @@ import { VideosComponent } from './videos/videos.component';
 @NgModule({
 
   declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, SignupComponent, Signup2Component, Signup3Component, DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,
-    PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent, BgInterfacesComponent, AchievementPageComponent, BackComponent, MealComponent, BreakfastComponent, LunchComponent, DinnerComponent, SnackComponent, VideosComponent],
+    PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent, BgInterfacesComponent, AchievementPageComponent, BackComponent, MealComponent, BreakfastComponent, LunchComponent, DinnerComponent, SnackComponent, VideosComponent, SetGoalComponent],
 
 
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],

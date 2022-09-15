@@ -2,7 +2,13 @@
   <app-bg-interfaces></app-bg-interfaces>
   <app-back></app-back>
   <div class="calendar">
-    <ion-datetime [showDefaultButtons]="true"></ion-datetime>
+    <ion-datetime #datetime>
+      <span slot="title">Plan your workout</span>
+      <ion-buttons slot="buttons">
+        <ion-button color="danger" (click)="datetime.reset()">Reset</ion-button>
+        <ion-button color="primary" (click)="datetime.confirm()" [routerLink]="['/set-goal']">Plan</ion-button>
+      </ion-buttons>
+    </ion-datetime>
   </div>
 
   <div class="record">
@@ -22,6 +28,9 @@
 
   <div class="suggestions">
     <p class="title">Workout for today</p>
+    <div class="viedos">
+      <app-videos></app-videos>
+    </div>
 
   </div>
 

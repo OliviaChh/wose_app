@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { importProvidersFrom, NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { CommunityComponent } from './community/community.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,6 +15,7 @@ import { BreakfastComponent } from './breakfast/breakfast.component';
 import { LunchComponent } from './lunch/lunch.component';
 import { DinnerComponent } from './dinner/dinner.component';
 import { SnackComponent } from './snack/snack.component';
+import { SetGoalComponent } from './set-goal/set-goal.component';
 
 
 
@@ -84,6 +85,10 @@ const routes: Routes = [
   {
     path: 'snack',
     component: SnackComponent
+  },
+  {
+    path: 'set-goal',
+    component: SetGoalComponent
   }
 ];
 
