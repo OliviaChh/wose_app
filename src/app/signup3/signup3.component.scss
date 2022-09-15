@@ -1,10 +1,3 @@
-.body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .switch{
     display: flex;
     align-items: center;
@@ -46,7 +39,7 @@
 .signup3_allergy{
     position: absolute;
     font-size: 20px;
-    bottom: 32%;
+    bottom: 35%;
 }
 
 .firstpage_button{
@@ -95,10 +88,59 @@
     top: 30%;
   }
 
-  .dietaryitem{
+  .dietaryform{
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    background-color: #F19D6E;
+    justify-content: space-evenly;
+    position:absolute;
+    right:0;
+    left:0;
+    top:11%;
+    bottom:0;
+  }
 
+  .dietaryitem{
+    border-left: 20px solid;
+    border-right: 20px solid;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-radius: 18px;
+    font-size: large;
+    background: #F19D6E;
+    border-color: #F19D6E;
+    color: black;
+  }
+
+  .allergyform1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position:absolute;
+    right:0;
+    left:0;
+    top:44%;
+    bottom:0;
+  }
+
+  .allergyform2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position:absolute;
+    right:0;
+    left:0;
+    top:60%;
+    bottom:0;
+  }
+
+  .allergyitem{
+    border-left: 20px solid;
+    border-right: 20px solid;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-radius: 18px;
+    font-size: large;
+    background: #F19D6E;
+    border-color: #F19D6E;
+    color: black;
   }

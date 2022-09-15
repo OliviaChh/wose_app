@@ -1,4 +1,4 @@
-<div class="body">
+
 <app-bg></app-bg>
 <div class="switch">
   <img [routerLink]="['/signup2']" src="../../assets/image/signup_login/page_switch_arrow.svg" alt="">
@@ -17,15 +17,25 @@
 
   <div class="signup3_diet">DIETARY PREFERENCE?</div>
 
-  <div class="dietaryitem">
-    <div class="normal">NORMAL</div>
-    <div class="vagan">VAGAN</div>
-    <div class="halal">HALAL</div>
+  <div class="dietaryform">
+    <div class="dietaryitem">NORMAL</div>
+    <div class="dietaryitem">VAGAN</div>
+    <div class="dietaryitem">HALAL</div>
+  </div>
+
+  <div class="allergyform1">
+    <div class="allergyitem">WHEAT</div>
+    <div class="allergyitem">EGG</div>
+    <div class="allergyitem">NUTS</div>
+  </div>
+  <div class="allergyform2">
+    <div class="allergyitem">GLUTEN</div>
+    <div class="allergyitem">SOY</div>
+    <div class="allergyitem">FISH</div>
   </div>
 
   <div class="signup3_allergy">ALLERGY INFO?</div>
 
 <div class="firstpage_button">
   <div class="firstpage_button1" [routerLink]="['/signup3']">FINISH</div>
-</div>
 </div>

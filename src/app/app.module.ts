@@ -21,12 +21,14 @@ import { AchievementComponent } from './achievement/achievement.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { SignupComponent } from './signup/signup.component';
 import { Signup2Component } from './signup2/signup2.component';
+import { Signup3Component } from './signup3/signup3.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { BgInterfacesComponent } from './bg-interfaces/bg-interfaces.component';
 import { AchievementPageComponent } from './achievement-page/achievement-page.component';
 import { BackComponent } from './back/back.component';
 
 import { MealComponent } from './meal/meal.component';
-import { Signup3Component } from './signup3/signup3.component';
+
 
 import { BreakfastComponent } from './breakfast/breakfast.component';
 import { LunchComponent } from './lunch/lunch.component';
@@ -44,7 +46,7 @@ import { SetGoalComponent } from './set-goal/set-goal.component';
 
 @NgModule({
 
-  declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, SignupComponent, Signup2Component, Signup3Component, DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,
+  declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, SignupComponent, Signup2Component, Signup3Component, PrivacyPolicyComponent, DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,
     PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent, BgInterfacesComponent, AchievementPageComponent, BackComponent, MealComponent, BreakfastComponent, LunchComponent, DinnerComponent, SnackComponent, VideosComponent, SetGoalComponent],
 
 

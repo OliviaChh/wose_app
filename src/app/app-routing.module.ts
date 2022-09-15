@@ -16,7 +16,7 @@ import { LunchComponent } from './lunch/lunch.component';
 import { DinnerComponent } from './dinner/dinner.component';
 import { SnackComponent } from './snack/snack.component';
 import { SetGoalComponent } from './set-goal/set-goal.component';
-
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 
 const routes: Routes = [
@@ -40,6 +40,10 @@ const routes: Routes = [
   {
     path: 'signup3',
     component: Signup3Component
+  },
+  {
+    path: 'privacypolicy',
+    component: PrivacyPolicyComponent
   },
   {
     path: 'dashboard',
