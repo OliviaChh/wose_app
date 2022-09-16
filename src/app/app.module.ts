@@ -37,6 +37,9 @@ import { SnackComponent } from './snack/snack.component';
 
 import { VideosComponent } from './videos/videos.component';
 import { SetGoalComponent } from './set-goal/set-goal.component';
+import { CommunitySearchFriendsComponent } from './community-search-friends/community-search-friends.component';
+import { DashboardExerciseFinishedComponent } from './dashboard-exercise-finished/dashboard-exercise-finished.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 
 
@@ -46,8 +49,8 @@ import { SetGoalComponent } from './set-goal/set-goal.component';
 
 @NgModule({
 
-  declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, SignupComponent, Signup2Component, Signup3Component, PrivacyPolicyComponent, DashboardComponent, DashboardLiveWorkoutComponent, CommunityComponent,
-    PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent, BgInterfacesComponent, AchievementPageComponent, BackComponent, MealComponent, BreakfastComponent, LunchComponent, DinnerComponent, SnackComponent, VideosComponent, SetGoalComponent],
+  declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, SignupComponent, Signup2Component, Signup3Component, PrivacyPolicyComponent, DashboardComponent, DashboardLiveWorkoutComponent, DashboardExerciseFinishedComponent, CommunityComponent, CommunitySearchFriendsComponent
+    ,PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent, BgInterfacesComponent, AchievementPageComponent, BackComponent, MealComponent, BreakfastComponent, LunchComponent, DinnerComponent, SnackComponent, VideosComponent, SetGoalComponent, LeaderboardComponent],
 
 
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],

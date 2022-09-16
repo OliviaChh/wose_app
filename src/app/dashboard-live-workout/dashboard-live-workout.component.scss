@@ -1,9 +1,9 @@
 .btnn{ 
     width: 100%;
     height: 100%;
-    border-radius: 25px;
-    background-color: red;
-    color: #cccccc;
+    border-radius: 100px;
+    background-color: orange;
+    color: white;
     /* 字体颜色color  背景颜色background  */
 }
 .btn{
@@ -40,14 +40,14 @@ ul>li{
 .adio{
     width: 90%;
     height: 200px;
-    background-color: blue;
+    background-color: grey;
     margin-left: 20px;
     border-radius: 20px;
 }
 .B_h1{
 width: 90%;
 height: 50px;
-background-color: red;
+// background-color: red;
 position: relative;
 top: 30px;
 left: 20px;
@@ -55,7 +55,7 @@ left: 20px;
 .body_h{
     width: 90%;
     height: 650px;
-    background-color: #cccccc;
+    background-color: white;
     margin-left: 15px;
     border-radius: 20px;
 }

@@ -1,0 +1,48 @@
+.header{
+    /* background-color: salmon; */
+    /* margin-top: 2rem; */
+    display: flex;
+}
+.h_png{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    /* background-color: red; */
+    margin-left: 10px;
+}
+.ipt{
+    
+    width: 16rem;
+    height: 4.5rem;
+    /* background-color: blue; */
+    margin-left: 80px;
+
+    /* border-radius: 30%; */
+}
+.iipt{
+    margin-top: 40px;
+    width: 90%;
+    height: 50%;
+    border-radius: 10px;
+}
+.body{
+    width: 90%;
+    height: 500px;
+    background: white;
+    margin-left: 20px;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+.list{
+    width: 95%;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+.bbtn{
+    width: 100px;
+    height: 30px;
+    position: relative;
+    left: 100px;
+    top: 28px;
+}

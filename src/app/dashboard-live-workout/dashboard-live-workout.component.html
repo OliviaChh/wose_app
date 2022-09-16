@@ -1,10 +1,5 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>dashboard-exercise</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <app-bg-interfaces></app-bg-interfaces>
   <div>
     <div class="header">
         <div class="ipt">
@@ -15,12 +10,13 @@
     <br>
     <div class="body_h">
        <div class="B_h1">
-        <h1 class="h1">ASDHJSABDJH</h1>
+        <h1 class="h1">EXERCISE</h1>
        </div>
        <br>
        <br>
        <div class="adio">
         <!-- 视频 -->
+      <video src="/">   video </video>
 
        </div>
        <!-- <br> -->
@@ -39,8 +35,8 @@
                 <span>sfghjkldsadsadsadsadasd</span>
             <!-- 这块区域留着写字 -->
        </div>
-       <div class="btn">
-            <button class="btnn">CLICK ME</button>
+       <div class="btn" [routerLink]="['../dashboard-exercise-finished']" >
+            <button class="btnn">Done</button>
        </div>
     </div>
 </div>
