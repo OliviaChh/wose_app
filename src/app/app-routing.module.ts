@@ -17,7 +17,8 @@ import { DinnerComponent } from './dinner/dinner.component';
 import { SnackComponent } from './snack/snack.component';
 import { SetGoalComponent } from './set-goal/set-goal.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-
+import { CalculateComponent } from './calculate/calculate.component';
+import { SettingComponent } from './setting/setting.component';
 
 const routes: Routes = [
   {
@@ -93,6 +94,14 @@ const routes: Routes = [
   {
     path: 'set-goal',
     component: SetGoalComponent
+  },
+  {
+    path: 'calculate',
+    component: CalculateComponent
+  },
+  {
+    path: 'setting',
+    component: SettingComponent
   }
 ];
 
