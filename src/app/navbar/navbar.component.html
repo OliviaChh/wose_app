@@ -14,7 +14,7 @@
         <div *ngIf="arr_boolNav[1]">DASHBOARD</div>
     </div>
 
-    <div id="nav2" class="nav-button" (click)="navClick(2)">
+    <div id="nav2" class="nav-button" (click)="navClick(2)" [routerLink]="['/calculate']">
         <svg *ngIf="!arr_boolNav[2]" width="44" height="45" viewBox="0 0 44 45" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -30,7 +30,7 @@
         <div *ngIf="arr_boolNav[2]">COMMUNITY</div>
     </div>
 
-    <div id="nav3" class="nav-button" (click)="navClick(3)" [routerLink]="['/calculate']">
+    <div id="nav3" class="nav-button" (click)="navClick(3)" [routerLink]="['/community']">
         <svg *ngIf="!arr_boolNav[3]" width="56" height="55" viewBox="0 0 56 55" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
