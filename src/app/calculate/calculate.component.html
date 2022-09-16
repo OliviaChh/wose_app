@@ -1,0 +1,43 @@
+<ion-content class="body">
+  <app-bg-interfaces></app-bg-interfaces>
+
+
+  <div class="container">
+    <div class="title">Your daily intake</div>
+    <div class="kcal">1000 kcal</div>
+
+    <div class="title">Caluculate your calorie intake!</div>
+
+    <div class="container2">
+
+
+      <div class="elements">
+        <div class="title2">Workout Time</div>
+        <ion-item lines="none" class="form-time">
+          <ion-input class="inputClass" type="number" placeholder="minutes" required></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="elements">
+        <div class="title2">Calorie Consumption</div>
+        <ion-item lines="none" class="form-cal">
+          <ion-input class="inputClass" type="number" placeholder="Kcal" required></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="elements">
+        <input type="submit" value="confirm" id="confirm-button" onclick="openPopup()">
+        <div class="popup" id="popup">
+          <div class="info"> Your calories intake is 265 kcal</div>
+          <button type="button" onclick="closePopup()">Back</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+  <app-navbar></app-navbar>
+</ion-content>

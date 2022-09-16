@@ -13,7 +13,7 @@
         </svg>
         <div *ngIf="arr_boolNav[1]">DASHBOARD</div>
     </div>
-    
+
     <div id="nav2" class="nav-button" (click)="navClick(2)">
         <svg *ngIf="!arr_boolNav[2]" width="44" height="45" viewBox="0 0 44 45" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
         <div *ngIf="arr_boolNav[2]">COMMUNITY</div>
     </div>
 
-    <div id="nav3" class="nav-button" (click)="navClick(3)">
+    <div id="nav3" class="nav-button" (click)="navClick(3)" [routerLink]="['/calculate']">
         <svg *ngIf="!arr_boolNav[3]" width="56" height="55" viewBox="0 0 56 55" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -43,7 +43,7 @@
                 d="M30.75 13.9583H25.25V24.7916H14.25V30.2083H25.25V41.0416H30.75V30.2083H41.75V24.7916H30.75V13.9583ZM28 0.416626C12.82 0.416626 0.5 12.55 0.5 27.5C0.5 42.45 12.82 54.5833 28 54.5833C43.18 54.5833 55.5 42.45 55.5 27.5C55.5 12.55 43.18 0.416626 28 0.416626ZM28 49.1666C15.8725 49.1666 6 39.4437 6 27.5C6 15.5562 15.8725 5.83329 28 5.83329C40.1275 5.83329 50 15.5562 50 27.5C50 39.4437 40.1275 49.1666 28 49.1666Z"
                 fill="#F19D6E" />
         </svg>
-        <div *ngIf="arr_boolNav[3]">CALORIE</div>
+        <div *ngIf="arr_boolNav[3]" [routerLink]="['/calculate']">CALORIE</div>
     </div>
 
     <div id="nav4" class="nav-button" (click)="navClick(4)" [routerLink]="['/plan']">
