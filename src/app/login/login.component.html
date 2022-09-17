@@ -1,6 +1,6 @@
 <app-bg></app-bg>
 <div class="login">
-        <img [routerLink]="['/']" id="login_img_back_arrow" src="../../assets/image/signup_login/back_arrow.svg">
+        <img [routerLink]="['/firstpage']" id="login_img_back_arrow" src="../../assets/image/signup_login/back_arrow.svg">
     <div class="login_person">
         <img id="login_img_person" src="../../assets/image/signup_login/login_person.svg" alt="">
     </div>
@@ -11,18 +11,18 @@
         <div id="login_input_inside">
             <img src="../../assets/image/signup_login/email_icon.svg">
             <ion-item>
-            <ion-input placeholder="Email ID"></ion-input>
+            <ion-input type="email" placeholder="Email ID"></ion-input>
             </ion-item>
         </div>
         <div id="login_input_inside">
             <img src="../../assets/image/signup_login/password_icon.svg">
             <ion-item>
-            <ion-input placeholder="Password"></ion-input>
+            <ion-input type="current-password" placeholder="Password"></ion-input>
             </ion-item>
         </div>
     </div>
     <div class="forgot_password_button">
-        <div class="forgot_password_button_inside" [routerLink]="['/']" >Forgot Password?</div>
+        <div class="forgot_password_button_inside" [routerLink]="['/verifyemail']" >Forgot Password?</div>
     </div>
     <div class="firstpage_button">
         <div class="firstpage_button1" [routerLink]="['/']" >LOGIN</div>

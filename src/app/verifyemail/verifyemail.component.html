@@ -1,0 +1,31 @@
+<app-bg></app-bg>
+<div class="verify">
+        <img [routerLink]="['/login']" id="verify_img_back_arrow" src="../../assets/image/signup_login/back_arrow.svg">
+    <div class="verify_person">
+        <img id="verify_img_person" src="../../assets/image/signup_login/verifyemail_person.svg" alt="">
+    </div>
+
+    <div class="verify_title">Verify Email</div>
+
+    <div class="verify_input">
+        <div id="verify_input_inside">
+            <img src="../../assets/image/signup_login/email_icon.svg">
+            <ion-item>
+            <ion-input placeholder="Email ID"></ion-input>
+            </ion-item>
+        </div>
+    </div>
+    <div class="verify_input2">
+        <div id="verify_input_inside">
+            <img src="../../assets/image/signup_login/verifyemail_otp_icon.svg">
+            <ion-item>
+            <ion-input placeholder="OTP"></ion-input>
+            </ion-item>
+        </div>
+    </div>
+    <div class="button_opt">
+        <div class="button_inside" [routerLink]="['/']" >GET OPT</div>
+    </div>
+    <div class="button_verify">
+        <div class="button_inside" [routerLink]="['/resetpw']" >VERIFY</div>
+    </div>

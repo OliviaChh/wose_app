@@ -1,0 +1,21 @@
+<app-bg></app-bg>
+<div class="reset">
+        <img [routerLink]="['/verifyemail']" id="reset_img_back_arrow" src="../../assets/image/signup_login/back_arrow.svg">
+    <div class="reset_person">
+        <img id="reset_img_person" src="../../assets/image/signup_login/resetpw_person.svg" alt="">
+    </div>
+
+    <div class="reset_title">Reset<br>Password</div>
+
+    <div class="reset_input">
+        <div id="reset_input_inside">
+            <img src="../../assets/image/signup_login/password_icon.svg">
+            <ion-item>
+            <ion-input placeholder="New Password"></ion-input>
+            </ion-item>
+        </div>
+    </div>
+
+    <div class="button_confirm">
+        <div class="button_inside" [routerLink]="['/']" >CONFIRM</div>
+    </div>

@@ -71,24 +71,7 @@
     </div>
 
     <div id="nav5" class="nav-button" (click)="navClick(5)" [routerLink]="['/my']">
-        <svg *ngIf="!arr_boolNav[5]" width="49" height="49" viewBox="0 0 49 49" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0_79_435" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="45"
-                height="45">
-                <path
-                    d="M24.1237 44.2876C35.2267 44.2876 44.2268 35.275 44.2268 24.1568C44.2268 13.0386 35.2267 4.02612 24.1237 4.02612C13.0208 4.02612 4.02063 13.0386 4.02063 24.1568C4.02063 35.275 13.0208 44.2876 24.1237 44.2876Z"
-                    stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                    d="M24.1237 23.1503C25.4567 23.1503 26.735 22.6201 27.6775 21.6763C28.62 20.7325 29.1495 19.4524 29.1495 18.1176C29.1495 16.7829 28.62 15.5028 27.6775 14.559C26.735 13.6152 25.4567 13.085 24.1237 13.085C22.7908 13.085 21.5125 13.6152 20.57 14.559C19.6275 15.5028 19.098 16.7829 19.098 18.1176C19.098 19.4524 19.6275 20.7325 20.57 21.6763C21.5125 22.6201 22.7908 23.1503 24.1237 23.1503Z"
-                    fill="white" stroke="white" stroke-width="4" stroke-linejoin="round" />
-                <path
-                    d="M10.0737 38.5826C10.4194 33.3375 14.7778 29.1896 20.1031 29.1896H28.1443C33.4626 29.1896 37.8169 33.3264 38.1728 38.5614"
-                    stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-            </mask>
-            <g mask="url(#mask0_79_435)">
-                <path d="M0 0H48.2474V48.3137H0V0Z" fill="black" />
-            </g>
-        </svg>
+        <img *ngIf="!arr_boolNav[5]" src="../../assets/image/navbar/nav5-1.png" style="width:49px; height:48px;"  >
         <svg *ngIf="arr_boolNav[5]" width="49" height="48" viewBox="0 0 49 48" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_93_204" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="2" y="1" width="45"

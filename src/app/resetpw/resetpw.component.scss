@@ -1,0 +1,74 @@
+.reset_person{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  #reset_img_person{
+    transform: translateY(80px);
+    width: 85%;
+  }
+
+  #reset_img_back_arrow{
+    position: absolute;
+    top:6%;
+    left: 5%;
+    z-index: 1;
+  }
+  
+  .reset_title{
+    font-size: 40px;
+    font-weight:800;
+    position: absolute;
+    bottom: 45%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reset_input{
+    position: absolute;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #reset_input_inside{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+  }
+
+  .button_confirm{
+    position: absolute;
+    bottom: 23%;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .button_inside{
+    border-left: 100px solid;
+    border-right: 100px solid;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-radius: 18px;
+    font-size: large;
+    background: #F19D6E;
+    border-color: #F19D6E;
+    color: white;
+    font-weight: bold;
+  }
