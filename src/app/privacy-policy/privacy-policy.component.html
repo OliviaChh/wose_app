@@ -10,7 +10,11 @@
   <div class="top_all_button">
     <div class="down_button" (click)="scrollToBottom()">Scroll To Bottom</div>
   </div>  
-  <h1>1. Clause 1</h1>
+  <div *ngFor="let item of privacyContent">
+    <h1>{{item.title}}</h1>
+    <p>{{item.content}}</p>
+  </div>
+  <!-- <h1>1. Clause 1</h1>
   <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in. 
       Consectetur eget id morbi amet amet, in. Ipsum viverra pretium tellus neque. 
       Ullamcorper suspendisse aenean leo pharetra in sit semper et. Amet quam placerat sem.</p>
@@ -29,7 +33,7 @@
   <h1>1. Clause 1</h1>
   <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in. 
       Consectetur eget id morbi amet amet, in. Ipsum viverra pretium tellus neque. 
-      Ullamcorper suspendisse aenean leo pharetra in sit semper et. Amet quam placerat sem.</p>
+      Ullamcorper suspendisse aenean leo pharetra in sit semper et. Amet quam placerat sem.</p> -->
     <div class="top_all_button">
       <div class="accept_button">Accept & Continue</div>
       <div class="top_button" (click)="scrollToTop()" >Scroll To Top </div>
