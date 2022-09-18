@@ -10,23 +10,23 @@
     </div>
     <div class="signup_title">Sign up</div>
 
-    <div class="signup_input">
+    <div class="signup_input" [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div id="signup_input_inside">
             <img src="../../assets/image/signup_login/email_icon.svg">
             <ion-item>
-            <ion-input type="email" placeholder="Email ID"></ion-input>
+            <ion-input formControlName="email" type="text" placeholder="Email ID"></ion-input>
             </ion-item>
         </div>
         <div id="signup_input_inside">
             <img src="../../assets/image/signup_login/username_icon.svg">
             <ion-item>
-            <ion-input type="username" placeholder="Username"></ion-input>
+            <ion-input formControlName="username" type="text" placeholder="Username"></ion-input>
             </ion-item>
         </div>
         <div id="signup_input_inside">
             <img src="../../assets/image/signup_login/password_icon.svg">
             <ion-item>
-            <ion-input type="new-password" placeholder="Password"></ion-input>
+            <ion-input formControlName="name" type="text" placeholder="Password"></ion-input>
             </ion-item>
         </div>
     </div>
@@ -34,6 +34,6 @@
         <a [routerLink]="['/privacypolicy']" >Terms & Conditions</a> and <a [routerLink]="['/privacypolicy']">Privacy Policy</a>
     </div>
     <div class="firstpage_button">
-        <div class="firstpage_button1" [routerLink]="['/signup2']" >NEXT</div>
+        <div type="submit" class="firstpage_button1" [routerLink]="['/signup2']" >NEXT</div>
     </div>
 </div>

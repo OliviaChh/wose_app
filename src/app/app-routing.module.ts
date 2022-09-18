@@ -26,6 +26,9 @@ import { SetGoalComponent } from './set-goal/set-goal.component';
 import { CalculateComponent } from './calculate/calculate.component';
 import { SettingComponent } from './setting/setting.component';
 import { ResetpwComponent } from './resetpw/resetpw.component';
+import { TestListComponent } from './test-list/test-list.component';
+import { TestUpdateComponent } from './test-update/test-update.component';
+import { TestCreateComponent } from './test-create/test-create.component';
 
 
 const routes: Routes = [
@@ -122,6 +125,18 @@ const routes: Routes = [
   {
     path: 'setting',
     component: SettingComponent
+  },
+  {
+    path: 'test-list',
+    component: TestListComponent
+  },
+  {
+    path: 'test-update',
+    component: TestUpdateComponent
+  },
+  {
+    path: 'test-create',
+    component: TestCreateComponent
   }
 ];
 

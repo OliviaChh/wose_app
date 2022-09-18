@@ -4,13 +4,12 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { GlobalService } from '../service/global.service';
 
-
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  selector: 'app-test-create',
+  templateUrl: './test-create.component.html',
+  styleUrls: ['./test-create.component.scss'],
 })
-export class SignupComponent implements OnInit {
+export class TestCreateComponent implements OnInit {
 
   userForm: FormGroup;
 
@@ -18,17 +17,17 @@ export class SignupComponent implements OnInit {
     private router: Router,
     public formBuilder: FormBuilder,
     private zone: NgZone,
-    private globalService: GlobalService  
+    private globalService: GlobalService    
   ) {
     this.userForm = this.formBuilder.group({
-        name: [''],
-        email: [''],
-        username: ['']
-      })
-    }
+      name: [''],
+      email: [''],
+      username: ['']
+    })
+  }
 
-  ngOnInit() {}
-  
+  ngOnInit() { }
+
   onSubmit() {
     if (!this.userForm.valid) {
       return false;

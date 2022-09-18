@@ -3,9 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SwiperModule } from 'swiper/angular';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+//backend
+import { HttpClientModule } from '@angular/common/http';
 
 import { FirstpageComponent } from './firstpage/firstpage.component';
 import { BgComponent } from './bg/bg.component';
@@ -43,6 +46,9 @@ import { CalculateComponent } from './calculate/calculate.component';
 import { SettingComponent } from './setting/setting.component';
 import { VideosComponent } from './videos/videos.component';
 import { SetGoalComponent } from './set-goal/set-goal.component';
+import { TestListComponent } from './test-list/test-list.component';
+import { TestUpdateComponent } from './test-update/test-update.component';
+import { TestCreateComponent } from './test-create/test-create.component';
 
 
 
@@ -51,11 +57,12 @@ import { SetGoalComponent } from './set-goal/set-goal.component';
 
   declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, SignupComponent, Signup2Component, Signup3Component, PrivacyPolicyComponent, VerifyemailComponent, ResetpwComponent, DashboardComponent, DashboardLiveWorkoutComponent, DashboardExerciseFinishedComponent, DashboardLiveWorkoutComponent, CommunityComponent, CommunitySearchFriendsComponent
     , PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent, BgInterfacesComponent, AchievementPageComponent, BackComponent, MealComponent, BreakfastComponent, LunchComponent, DinnerComponent, SnackComponent, VideosComponent, SetGoalComponent, LeaderboardComponent, CalculateComponent,
-    SettingComponent],
+    SettingComponent, TestListComponent, TestUpdateComponent, TestCreateComponent],
 
 
 
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SwiperModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SwiperModule, HttpClientModule
+  ,FormsModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
