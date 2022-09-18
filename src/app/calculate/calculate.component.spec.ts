@@ -23,3 +23,15 @@ describe('CalculateComponent', () => {
   });
 });
 
+var popup = document.getElementById("popup") as HTMLInputElement | null;
+
+if (popup != null) {
+  console.log(popup.value); // 👉️ "Initial Value"
+}
+
+function openPopup(): void {
+  popup.classList.add("open-popup");
+}
+function closePopup(): void {
+  popup.classList.remove("open-popup");
+}
