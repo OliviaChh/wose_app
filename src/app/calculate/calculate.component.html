@@ -26,10 +26,10 @@
       </div>
 
       <div class="elements">
-        <input type="submit" value="confirm" id="confirm-button" onclick="openPopup()">
+        <input type="submit" value="confirm" id="confirm-button" (click)="presentAlert()">
         <div class="popup" id="popup">
           <div class="info"> Your calories intake is 265 kcal</div>
-          <button type="button" onclick="closePopup()">Back</button>
+          <button type="button" (click)="closePopup()">Back</button>
         </div>
       </div>
 
@@ -41,8 +41,3 @@
 
   <app-navbar></app-navbar>
 </ion-content>
-
-<script type="text/typescript" src="calculate.component.spec.ts"></script>
-<script>
-
-</script>

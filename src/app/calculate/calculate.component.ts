@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-calculate',
@@ -7,8 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private alertController: AlertController) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Your calorie intake is 1000 kcal',
+      cssClass: 'custom-alert',
+      buttons: [
+        {
+          text: 'Back',
+          cssClass: 'alert-button-cancel',
+        },
+        {
+          text: 'Add it',
+          cssClass: 'alert-button-confirm',
+        },
+      ],
+    });
+
+    await alert.present();
+  }
 }
+
+
+
