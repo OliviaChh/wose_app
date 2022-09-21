@@ -36,7 +36,7 @@ export class TestCreateComponent implements OnInit {
         .subscribe((response) => {
           this.zone.run(() => {
             this.userForm.reset();
-            this.router.navigate(['/list']);
+            this.router.navigate(['/test-list']);
           })
         });
     }

@@ -34,7 +34,7 @@ userRoute.route('/fetch-user/:id').get((req, res) => {
       return next(err)
     } else {
       res.json(user)
-      console.log('User retrieved!')
+      console.log('User fetch!')
     }
   })
 })
