@@ -1,5 +1,5 @@
 {
-  "name": "AOapp",
+  "name": "aoapp",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -28,6 +28,7 @@
     "@capacitor/status-bar": "4.0.1",
     "@ionic/angular": "^6.1.9",
     "cocoapods": "^0.0.0",
+    "pg": "^8.8.0",
     "rxjs": "~6.6.0",
     "swiper": "^8.4.2",
     "tslib": "^2.2.0",
@@ -67,5 +68,15 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.7.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OliviaChh/wose_app.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OliviaChh/wose_app/issues"
+  }
 }
