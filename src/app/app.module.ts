@@ -49,7 +49,7 @@ import { SetGoalComponent } from './set-goal/set-goal.component';
 import { TestListComponent } from './test-list/test-list.component';
 import { TestUpdateComponent } from './test-update/test-update.component';
 import { TestCreateComponent } from './test-create/test-create.component';
-
+import{ExerciseLiveVideoComponent}from'./exercise-live-video/exercise-live-video.component';
 
 
 
@@ -57,7 +57,7 @@ import { TestCreateComponent } from './test-create/test-create.component';
 
   declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, SignupComponent, Signup2Component, Signup3Component, PrivacyPolicyComponent, VerifyemailComponent, ResetpwComponent, DashboardComponent, DashboardLiveWorkoutComponent, DashboardExerciseFinishedComponent, DashboardLiveWorkoutComponent, CommunityComponent, CommunitySearchFriendsComponent
     , PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent, BgInterfacesComponent, AchievementPageComponent, BackComponent, MealComponent, BreakfastComponent, LunchComponent, DinnerComponent, SnackComponent, VideosComponent, SetGoalComponent, LeaderboardComponent, CalculateComponent,
-    SettingComponent, TestListComponent, TestUpdateComponent, TestCreateComponent],
+    SettingComponent, TestListComponent, TestUpdateComponent, TestCreateComponent,ExerciseLiveVideoComponent],
 
 
 

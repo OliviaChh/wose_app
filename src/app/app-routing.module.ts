@@ -29,9 +29,13 @@ import { ResetpwComponent } from './resetpw/resetpw.component';
 import { TestListComponent } from './test-list/test-list.component';
 import { TestUpdateComponent } from './test-update/test-update.component';
 import { TestCreateComponent } from './test-create/test-create.component';
-
+import{ExerciseLiveVideoComponent}from'./exercise-live-video/exercise-live-video.component';
 
 const routes: Routes = [
+  {
+    path:'exerciselivevideo',
+    component:ExerciseLiveVideoComponent
+  },
   {
     path: 'firstpage',
     component: FirstpageComponent
