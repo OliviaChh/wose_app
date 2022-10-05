@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../service/global.service';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-test-list',
@@ -11,25 +12,32 @@ export class TestListComponent implements OnInit {
   Users: any = [];
   i: any;
 
-  constructor( private globalService: GlobalService ) { }
+  constructor(
+    public api: GlobalService, 
+    public loadingController: LoadingController) { }
 
-  ngOnInit() { }
-
-  ionViewDidEnter() {
-    this.globalService.getUsers().subscribe((response) => {
-      this.Users = response;
-    })
+  classrooms: any;
+  
+  async getClassrooms() {
+    const loading = await this.loadingController.create({
+      message: 'Loading'
+    });
+    await loading.present();
+    await this.api.getClassroom()
+      .subscribe(res => {
+        console.log(res);
+        this.classrooms = res;
+        loading.dismiss();
+      }, err => {
+        console.log(err);
+        loading.dismiss();
+      });
   }
 
-  removeUser(user, i) {
-    if (window.confirm('Are you sure')) {
-      this.globalService.deleteUser(user._id)
-      .subscribe(() => {
-          this.Users.splice(i, 1);
-          console.log('User deleted!')
-        }
-      )
-    }
+  ngOnInit() {
+    this.getClassrooms();
   }
+
+  
 
 }

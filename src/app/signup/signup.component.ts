@@ -29,18 +29,4 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {}
   
-  onSubmit() {
-    if (!this.userForm.valid) {
-      return false;
-    } else {
-      this.globalService.createUser(this.userForm.value)
-        .subscribe((response) => {
-          this.zone.run(() => {
-            this.userForm.reset();
-            this.router.navigate(['/list']);
-          })
-        });
-    }
-  }
-
 }
