@@ -1,27 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Clasroom List
-    </ion-title>
+    <ion-title>Users List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
   <ion-list>
-    <ion-item *ngFor="let cr of classrooms" routerLink="/detail/{{cr.id}}">
-      <ion-icon name="desktop" slot="start"></ion-icon>
-      {{cr.class_name}}
-      <div class="item-note" slot="end">
-        {{cr.createdAt | date}}
+    <ion-item *ngFor="let user of Users">
+      <ion-label>
+        <h2>{{user.name}}</h2>
+        <h3>{{user.email}}</h3>
+        <h3>{{user.username}}</h3>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/test-update', user._id]">
+          <ion-icon name="create" style="zoom:1.5"></ion-icon>
+        </button>
+        <button ion-button clear (click)="removeUser(user, i)">
+          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+        </button>
       </div>
     </ion-item>
   </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+
 </ion-content>

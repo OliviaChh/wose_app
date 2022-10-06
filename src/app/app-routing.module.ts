@@ -27,6 +27,8 @@ import { CalculateComponent } from './calculate/calculate.component';
 import { SettingComponent } from './setting/setting.component';
 import { ResetpwComponent } from './resetpw/resetpw.component';
 import { TestListComponent } from './test-list/test-list.component';
+import { TestUpdateComponent } from './test-update/test-update.component';
+import { TestCreateComponent } from './test-create/test-create.component';
 import{ExerciseLiveVideoComponent}from'./exercise-live-video/exercise-live-video.component';
 
 const routes: Routes = [
@@ -131,6 +133,14 @@ const routes: Routes = [
   {
     path: 'test-list',
     component: TestListComponent
+  },
+  {
+    path: 'test-update',
+    component: TestUpdateComponent
+  },
+  {
+    path: 'test-create',
+    component: TestCreateComponent
   }
 ];
 

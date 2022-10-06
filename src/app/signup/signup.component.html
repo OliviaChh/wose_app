@@ -10,7 +10,7 @@
     </div>
     <div class="signup_title">Sign up</div>
 
-    <div class="signup_input" [formGroup]="userForm">
+    <div class="signup_input" [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div id="signup_input_inside">
             <img src="../../assets/image/signup_login/email_icon.svg">
             <ion-item>
