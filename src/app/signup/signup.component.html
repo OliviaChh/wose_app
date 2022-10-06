@@ -1,3 +1,5 @@
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 <app-bg></app-bg>
 <div class="signup">
     <div class="switch">
@@ -10,7 +12,7 @@
     </div>
     <div class="signup_title">Sign up</div>
 
-    <div class="signup_input" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="signup_input">
         <div id="signup_input_inside">
             <img src="../../assets/image/signup_login/email_icon.svg">
             <ion-item>
@@ -20,13 +22,13 @@
         <div id="signup_input_inside">
             <img src="../../assets/image/signup_login/username_icon.svg">
             <ion-item>
-            <ion-input formControlName="username" type="text" placeholder="Username"></ion-input>
+            <ion-input formControlName="uname" type="text" placeholder="Username"></ion-input>
             </ion-item>
         </div>
         <div id="signup_input_inside">
             <img src="../../assets/image/signup_login/password_icon.svg">
             <ion-item>
-            <ion-input formControlName="name" type="text" placeholder="Password"></ion-input>
+            <ion-input formControlName="password" type="text" placeholder="Password"></ion-input>
             </ion-item>
         </div>
     </div>
@@ -34,6 +36,7 @@
         <a [routerLink]="['/privacypolicy']" >Terms & Conditions</a> and <a [routerLink]="['/privacypolicy']">Privacy Policy</a>
     </div>
     <div class="firstpage_button">
-        <div type="submit" class="firstpage_button1" [routerLink]="['/signup2']" >NEXT</div>
+        <ion-button type="submit" class="firstpage_button1" fill="clear" [routerLink]="['/signup2']" >NEXT</ion-button>
     </div>
 </div>
+</form>

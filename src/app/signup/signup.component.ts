@@ -2,7 +2,7 @@ import { Component, OnInit, NgZone } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from "@angular/forms";
-import { GlobalService } from '../service/global.service';
+import { User_profileService } from '../service/user_profile.service';
 
 
 @Component({
@@ -18,12 +18,12 @@ export class SignupComponent implements OnInit {
     private router: Router,
     public formBuilder: FormBuilder,
     private zone: NgZone,
-    private globalService: GlobalService  
+    private user_profileService: User_profileService  
   ) {
     this.userForm = this.formBuilder.group({
-        name: [''],
         email: [''],
-        username: ['']
+        uname: [''],
+        password: ['']
       })
     }
 
@@ -33,11 +33,10 @@ export class SignupComponent implements OnInit {
     if (!this.userForm.valid) {
       return false;
     } else {
-      this.globalService.createUser(this.userForm.value)
+      this.user_profileService.createUser(this.userForm.value)
         .subscribe((response) => {
           this.zone.run(() => {
             this.userForm.reset();
-            this.router.navigate(['/list']);
           })
         });
     }

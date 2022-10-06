@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const database = require('./db/database');
 const connectionString= 'mongodb+srv://makkapakka:tSJexvYX6apIo3Nz@cluster0.5gq2r05.mongodb.net/?retryWrites=true&w=majority';
 
 // MongoDB connection 
@@ -17,9 +16,11 @@ mongoose.connect(connectionString, {
   }
 )
 
+//update any new route!!!
 const userRoute = require('./routes/user.route');
-const { url } = require('inspector');
+const user_profileRoute = require('./routes/user_profile.route');
 
+const { url } = require('inspector');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({
@@ -27,7 +28,9 @@ app.use(express.urlencoded({
 }));
 app.use(cors());
 
+//update any new route with api !!!
 app.use('/api', userRoute)
+app.use('/userprofile', user_profileRoute)
 
 const port = process.env.PORT || 5000;
 
