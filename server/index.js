@@ -1,51 +1,42 @@
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const database = require('./db/database');
+const connectionString= 'mongodb+srv://makkapakka:tSJexvYX6apIo3Nz@cluster0.5gq2r05.mongodb.net/?retryWrites=true&w=majority';
 
-const { Pool, Client } = require("pg");
+// MongoDB connection 
+mongoose.Promise = global.Promise;
+mongoose.connect(connectionString, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  console.log('Database connected ')
+},
+  error => {
+    console.log('Database not connected : ' + error)
+  }
+)
 
-const credentials = {
-    host: "ec2-34-200-205-45.compute-1.amazonaws.com",
-    user: "raztojdnrdaltv",
-    port: 5432,
-    password: "e7c2e11185c31fd782342ae1187d2a5e71598151b82be98fdb23115da296b61a",
-    database: "d60cq5fggrrsv",
-    ssl: {
-        rejectUnauthorized: false,
-    }
-};
+const userRoute = require('./routes/user.route');
+const { url } = require('inspector');
 
-// Connect with a connection pool.
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: false
+}));
+app.use(cors());
 
-async function poolDemo() {
-  const pool = new Pool(credentials);
-  const now = await pool.query("SELECT NOW()");
-  pool.query("INSERT INTO test_table(id,name)values(3,'c')", (err,res)=>{
-    console.log(err,res)
-  });
-  await pool.end();
+app.use('/api', userRoute)
 
-  return now;
-}
+const port = process.env.PORT || 5000;
 
+app.listen(port, () => {
+  console.log('PORT connected: ' + port)
+})
 
-
-// Connect with a client.
-
-async function clientDemo() {
-  const client = new Client(credentials);
-  await client.connect();
-//   const now = await client.query("SELECT NOW()");
-  const test_query = await client.query("SELECT * FROM test_table;");
-
-  await client.end();
-
-  return test_query;
-}
-
-// Use a self-calling function so we can use async / await.
-
-(async () => {
-  const poolResult = await poolDemo();
-  console.log("Time with pool: " + poolResult.rows[0]["now"]);
-
-  const clientResult = await clientDemo();
-  console.log("Row counts in test_table: " + clientResult.rowCount);
-})();
+app.use(function (error, res,) {
+  console.error(error.message);
+  if (!error.statusCode) error.statusCode = 500;
+  res.status(error.statusCode).send(error.message);
+});
