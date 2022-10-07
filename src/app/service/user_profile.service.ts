@@ -30,7 +30,7 @@ export class User_profileService {
   createUser(user: User_profile): Observable<any> {
     return this.httpClient.post<User_profile>('http://localhost:5000/userprofile/create-user', user, this.httpOptions)
       .pipe(
-        catchError(this.handleError<User_profile>('getUserProfile failed'))
+        catchError(this.handleError<User_profile>('create UserProfile failed'))
       );
   }
 

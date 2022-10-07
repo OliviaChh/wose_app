@@ -10,12 +10,14 @@ import {TutorialsService} from "../service/tutorials.service";
 export class DashboardComponent implements OnInit {
   userProfile = {avatar: '', uname: ''}
   tutorials = []
+  keywords = ''
 
   constructor(private User_profileService: User_profileService, private tutorialsService: TutorialsService) {
   }
 
   ngOnInit() {
     this.getUserProfile('test');
+    this.searchTutorials();
   }
 
   getUserProfile(uname) {
@@ -25,8 +27,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  searchTutorials(keywords) {
-    this.tutorialsService.searchTutorials(keywords).subscribe((data) => {
+  searchTutorials() {
+    this.tutorialsService.searchTutorials(this.keywords).subscribe((data) => {
+      console.log(data);
       this.tutorials = data;
     })
   }
