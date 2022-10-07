@@ -51,6 +51,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
   }
 
   .firstpage_button1{
@@ -64,6 +65,8 @@
     border-color: #F19D6E;
     color: white;
     font-weight: bold;
+    --background:none;
+    --background-activated:none;
   }
 
   .switch{
@@ -105,3 +108,10 @@
     text-align: center;
   }
  
+  .genderbtn{
+    height: 10em;
+    width: 10em;
+    padding: none;
+    margin: none;
+    --background:none;
+  }

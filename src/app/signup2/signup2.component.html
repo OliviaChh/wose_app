@@ -1,32 +1,34 @@
-<app-bg></app-bg>
-<div class="switch">
-  <img [routerLink]="['/signup']" src="../../assets/image/signup_login/page_switch_arrow.svg" alt="">
-  <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
-  <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
-  <img src="../../assets/image/signup_login/page_switch_off.svg" alt="">
-</div>
-<div class="signup2_word">
-  <div class="signup2_title">May I have your info?</div>
+<form [formGroup]="this.user_profileService.userForm" (ngSubmit)="onSubmit()">
+  <app-bg></app-bg>
+  <div class="switch">
+    <img [routerLink]="['/signup']" src="../../assets/image/signup_login/page_switch_arrow.svg" alt="">
+    <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
+    <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
+    <img src="../../assets/image/signup_login/page_switch_off.svg" alt="">
+  </div>
+  <div class="signup2_word">
+    <div class="signup2_title">May I have your info?</div>
 
-  <div class="signup2_gender">GENDER?</div>
-  <div class="posi">
-    <div class="signup2_gender_img">
-        <img src="../../assets/image/signup_login/signup2_male.svg">
-        <img src="../../assets/image/signup_login/signup2_fm.svg">
+    <div class="signup2_gender">GENDER?</div>
+    <div class="posi">
+      <div class="signup2_gender_img">
+          <ion-button (click)="genderClick(1)" class="genderbtn"><img src="../../assets/image/signup_login/signup2_male.svg"></ion-button>
+          <ion-button (click)="genderClick(2)" class="genderbtn"><img src="../../assets/image/signup_login/signup2_fm.svg"></ion-button>
+      </div>
     </div>
+
+    <div class="signup2_height">HEIGHT?</div>
+    <ion-item lines="none" class ="itemformcm">
+      <ion-input formControlName="height" type="number" placeholder="CM" required [(ngModel)]="this.user_profileService.userProfile.height"></ion-input>
+    </ion-item>
+
+    <div class="signup2_weight">WEIGHT?</div>
+    <ion-item lines="none" class ="itemformkg">
+      <ion-input formControlName="weight" type="number" placeholder="KG" required [(ngModel)]="this.user_profileService.userProfile.weight"></ion-input>
+    </ion-item>
   </div>
 
-  <div class="signup2_height">HEIGHT?</div>
-  <ion-item lines="none" class ="itemformcm">
-    <ion-input class ="inputClass" type="number" placeholder="CM" required></ion-input>
-  </ion-item>
-
-  <div class="signup2_weight">WEIGHT?</div>
-  <ion-item lines="none" class ="itemformkg">
-    <ion-input class ="inputClass" type="number" placeholder="KG" required></ion-input>
-  </ion-item>
-</div>
-
-<div class="firstpage_button">
-  <div class="firstpage_button1" [routerLink]="['/signup3']" >NEXT</div>
-</div>
+  <div class="firstpage_button">
+    <ion-button type="submit" class="firstpage_button1" fill="clear" [routerLink]="['/signup3']">NEXT</ion-button>
+  </div>
+</form>
