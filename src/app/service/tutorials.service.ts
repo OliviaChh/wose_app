@@ -4,18 +4,13 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 
-export class User_profile {
-  _id: number;
-  email: string;
-  uname: string;
-  password: string;
-  avatar: string;
+export class Tutorials {
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class User_profileService {
+export class TutorialsService {
 
   //backend
   httpOptions = {
@@ -27,17 +22,17 @@ export class User_profileService {
   constructor(private httpClient: HttpClient) {
   }
 
-  createUser(user: User_profile): Observable<any> {
-    return this.httpClient.post<User_profile>('http://localhost:5000/userprofile/create-user', user, this.httpOptions)
+  searchTutorials(keywords: string): Observable<Tutorials[]> {
+    return this.httpClient.get<Tutorials[]>(`${this.backendUrl}/tutorials?keywords=${keywords}`, this.httpOptions)
       .pipe(
-        catchError(this.handleError<User_profile>('getUserProfile failed'))
+        catchError(this.handleError<Tutorials[]>('searchTutorials failed'))
       );
   }
 
-  getUserProfile(uname: string): Observable<User_profile> {
-    return this.httpClient.get<User_profile>(`${this.backendUrl}/userprofile/${uname}`, this.httpOptions)
+  getTutorialInfo(id: number): Observable<Tutorials> {
+    return this.httpClient.get<Tutorials>(`${this.backendUrl}/tutorials/${id}`, this.httpOptions)
       .pipe(
-        catchError(this.handleError<User_profile>('getUserProfile failed'))
+        catchError(this.handleError<Tutorials>('getTutorialInfo failed'))
       );
   }
 

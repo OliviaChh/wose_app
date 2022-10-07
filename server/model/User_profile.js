@@ -10,6 +10,9 @@ let User_profile = new Schema({
   },
   password: {
     type: String
+  },
+  avatar: {
+    type: String
   }
 }, {
   collection: 'user_profile'
