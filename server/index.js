@@ -19,11 +19,13 @@ mongoose.connect(connectionString, {
 //update any new route!!!
 const userRoute = require('./routes/user.route');
 const user_profileRoute = require('./routes/user_profile.route');
-const tutorialsRoute = require('./routes/tutorials.route');
 
 /**---------------------------------------------------------------- */
 const { url } = require('inspector');
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 4371483b (Revert "Revert "Merge branch 'main' of https://github.com/OliviaChh/wose_app"")
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({
@@ -34,7 +36,6 @@ app.use(cors());
 //update any new route with api !!!
 app.use('/api', userRoute)
 app.use('/userprofile', user_profileRoute)
-app.use('/tutorials', tutorialsRoute)
 
 /**---------------------------------------------------------------- */
 
