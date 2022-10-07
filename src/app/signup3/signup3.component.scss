@@ -27,7 +27,7 @@
 .signup3_goal{
     position: absolute;
     font-size: 20px;
-    top: 23%;
+    top: 40%;
 }
 
 .signup3_diet{
@@ -64,6 +64,7 @@
     border-color: #F19D6E;
     color: white;
     font-weight: bold;
+    --background:none;
   }
 
   ion-input{
@@ -85,7 +86,7 @@
 
   .goalInput{
     position: absolute;
-    top: 30%;
+    top: 50%;
   }
 
   .dietaryform{
