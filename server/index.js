@@ -20,7 +20,6 @@ mongoose.connect(connectionString, {
 const userRoute = require('./routes/user.route');
 const user_profileRoute = require('./routes/user_profile.route');
 
-/**---------------------------------------------------------------- */
 const { url } = require('inspector');
 const app = express();
 app.use(express.json());
@@ -32,8 +31,6 @@ app.use(cors());
 //update any new route with api !!!
 app.use('/api', userRoute)
 app.use('/userprofile', user_profileRoute)
-
-/**---------------------------------------------------------------- */
 
 const port = process.env.PORT || 5000;
 

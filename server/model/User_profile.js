@@ -10,19 +10,7 @@ let User_profile = new Schema({
   },
   password: {
     type: String
-  },
-  gender: {
-    type: String
-  },
-  weight: {
-    type: Number
-  },
-  height: {
-    type: Number
-  },
-  goal: {
-    type: Number
-  },
+  }
 }, {
   collection: 'user_profile'
 })

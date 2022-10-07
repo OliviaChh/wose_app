@@ -18,29 +18,28 @@ export class SignupComponent implements OnInit {
     private router: Router,
     public formBuilder: FormBuilder,
     private zone: NgZone,
-    public user_profileService: User_profileService  
+    private user_profileService: User_profileService  
   ) {
-    
+    this.userForm = this.formBuilder.group({
+        email: [''],
+        uname: [''],
+        password: ['']
+      })
     }
 
-  ngOnInit() {
-    this.user_profileService.createUserForm();
-  }
+  ngOnInit() {}
   
   onSubmit() {
-    console.log(`[Email]: ${this.user_profileService.userProfile.email}`);
-    console.log(`[Uname]: ${this.user_profileService.userProfile.uname}`);
-    console.log(`[Passwd]: ${this.user_profileService.userProfile.passwd}`);
-    // if (!this.userForm.valid) {
-    //   return false;
-    // } else {
-    //   this.user_profileService.createUser(this.user_profileService.userForm.value)
-    //     .subscribe((response) => {
-    //       this.zone.run(() => {
-    //         this.userForm.reset();
-    //       })
-    //     });
-    // }
+    if (!this.userForm.valid) {
+      return false;
+    } else {
+      this.user_profileService.createUser(this.userForm.value)
+        .subscribe((response) => {
+          this.zone.run(() => {
+            this.userForm.reset();
+          })
+        });
+    }
   }
 
 }
