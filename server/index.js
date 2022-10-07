@@ -21,11 +21,9 @@ const userRoute = require('./routes/user.route');
 const user_profileRoute = require('./routes/user_profile.route');
 const tutorialsRoute = require('./routes/tutorials.route');
 
-<<<<<<< HEAD
 /**---------------------------------------------------------------- */
 const { url } = require('inspector');
-=======
->>>>>>> 191761e96686a3c794b96be04c73d8cef099bdde
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({
