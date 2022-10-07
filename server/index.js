@@ -22,10 +22,6 @@ const user_profileRoute = require('./routes/user_profile.route');
 
 /**---------------------------------------------------------------- */
 const { url } = require('inspector');
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 4371483b (Revert "Revert "Merge branch 'main' of https://github.com/OliviaChh/wose_app"")
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({
