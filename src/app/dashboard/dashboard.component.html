@@ -1,98 +1,98 @@
 <ion-content>
-  <app-bg-interfaces></app-bg-interfaces>
-  <div class="body">
-    <div class="header">
-      <div class="h_png">
-        <img src="{{userProfile.avatar}}" alt="" class="img">
-      </div>
-      <div class="ipt">
-        <input [(ngModel)]="keywords" (keyup)='searchTutorials()' type="text" class="iipt">
-      </div>
-    </div>
-    <!-- <br> -->
-    <h1 class="h1">HELLO , {{userProfile.uname}}  </h1>
-    <div class="ASYNC">
-      <div class="Hhead">
-        <h2>&emsp;LIVES WORKOUT</h2>
+    <app-bg-interfaces></app-bg-interfaces>
+       <div class="body">
+        <div class="header">
+            <div class="h_png">
+                <!-- 这里面放图片 -->
+                <img src="../../assets/image/dashboard/Ellipse 3.svg" alt="" class="img">
+            </div>
+            <div class="ipt">
+                <input type="text" class="iipt">
+            </div>
+        </div>
+        <!-- <br> -->
+        <h1 class="h1">HELLO , MONICA</h1>
+        <div class="ASYNC">
+            <div class="Hhead">
+              <h2>&emsp;LIVES WORKOUT</h2>
+               <br>
+    
+            </div><br/>
+            <div class="ddd">
+                <div class="div2">
+                    <!-- 里面放图 -->
+                    <img src="../../assets/image/dashboard/Rectangle 29.svg" alt="" class="img2">
+                </div>
+                <span class="span">asasdsa</span>
+            </div>
+            <div class="ddd">
+                <div class="div2">
+                    <!-- 里面放图 -->
+                    <img src="../../assets/image/dashboard/Rectangle 30.svg" alt="" class="img2">
+                </div>
+                <span class="span">asasdsa</span>
+            </div>
+            <div class="ddd">
+                <div class="div2">
+                    <!-- 里面放图 -->
+                    <img src="../../assets/image/dashboard/Rectangle 31.svg" alt="" class="img2">
+                </div>
+                <span class="span">asasdsa</span>
+            </div>
+        </div>
+        
         <br>
-
-      </div>
-      <br/>
-      <div class="ddd">
-        <div class="div2">
-          <!-- 里面放图 -->
-          <img src="../../assets/image/dashboard/Rectangle 29.svg" alt="" class="img2">
+        <br>
+        <div class="foter">
+            
+                <div class="header_x">
+                    <h2>&emsp;LIVES WORKOUT</h2>
+                </div>
+                <div class="Journalism">
+                 <div class="left_p" [routerLink]="['dashboardliveworkout']">
+                        <!-- 这里面放图片 -->
+                        <img src="../../assets/image/dashboard/Rectangle 33-1.svg" alt="" class="imgx">
+                    </div>
+                    <div class="right_p">
+                      <span>HAHHAHAHA</span>
+                      <br>
+                      <img src="" alt=""><span>sadsadsadas</span>
+                      <br>
+                      <img src="" alt=""><span>asdsadsdasd</span>
+                    </div>
+                </div>
+                <br>
+                <div class="Journalism">
+                    <div class="left_p">
+                        <!-- 这里面放图片 -->
+                        <img src="../../assets/image/dashboard/Rectangle 33-1.svg" alt="" class="imgx">
+                    </div>
+                    <div class="right_p">
+                      <span>HAHHAHAHA</span>
+                      <br>
+                      <img src="" alt=""><span>sadsadsadas</span>
+                      <br>
+                      <img src="" alt=""><span>asdsadsdasd</span>
+                    </div>
+                </div>
+                <br>
+                <div class="Journalism">
+                    <div class="left_p">
+                        <!-- 这里面放图片 -->
+                        <img src="../../assets/image/dashboard/Rectangle 33.svg" alt="" class="imgx">
+                    </div>
+                    <div class="right_p">
+                      <span>HAHHAHAHA</span>
+                        <br>
+                        <img src="../../assets/image/dashboard/Vector-5.svg" alt="">&nbsp;<span>sadsadsadas</span>
+                        <br>
+                        <img src="" alt=""><span>asdsadsdasd</span>
+                    </div>
+                </div>
         </div>
-        <span class="span">asasdsa</span>
-      </div>
-      <div class="ddd">
-        <div class="div2">
-          <!-- 里面放图 -->
-          <img src="../../assets/image/dashboard/Rectangle 30.svg" alt="" class="img2">
-        </div>
-        <span class="span">asasdsa</span>
-      </div>
-      <div class="ddd">
-        <div class="div2">
-          <!-- 里面放图 -->
-          <img src="../../assets/image/dashboard/Rectangle 31.svg" alt="" class="img2">
-        </div>
-        <span class="span">asasdsa</span>
-      </div>
     </div>
-
-    <br>
-    <br>
-    <div class="foter">
-
-      <div class="header_x">
-        <h2>&emsp;LIVES WORKOUT</h2>
-      </div>
-      <div *ngFor="let tutorial of tutorials;" class="Journalism">
-        <div class="left_p" [routerLink]="['dashboardliveworkout']">
-          <!-- 这里面放图片 -->
-          <img src="../../assets/{{tutorial.bigImageUrl}}" alt="" class="imgx">
-        </div>
-        <div class="right_p">
-          <span>{{tutorial.name}}</span>
-          <br>
-          <img src="" alt=""><span>{{tutorial.coach}}</span>
-          <br>
-          <img src="" alt=""><span>{{tutorial.time}} min</span>
-        </div>
-      </div>
-      <br>
-      <!--      <div class="Journalism">-->
-      <!--        <div class="left_p">-->
-      <!--          &lt;!&ndash; 这里面放图片 &ndash;&gt;-->
-      <!--          <img src="../../assets/image/dashboard/Rectangle 33-1.svg" alt="" class="imgx">-->
-      <!--        </div>-->
-      <!--        <div class="right_p">-->
-      <!--          <span>HAHHAHAHA</span>-->
-      <!--          <br>-->
-      <!--          <img src="" alt=""><span>sadsadsadas</span>-->
-      <!--          <br>-->
-      <!--          <img src="" alt=""><span>asdsadsdasd</span>-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <!--      <br>-->
-      <!--      <div class="Journalism">-->
-      <!--        <div class="left_p">-->
-      <!--          &lt;!&ndash; 这里面放图片 &ndash;&gt;-->
-      <!--          <img src="../../assets/image/dashboard/Rectangle 33.svg" alt="" class="imgx">-->
-      <!--        </div>-->
-      <!--        <div class="right_p">-->
-      <!--          <span>HAHHAHAHA</span>-->
-      <!--          <br>-->
-      <!--          <img src="../../assets/image/dashboard/Vector-5.svg" alt="">&nbsp;<span>sadsadsadas</span>-->
-      <!--          <br>-->
-      <!--          <img src="" alt=""><span>asdsadsdasd</span>-->
-      <!--        </div>-->
-      <!--      </div>-->
-    </div>
-  </div>
-
-  <app-navbar></app-navbar>
-</ion-content>
+    
+    <app-navbar></app-navbar>
+    </ion-content>
     
      
