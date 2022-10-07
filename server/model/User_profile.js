@@ -11,6 +11,7 @@ let User_profile = new Schema({
   password: {
     type: String
   },
+<<<<<<< HEAD
   gender: {
     type: String
   },
@@ -23,6 +24,11 @@ let User_profile = new Schema({
   goal: {
     type: Number
   },
+=======
+  avatar: {
+    type: String
+  }
+>>>>>>> 191761e96686a3c794b96be04c73d8cef099bdde
 }, {
   collection: 'user_profile'
 })
