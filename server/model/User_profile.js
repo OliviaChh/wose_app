@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const uniqueValidator = require('mongoose-unique-validator');
 
 let User_profile = new Schema({
   email: {
-    type: String
+    type: String,
+    unique: true
   },
   uname: {
     type: String
@@ -14,10 +16,10 @@ let User_profile = new Schema({
   gender: {
     type: String
   },
-  weight: {
+  height: {
     type: Number
   },
-  height: {
+  weight: {
     type: Number
   },
   goal: {
@@ -27,4 +29,5 @@ let User_profile = new Schema({
   collection: 'user_profile'
 })
 
-module.exports = mongoose.model('User_profile', User_profile)
+User_profile.plugin(uniqueValidator, { message: 'Email already in use.' });
+module.exports = mongoose.model('User_profile', User_profile);

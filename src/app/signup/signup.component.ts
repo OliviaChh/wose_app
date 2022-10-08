@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
   onSubmit() {
     console.log(`[Email]: ${this.user_profileService.userProfile.email}`);
     console.log(`[Uname]: ${this.user_profileService.userProfile.uname}`);
-    console.log(`[Passwd]: ${this.user_profileService.userProfile.passwd}`);
+    console.log(`[Passwd]: ${this.user_profileService.userProfile.password}`);
     // if (!this.userForm.valid) {
     //   return false;
     // } else {

@@ -76,6 +76,7 @@
     align-items: center;
     justify-content: space-around;
   }
+
   .firstpage_button1{
     border-left: 100px solid;
     border-right: 100px solid;
@@ -87,6 +88,7 @@
     border-color: #F19D6E;
     color: white;
     font-weight: bold;
+    --background:none;
   }
 
   hr{

@@ -8,7 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //backend
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './login/authconfig.interceptor';
 
 import { FirstpageComponent } from './firstpage/firstpage.component';
 import { BgComponent } from './bg/bg.component';
@@ -59,11 +60,10 @@ import{ExerciseLiveVideoComponent}from'./exercise-live-video/exercise-live-video
     , PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent, BgInterfacesComponent, AchievementPageComponent, BackComponent, MealComponent, BreakfastComponent, LunchComponent, DinnerComponent, SnackComponent, VideosComponent, SetGoalComponent, LeaderboardComponent, CalculateComponent,
     SettingComponent, TestListComponent, TestUpdateComponent, TestCreateComponent,ExerciseLiveVideoComponent],
 
-
-
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SwiperModule, HttpClientModule
-  ,FormsModule, ReactiveFormsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  //provide: RouteReuseStrategy, useClass: IonicRouteStrategy, 
+  
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SwiperModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

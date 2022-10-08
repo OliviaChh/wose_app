@@ -1,42 +1,44 @@
-<app-bg></app-bg>
-<div class="login">
-        <img [routerLink]="['/firstpage']" id="login_img_back_arrow" src="../../assets/image/signup_login/back_arrow.svg">
-    <div class="login_person">
-        <img id="login_img_person" src="../../assets/image/signup_login/login_person.svg" alt="">
-    </div>
-
-    <div class="login_title">Login</div>
-
-    <div class="login_input">
-        <div id="login_input_inside">
-            <img src="../../assets/image/signup_login/email_icon.svg">
-            <ion-item>
-            <ion-input type="email" placeholder="Email ID"></ion-input>
-            </ion-item>
+<form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
+    <app-bg></app-bg>
+    <div class="login">
+            <img [routerLink]="['/firstpage']" id="login_img_back_arrow" src="../../assets/image/signup_login/back_arrow.svg">
+        <div class="login_person">
+            <img id="login_img_person" src="../../assets/image/signup_login/login_person.svg" alt="">
         </div>
-        <div id="login_input_inside">
-            <img src="../../assets/image/signup_login/password_icon.svg">
-            <ion-item>
-            <ion-input type="current-password" placeholder="Password"></ion-input>
-            </ion-item>
+
+        <div class="login_title">Login</div>
+
+        <div class="login_input">
+            <div id="login_input_inside">
+                <img src="../../assets/image/signup_login/email_icon.svg">
+                <ion-item>
+                <ion-input type="email" formControlName="email" placeholder="Email ID" required></ion-input>
+                </ion-item>
+            </div>
+            <div id="login_input_inside">
+                <img src="../../assets/image/signup_login/password_icon.svg">
+                <ion-item>
+                <ion-input type="current-password" formControlName="password" placeholder="Password"></ion-input>
+                </ion-item>
+            </div>
+        </div>
+        <div class="forgot_password_button">
+            <div class="forgot_password_button_inside" [routerLink]="['/verifyemail']" >Forgot Password?</div>
+        </div>
+        <div class="firstpage_button">
+            <ion-button type="submit" class="firstpage_button1" [routerLink]="['/dashboard']" >LOGIN</ion-button>
+        </div>
+        <div class="or_word">
+            <hr width="25%">
+            OR
+            <hr width="25%">
+        </div>
+        <ion-button class="google_button" color="light">
+            <img style="position: absolute; left: 0%; right: 20%;" src="../../assets/image/signup_login/google_icon.svg">
+            <div id="google_button_word">Login with Google</div>
+        </ion-button>
+        <div class="bottom_word">Don't hava an account yet?&nbsp;
+            <a [routerLink]="['/signup']"> Register</a>
         </div>
     </div>
-    <div class="forgot_password_button">
-        <div class="forgot_password_button_inside" [routerLink]="['/verifyemail']" >Forgot Password?</div>
-    </div>
-    <div class="firstpage_button">
-        <div class="firstpage_button1" [routerLink]="['/dashboard']" >LOGIN</div>
-    </div>
-    <div class="or_word">
-        <hr width="25%">
-        OR
-        <hr width="25%">
-    </div>
-    <ion-button class="google_button" color="light">
-        <img style="position: absolute; left: 0%; right: 20%;" src="../../assets/image/signup_login/google_icon.svg">
-        <div id="google_button_word">Login with Google</div>
-    </ion-button>
-    <div class="bottom_word">Don't hava an account yet?&nbsp;
-        <a [routerLink]="['/signup']"> Register</a>
-    </div>
-</div>
+</form>

@@ -22,7 +22,7 @@ export class User_profile {
   interface UserProfile{
     email: string,
     uname: string,
-    passwd: string,
+    password: string,
     gender: string,
     height: number,
     weight: number,
@@ -41,7 +41,7 @@ export class User_profileService {
   userProfile: UserProfile = {
     email: "",
     uname: "",
-    passwd: "",
+    password: "",
     gender: "",
     height: null,
     weight: null,
@@ -82,17 +82,18 @@ export class User_profileService {
   }
 
   // Sign-in
-  signIn(user: User_profile) {
-    return this.httpClient.post<any>('http://localhost:5000/userprofile/signin', user)
+  signIn(user: User_profile){
+    return this.httpClient.post<User_profile>('http://localhost:5000/userprofile/signin', user)
       .subscribe((res: any) => {
         localStorage.setItem('access_token', res.token);
         this.getUser(res._id).subscribe((res) => {
           this.currentUser = res;
-          //this.router.navigate(['user-profile/']);
+          this.router.navigate(['/']);
         });
       });
   }
 
+  //keep login
   getToken() {
     return localStorage.getItem('access_token');
   }
@@ -101,6 +102,7 @@ export class User_profileService {
     return authToken !== null ? true : false;
   }
 
+  //logout
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
     if (removeToken == null) {
@@ -122,7 +124,7 @@ export class User_profileService {
     this.userForm = this.formBuilder.group({
       email: [''],
       uname: [''],
-      passwd: [''],
+      password: [''],
       gender: [''],
       height: [''],
       weight: [''],

@@ -1,6 +1,8 @@
 import { importProvidersFrom, NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+//backend
+import { AuthGuard } from "./login/auth.guard";
 
 import { FirstpageComponent } from './firstpage/firstpage.component';
 import { LoginComponent } from './login/login.component';
