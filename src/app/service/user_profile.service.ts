@@ -34,7 +34,7 @@ export class User_profileService {
   
   userForm: FormGroup;
 
-  // temperate save user profile info
+  // temperate save user profile info (method2)
   userProfile: UserProfile = {
     email: "",
     uname: "",
@@ -53,6 +53,7 @@ export class User_profileService {
   constructor(private httpClient: HttpClient, public formBuilder: FormBuilder) {}
 
   createUser(user: User_profile): Observable<any> {
+    console.log(`[createUser]: ${user.gender}`);
     return this.httpClient.post<User_profile>('http://localhost:5000/userprofile/create-user', user, this.httpOptions)
       .pipe(
         catchError(this.handleError<User_profile>('create UserProfile failed'))
@@ -67,7 +68,7 @@ export class User_profileService {
     };
   }  
 
-  // final form group
+  //  (method1)
   createUserForm(){
     this.userForm = this.formBuilder.group({
       email: [''],

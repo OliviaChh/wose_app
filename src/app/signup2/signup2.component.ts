@@ -38,9 +38,11 @@ export class Signup2Component implements OnInit {
   //gender button control
   genderClick(gender:number){
     if(gender==1){
-      this.user_profileService.userProfile.gender="M";
+      //this.user_profileService.userProfile.gender="M";
+      this.user_profileService.userForm.controls.gender.setValue("M");
     }else{
-      this.user_profileService.userProfile.gender="F";
+      //this.user_profileService.userProfile.gender="F";
+      this.user_profileService.userForm.controls.gender.setValue("F");
     }
   }
 }
