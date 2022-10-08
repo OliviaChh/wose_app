@@ -49,9 +49,9 @@
         <h2>&emsp;LIVES WORKOUT</h2>
       </div>
       <div *ngFor="let tutorial of tutorials;" class="Journalism">
-        <div class="left_p" [routerLink]="['dashboardliveworkout']">
+        <div class="left_p">
           <!-- 这里面放图片 -->
-          <img src="../../assets/{{tutorial.bigImageUrl}}" alt="" class="imgx">
+          <img src="../../assets/{{tutorial.bigImageUrl}}" (click)="goToTutorialDetails(tutorial)" alt="" class="imgx">
         </div>
         <div class="right_p">
           <span>{{tutorial.name}}</span>

@@ -7,6 +7,9 @@ import {catchError} from 'rxjs/operators';
 export class Tutorials {
 }
 
+export class TutorialAudience {
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -33,6 +36,20 @@ export class TutorialsService {
     return this.httpClient.get<Tutorials>(`${this.backendUrl}/tutorials/${id}`, this.httpOptions)
       .pipe(
         catchError(this.handleError<Tutorials>('getTutorialInfo failed'))
+      );
+  }
+
+  getTutorialAudiences(id: number): Observable<TutorialAudience[]> {
+    return this.httpClient.get<TutorialAudience[]>(`${this.backendUrl}/tutorials/${id}/audiences`, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<TutorialAudience[]>('getTutorialAudiences failed'))
+      );
+  }
+
+  addTutorialAudience(id: number, uname: string): Observable<Tutorials> {
+    return this.httpClient.post<Tutorials>(`${this.backendUrl}/tutorials/${id}/audiences`, uname, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<Tutorials>('addTutorialAudience failed'))
       );
   }
 

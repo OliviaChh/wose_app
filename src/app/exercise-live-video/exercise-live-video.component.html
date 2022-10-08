@@ -1,60 +1,54 @@
 <ion-content>
   <app-bg-interfaces></app-bg-interfaces>
-<div class="title">
-      <div class="video">
+  <div class="title">
+    <div class="video">
+      <video src="../../assets/{{videoUrl}}">
+      </video>
+    </div>
+    <div class="text">
+      <b><span>User exercising</span></b>
+      <!-- 哈哈哈{title} -->
+    </div>
+    <div *ngFor="let audience of audiences;" class="ren1" id="ren1" (click)="fun()">
+      <div class="r_img">
         <!-- 这里放图 -->
-      </div>  
-      <div class="text">
-        <b><span>User exercising</span></b>
-        <!-- 哈哈哈{title} -->
       </div>
-      <div class="ren1" id="ren1" (click)="fun()">
-        <div class="r_img">
-          <!-- 这里放图 -->
-        </div>
-        <div class="r_div1"><span>{{title}}</span></div>
-        <div class="r_div2"><b>800KCAL</b></div>
+      <div class="r_div1"><span>{{audience.name}}</span></div>
+      <div class="r_div2"><b>{{audience.calories}}KCAL</b></div>
+    </div>
+    <div class="z" [style.display]='xian'>
+      <div class="x" (click)="fun1()">
+        X
       </div>
-      <div class="ren2" (click)="fun2()">
-        <div class="r_img">
-          <!-- 这里放图 -->
-        </div>
-        <div class="r_div1"><span>{{title1}}</span></div>
-        <div class="r_div2"><b>800KCAL</b></div>
-      </div>
-      <div class="z" [style.display] = 'xian'>
-        <div class="x" (click)="fun1()">
-            X
-        </div>
-        <div class="z_img">
+      <div class="z_img">
 
-        </div>
-        <div class="z_text">
-            {{ttitle}}
-        </div>
-        <div class="bb">
-            <div>
-              <b><span>Total Hours</span></b>
-              <br>
-              <b><span>330</span></b>
-            </div>
-            <div>
-              <b><span>Workout Days</span></b>
-              <br>
-              <b><span>450</span></b>
-            </div>
-            <div>
-              <b><span>Total Points</span></b>
-              <br>
-              <b><span>24000</span></b>
-            </div>
-           
-        </div>
-        <ion-button expand="block" color="warning" class="bbbtn">add friends</ion-button>
-    
       </div>
-      <app-navbar></app-navbar>
-</div>
+      <div class="z_text">
+        {{ttitle}}
+      </div>
+      <div class="bb">
+        <div>
+          <b><span>Total Hours</span></b>
+          <br>
+          <b><span>330</span></b>
+        </div>
+        <div>
+          <b><span>Workout Days</span></b>
+          <br>
+          <b><span>450</span></b>
+        </div>
+        <div>
+          <b><span>Total Points</span></b>
+          <br>
+          <b><span>24000</span></b>
+        </div>
+
+      </div>
+      <ion-button expand="block" color="warning" class="bbbtn">add friends</ion-button>
+
+    </div>
+    <app-navbar></app-navbar>
+  </div>
 
 
 </ion-content>

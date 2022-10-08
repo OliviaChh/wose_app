@@ -2,43 +2,42 @@
   <app-bg-interfaces></app-bg-interfaces>
   <div>
     <div class="header">
-        <div class="ipt">
-            <input type="text" class="iipt">
-        </div>
+      <div class="ipt">
+        <input type="text" class="iipt">
+      </div>
     </div>
     <br>
     <br>
     <div class="body_h">
-       <div class="B_h1">
+      <div class="B_h1">
         <h1 class="h1">EXERCISE</h1>
-       </div>
-       <br>
-       <br>
-       <div class="adio">
+      </div>
+      <br>
+      <br>
+      <div class="adio">
         <!-- 视频 -->
-      <video src="/">   video </video>
+        <video src="../../assets/{{tutorial.videoUrl}}" width= 100%; height=100%; autoplay="autoplay"></video>
 
-       </div>
-       <!-- <br> -->
+      </div>
+      <!-- <br> -->
 
-       <div class="text">
+      <div class="text">
         <br>
-            <ul>
-                <li>ADSADDA</li>
-                <li>ADSADDA</li>
-                <li>ADSADDA</li>
-            </ul>
-       </div>
-       <br>
-       <div class="text2">
-                <span>sfghjkldsadsadsadsadasd</span>
-                <span>sfghjkldsadsadsadsadasd</span>
-            <!-- 这块区域留着写字 -->
-       </div>
-       <div class="btn" [routerLink]="['../dashboard-exercise-finished']" >
-            <button class="btnn">Done</button>
-       </div>
+        <ul>
+          <li>Coach: {{tutorial.coach}} </li>
+          <li>Time: {{tutorial.time}} mins</li>
+          <li>Est.Calories: {{tutorial.calories}}</li>
+        </ul>
+      </div>
+      <br>
+      <div class="text2">
+        <span>Please wear your device and follow </span>
+        <span>the coach to finish your exercise</span>
+      </div>
+      <div class="btn" [routerLink]="['../dashboard-exercise-finished']">
+        <button class="btnn">Done</button>
+      </div>
     </div>
-</div>
-<app-navbar></app-navbar>
+  </div>
+  <app-navbar></app-navbar>
 </ion-content>

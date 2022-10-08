@@ -17,6 +17,9 @@ const Tutorials = new Schema({
   calories: {
     type: String
   },
+  videoUrl: {
+    type: String
+  },
   smallImageUrl: {
     type: String
   },
