@@ -1,41 +1,22 @@
-
-<app-bg></app-bg>
-<div class="switch">
-  <img [routerLink]="['/signup2']" src="../../assets/image/signup_login/page_switch_arrow.svg" alt="">
-  <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
-  <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
-  <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
-</div>
-<div class="signup2_word">
-  <div class="signup2_title">May I have your info?</div>
-
-  <div class="signup3_goal">YOUR GOAL?</div>
-
-  <div class="itemformkg">
-    <ion-input class ="goalInput" type="number" placeholder="KG" required></ion-input>
+<form [formGroup]="this.user_profileService.userForm" (ngSubmit)="onSubmit()">
+  <app-bg></app-bg>
+  <div class="switch">
+    <img [routerLink]="['/signup2']" src="../../assets/image/signup_login/page_switch_arrow.svg" alt="">
+    <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
+    <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
+    <img src="../../assets/image/signup_login/page_switch_on.svg" alt="">
   </div>
+  <div class="signup2_word">
+    <div class="signup2_title">May I have your info?</div>
 
-  <div class="signup3_diet">DIETARY PREFERENCE?</div>
+    <div class="signup3_goal">YOUR GOAL?</div>
 
-  <div class="dietaryform">
-    <div class="dietaryitem">NORMAL</div>
-    <div class="dietaryitem">VAGAN</div>
-    <div class="dietaryitem">HALAL</div>
+    <div class="itemformkg">
+      <ion-input formControlName="goal" class ="goalInput" type="number" placeholder="KG" required [(ngModel)]="this.user_profileService.userProfile.goal"></ion-input>
+    </div>
+
+  <div class="firstpage_button">
+    <ion-button type="submit" class="firstpage_button1" [routerLink]="['/']">FINISH</ion-button>
   </div>
-
-  <div class="allergyform1">
-    <div class="allergyitem">WHEAT</div>
-    <div class="allergyitem">EGG</div>
-    <div class="allergyitem">NUTS</div>
   </div>
-  <div class="allergyform2">
-    <div class="allergyitem">GLUTEN</div>
-    <div class="allergyitem">SOY</div>
-    <div class="allergyitem">FISH</div>
-  </div>
-
-  <div class="signup3_allergy">ALLERGY INFO?</div>
-
-<div class="firstpage_button">
-  <div class="firstpage_button1" [routerLink]="['/']">FINISH</div>
-</div>
+</form>

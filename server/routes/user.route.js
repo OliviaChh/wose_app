@@ -13,7 +13,7 @@ userRoute.route('/').get((req, res) => {
       console.log('Users retrieved!')
     }
   })
-})
+});
 
 
 userRoute.route('/create-user').post((req, res, next) => {
@@ -37,8 +37,7 @@ userRoute.route('/fetch-user/:id').get((req, res) => {
       console.log('User fetch!')
     }
   })
-})
-
+});
 
 userRoute.route('/update-user/:id').put((req, res, next) => {
   UserModel.findByIdAndUpdate(req.params.id, {
@@ -51,7 +50,7 @@ userRoute.route('/update-user/:id').put((req, res, next) => {
       console.log('User updated!')
     }
   })
-})
+});
 
 userRoute.route('/delete-user/:id').delete((req, res, next) => {
   UserModel.findByIdAndRemove(req.params.id, (error, user) => {
@@ -64,6 +63,6 @@ userRoute.route('/delete-user/:id').delete((req, res, next) => {
       console.log('User deleted!')
     }
   })
-})
+});
 
 module.exports = userRoute;
