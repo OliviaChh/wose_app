@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { FormGroup, FormBuilder} from "@angular/forms";
 
+// final export place
 export class User_profile {
     _id: number;
     email: string;
@@ -34,7 +35,7 @@ export class User_profileService {
   
   userForm: FormGroup;
 
-  // temperate save user profile info (method2)
+  //(method2) temperate save user profile info
   userProfile: UserProfile = {
     email: "",
     uname: "",
@@ -60,6 +61,22 @@ export class User_profileService {
       );
   }
 
+  getUser(id): Observable<User_profile[]> {
+    return this.httpClient.get<User_profile[]>('http://localhost:5000/userprofile/fetch-user/' + id)
+      .pipe(
+        tap(_ => console.log(`User fetched: ${id}`)),
+        catchError(this.handleError<User_profile[]>(`Get user id=${id}`))
+      );
+  }
+
+  getUsers(): Observable<User_profile[]> {
+    return this.httpClient.get<User_profile[]>('http://localhost:5000/userprofile')
+      .pipe(
+        tap(users => console.log('Users retrieved!')),
+        catchError(this.handleError<User_profile[]>('Get user', []))
+      );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
@@ -68,7 +85,7 @@ export class User_profileService {
     };
   }  
 
-  //  (method1)
+  //  (method1) because we don't use local form so we bind to our form 
   createUserForm(){
     this.userForm = this.formBuilder.group({
       email: [''],

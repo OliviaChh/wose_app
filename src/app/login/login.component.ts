@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User_profileService } from '../service/user_profile.service';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  Users: any = [];
+  
+  constructor( private user_profileService: User_profileService) { }
 
   ngOnInit() {}
+
+  ionViewDidEnter() {
+    this.user_profileService.getUsers().subscribe((response) => {
+      this.Users = response;
+    })
+  }
 
 }

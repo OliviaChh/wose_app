@@ -12,7 +12,7 @@ user_profileRoute.route('/').get((req, res) => {
       console.log('Users retrieved!')
     }
   })
-})
+});
 
 user_profileRoute.route('/create-user').post((req, res, next) => {
     User_profileModel.create(req.body, (err, user) => {
@@ -21,6 +21,17 @@ user_profileRoute.route('/create-user').post((req, res, next) => {
     } else {
       res.json(user)
       console.log('User created!')
+    }
+  })
+});
+
+user_profileRoute.route('/fetch-user/:id').get((req, res) => {
+  UserModel.findById(req.params.id, (err, user) => {
+    if (err) {
+      return next(err)
+    } else {
+      res.json(user)
+      console.log('User fetch!')
     }
   })
 });
