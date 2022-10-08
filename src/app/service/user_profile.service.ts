@@ -1,9 +1,11 @@
 import { Injectable } from "@angular/core";
 //backend
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { FormGroup, FormBuilder} from "@angular/forms";
+import { Router } from '@angular/router';
+
 
 // final export place
 export class User_profile {
@@ -47,12 +49,13 @@ export class User_profileService {
   }
 
   //backend
+  currentUser = {};
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
+  constructor(private httpClient: HttpClient, public formBuilder: FormBuilder, public router: Router) {}
 
-  constructor(private httpClient: HttpClient, public formBuilder: FormBuilder) {}
-
+  //sign up
   createUser(user: User_profile): Observable<any> {
     console.log(`[createUser]: ${user.gender}`);
     return this.httpClient.post<User_profile>('http://localhost:5000/userprofile/create-user', user, this.httpOptions)
@@ -61,8 +64,9 @@ export class User_profileService {
       );
   }
 
+  //get userprofile
   getUser(id): Observable<User_profile[]> {
-    return this.httpClient.get<User_profile[]>('http://localhost:5000/userprofile/fetch-user/' + id)
+    return this.httpClient.get<User_profile[]>('http://localhost:5000/userprofile/fetch-user/' + id )
       .pipe(
         tap(_ => console.log(`User fetched: ${id}`)),
         catchError(this.handleError<User_profile[]>(`Get user id=${id}`))
@@ -77,6 +81,34 @@ export class User_profileService {
       );
   }
 
+  // Sign-in
+  signIn(user: User_profile) {
+    return this.httpClient.post<any>('http://localhost:5000/userprofile/signin', user)
+      .subscribe((res: any) => {
+        localStorage.setItem('access_token', res.token);
+        this.getUser(res._id).subscribe((res) => {
+          this.currentUser = res;
+          //this.router.navigate(['user-profile/']);
+        });
+      });
+  }
+
+  getToken() {
+    return localStorage.getItem('access_token');
+  }
+  get isLoggedIn(): boolean {
+    let authToken = localStorage.getItem('access_token');
+    return authToken !== null ? true : false;
+  }
+
+  doLogout() {
+    let removeToken = localStorage.removeItem('access_token');
+    if (removeToken == null) {
+      this.router.navigate(['login']);
+    }
+  }
+  
+  //handle error
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
