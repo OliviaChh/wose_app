@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const connectionString= 'mongodb+srv://makkapakka:tSJexvYX6apIo3Nz@cluster0.5gq2r05.mongodb.net/?retryWrites=true&w=majority';
+const connectionString = 'mongodb+srv://makkapakka:tSJexvYX6apIo3Nz@cluster0.5gq2r05.mongodb.net/?retryWrites=true&w=majority';
 
 // MongoDB connection 
 mongoose.Promise = global.Promise;
@@ -19,7 +19,7 @@ mongoose.connect(connectionString, {
 //update any new route!!!
 const userRoute = require('./routes/user.route');
 const user_profileRoute = require('./routes/user_profile.route');
-
+// const foodsRoute = require('./routes/foods');
 /**---------------------------------------------------------------- */
 const { url } = require('inspector');
 const app = express();
@@ -32,6 +32,7 @@ app.use(cors());
 //update any new route with api !!!
 app.use('/api', userRoute)
 app.use('/userprofile', user_profileRoute)
+// app.use('/foods', foodsRoute)
 
 /**---------------------------------------------------------------- */
 
