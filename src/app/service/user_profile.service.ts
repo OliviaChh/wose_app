@@ -17,6 +17,7 @@ export class User_profile {
     height: number;
     weight: number;
     goal: number;
+    avatar: string;
   }
 
   interface UserProfile{
@@ -26,7 +27,8 @@ export class User_profile {
     gender: string,
     height: number,
     weight: number,
-    goal: number
+    goal: number,
+    avatar: string
   }
 
 @Injectable({
@@ -35,6 +37,7 @@ export class User_profile {
 
 export class User_profileService {
   
+  private backendUrl = 'http://localhost:5000';
   userForm: FormGroup;
 
   //(method2) temperate save user profile info
@@ -45,7 +48,8 @@ export class User_profileService {
     gender: "",
     height: null,
     weight: null,
-    goal: null
+    goal: null,
+    avatar: ""
   }
 
   //backend
@@ -89,7 +93,7 @@ export class User_profileService {
         localStorage.setItem('access_token', res.token);
         this.getUser(res._id).subscribe((res) => {
           this.currentUser = res;
-          this.router.navigate(['/']);
+          this.router.navigate(['/dashboard']);
         });
       });
   }
@@ -118,7 +122,14 @@ export class User_profileService {
       console.log(`${operation} failed: ${error.message}`);
       return of(result as T);
     };
-  }  
+  } 
+
+  // getUserProfile(uname: string): Observable<User_profile> {
+  //   return this.httpClient.get<User_profile>(`${this.backendUrl}/userprofile/${uname}`, this.httpOptions)
+  //     .pipe(
+  //       catchError(this.handleError<User_profile>('getUserProfile failed'))
+  //     );
+  // }
 
   //  (method1) because we don't use local form so we bind to our form 
   createUserForm(){
@@ -129,7 +140,8 @@ export class User_profileService {
       gender: [''],
       height: [''],
       weight: [''],
-      goal: ['']
+      goal: [''],
+      avatar: ['']
     })
   }
 }

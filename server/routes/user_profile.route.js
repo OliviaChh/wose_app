@@ -33,7 +33,6 @@ user_profileRoute.route('/create-user').post((req, res, next) => {
 
 // Sign-in
 user_profileRoute.route('/signin').post((req, res, next) => {
-  console.log(`[Sign-in]: Enter userprofile_route /signin-->${req.body.email}`);
   let getUser;
   var email = req.body.email;
   User_profileModel.findOne({ email })
@@ -70,18 +69,7 @@ user_profileRoute.route('/signin').post((req, res, next) => {
     })
 })
 
-// Get Users
-user_profileRoute.route('/').get((req, res, next) => {
-  userSchema.find((error, response)=> {
-    if (error) {
-      return next(error)
-    } else {
-      return res.status(200).json(response)
-    }
-  })
-})
-
-//get id + user
+//get user by id
 user_profileRoute.route('/fetch-user/:id').get((req, res) => {
   User_profileModel.findById(req.params.id, (err, user) => {
     if (err) {
@@ -92,5 +80,20 @@ user_profileRoute.route('/fetch-user/:id').get((req, res) => {
     }
   })
 });
+
+//get user by uname
+// user_profileRoute.route('/:uname').get((req, res) => {
+//   User_profileModel.findOne({'uname': req.params.uname}, (error, data) => {
+//     if (!error) {
+//       console.log('UsersProfile fetched succeed:', JSON.stringify(data))
+//       res.status(200).json(data);
+//     } else {
+//       res.json(user)
+//       console.log('User created!')
+//       console.error(error);
+//       res.status(500);
+//     }
+//   })
+// });
 
 module.exports = user_profileRoute;

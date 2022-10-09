@@ -25,6 +25,9 @@ let User_profile = new Schema({
   goal: {
     type: Number
   },
+  avatar: {
+    type: String
+  },
 }, {
   collection: 'user_profile'
 })
