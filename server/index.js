@@ -20,6 +20,8 @@ mongoose.connect(connectionString, {
 const userRoute = require('./routes/user.route');
 const user_profileRoute = require('./routes/user_profile.route');
 // const foodsRoute = require('./routes/foods');
+const tutorialsRoute = require('./routes/tutorials.route');
+
 /**---------------------------------------------------------------- */
 const { url } = require('inspector');
 const app = express();
@@ -33,6 +35,7 @@ app.use(cors());
 app.use('/api', userRoute)
 app.use('/userprofile', user_profileRoute)
 // app.use('/foods', foodsRoute)
+app.use('/tutorials', tutorialsRoute)
 
 /**---------------------------------------------------------------- */
 
