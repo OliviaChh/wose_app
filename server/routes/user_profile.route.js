@@ -33,8 +33,10 @@ user_profileRoute.route('/create-user').post((req, res, next) => {
 
 // Sign-in
 user_profileRoute.route('/signin').post((req, res, next) => {
-  let getUser
-  User_profileModel.findOne({ email: req.body.email })
+  console.log(`[Sign-in]: Enter userprofile_route /signin-->${req.body.email}`);
+  let getUser;
+  var email = req.body.email;
+  User_profileModel.findOne({ email })
     .then((user) => {
       console.log(`[Login email]:${email}`)
       if (!user) {
@@ -43,12 +45,18 @@ user_profileRoute.route('/signin').post((req, res, next) => {
         })
       }
       getUser = user
-      return bcrypt.compare(req.body.password, user.password)
+      var password_1 = req.body.password;
+      var password_2 = user.password;
+      // return bcrypt.compare(req.body.password, user.password)
+      var match = bcrypt.compareSync(password_1, password_2);
+      console.log(`[sign-in]: ${password_1 == password_2}`)
+      return password_1 == password_2;
     })
     .then((response) => {
+      console.log(`${response}`)
       if (!response) {
         return res.status(401).json({
-          message: 'Authentication failed',
+          message: 'Authentication failed(!response)',
         })
       }
       let jwtToken = jwt.sign({ email: getUser.email, userId: getUser._id},
@@ -57,7 +65,7 @@ user_profileRoute.route('/signin').post((req, res, next) => {
     })
     .catch((err) => {
       return res.status(401).json({
-        message: 'Authentication failed',
+        message: `${err}`,
       })
     })
 })
@@ -75,7 +83,7 @@ user_profileRoute.route('/').get((req, res, next) => {
 
 //get id + user
 user_profileRoute.route('/fetch-user/:id').get((req, res) => {
-  UserModel.findById(req.params.id, (err, user) => {
+  User_profileModel.findById(req.params.id, (err, user) => {
     if (err) {
       return next(err)
     } else {

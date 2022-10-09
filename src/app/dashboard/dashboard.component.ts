@@ -29,10 +29,10 @@ export class DashboardComponent implements OnInit {
   // }
 
   searchTutorials() {
-    this.tutorialsService.searchTutorials(this.keywords).subscribe((data) => {
-      console.log(data);
-      this.tutorials = data;
-    })
+    // this.tutorialsService.searchTutorials(this.keywords).subscribe((data) => {
+    //   console.log(data);
+    //   this.tutorials = data;
+    // })
   }
 
   goToTutorialDetails(tutorial) {
