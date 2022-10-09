@@ -8,6 +8,9 @@ export class Tutorials {
 }
 
 export class TutorialAudience {
+  tid: string;
+  uid: string;
+  start_time: number
 }
 
 @Injectable({
@@ -32,24 +35,36 @@ export class TutorialsService {
       );
   }
 
-  getTutorialInfo(id: number): Observable<Tutorials> {
+  getTutorialInfo(id: string): Observable<Tutorials> {
     return this.httpClient.get<Tutorials>(`${this.backendUrl}/tutorials/${id}`, this.httpOptions)
       .pipe(
         catchError(this.handleError<Tutorials>('getTutorialInfo failed'))
       );
   }
 
-  getTutorialAudiences(id: number): Observable<TutorialAudience[]> {
-    return this.httpClient.get<TutorialAudience[]>(`${this.backendUrl}/tutorials/${id}/audiences`, this.httpOptions)
+  getTutorialAudiences(tid: string): Observable<TutorialAudience[]> {
+    return this.httpClient.get<TutorialAudience[]>(`${this.backendUrl}/audiences?tid=${tid}`, this.httpOptions)
       .pipe(
         catchError(this.handleError<TutorialAudience[]>('getTutorialAudiences failed'))
       );
   }
 
-  addTutorialAudience(id: number, uname: string): Observable<Tutorials> {
-    return this.httpClient.post<Tutorials>(`${this.backendUrl}/tutorials/${id}/audiences`, uname, this.httpOptions)
+  addTutorialAudience(tid: string, uid: string): Observable<Tutorials> {
+    const body = {
+      tid,
+      uid,
+      start_time: Date.now()
+    }
+    return this.httpClient.post<Tutorials>(`${this.backendUrl}/audiences`, body, this.httpOptions)
       .pipe(
         catchError(this.handleError<Tutorials>('addTutorialAudience failed'))
+      );
+  }
+
+  removeTutorialAudiences(uid: string): Observable<void> {
+    return this.httpClient.delete<void>(`${this.backendUrl}/audiences/delete/${uid}`, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<void>('removeTutorialAudiences failed'))
       );
   }
 
@@ -60,5 +75,4 @@ export class TutorialsService {
       return of(result as T);
     };
   }
-
 }

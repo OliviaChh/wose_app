@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TutorialsService} from "../service/tutorials.service";
+import {ActivatedRoute, Params} from "@angular/router";
+import {User_profileService} from "../service/user_profile.service";
 
 @Component({
   selector: 'app-exercise-live-video',
@@ -7,36 +9,47 @@ import {TutorialsService} from "../service/tutorials.service";
   styleUrls: ['./exercise-live-video.component.scss'],
 })
 export class ExerciseLiveVideoComponent implements OnInit {
-  videoUrl = '';
+  tutorial = {id: '', videoUrl: '', calories: '', time: ''};
   audiences = [];
 
-  constructor(private tutorialsService: TutorialsService) {
+  constructor(private tutorialsService: TutorialsService, public activeRoute: ActivatedRoute, private userProfileService: User_profileService) {
   }
 
-  ngOnDestroy() {
-  console.log('byebye');
+  ionViewWillLeave() {
+    this.tutorialsService.removeTutorialAudiences('6342bdf1ee85273f550ec75e')
   }
 
   ngOnInit() {
-    this.videoUrl = 'video/video1.mp4';
-    this.addAudience('6341735692b45a78c8349335','2')
-    this.getAudiences(1);
+    this.activeRoute.queryParams.subscribe((params: Params) => {
+      this.tutorial.id = params['id'];
+      this.tutorial.videoUrl = params['videoUrl']
+      this.tutorial.calories = params['calories']
+      this.tutorial.time = params['time']
+    })
+    this.addAudience(this.tutorial.id, '6342bdf1ee85273f550ec75e')
+    this.getAudiences(this.tutorial.id);
   }
 
-  loadVideo(tutorial) {
-    this.videoUrl = tutorial.videoUrl;
-  }
-
-  addAudience(id, uname) {
-    this.tutorialsService.addTutorialAudience(id, uname).subscribe((data) => {
-      console.log("Add audience succeed");
+  addAudience(id, uid) {
+    this.tutorialsService.addTutorialAudience(id, uid).subscribe(() => {
     })
   }
 
   getAudiences(id) {
     this.tutorialsService.getTutorialAudiences(id).subscribe((data) => {
       console.log('audiences', JSON.stringify(data));
-      this.audiences = data;
+      let audiences = []
+      for (let d of data) {
+        this.userProfileService.getUser(d.uid).subscribe((data) => {
+          const caloriesPerMin = parseInt(this.tutorial.calories) / parseInt(this.tutorial.time)
+          const audiencesTime = (Date.now() - d.start_time) / 1000 / 60;
+          audiences.push({
+            ...data,
+            calories: (audiencesTime * caloriesPerMin).toFixed(0)
+          })
+        })
+        this.audiences = audiences;
+      }
     });
   }
 

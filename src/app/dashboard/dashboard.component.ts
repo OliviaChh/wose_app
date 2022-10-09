@@ -9,7 +9,7 @@ import {NavController} from '@ionic/angular';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  userProfile = {avatar: '', uname: ''}
+  userProfile = {uname: '', avatar: ''}
   tutorials = []
   keywords = ''
 
@@ -17,22 +17,22 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.getUserProfile('2');
+    this.getUserProfile('6342bdf1ee85273f550ec75e');
     this.searchTutorials();
   }
 
-  // getUserProfile(uname) {
-  //   this.User_profileService.getUserProfile(uname).subscribe((data) => {
-  //     this.userProfile = data;
-  //     this.userProfile.avatar = data?.avatar !== undefined && data?.avatar !== '' ? `data:image/jpg;base64,${data.avatar}` : '../../assets/image/dashboard/Ellipse 3.svg'
-  //   });
-  // }
+  getUserProfile(uid) {
+    // this.User_profileService.getUser(uid).subscribe((data) => {
+    //   this.userProfile = data[0];
+    //   this.userProfile.avatar = data?.avatar !== undefined && data?.avatar !== '' ? `data:image/jpg;base64,${data.avatar}` : '../../assets/image/dashboard/Ellipse 3.svg'
+    // });
+  }
 
   searchTutorials() {
-    // this.tutorialsService.searchTutorials(this.keywords).subscribe((data) => {
-    //   console.log(data);
-    //   this.tutorials = data;
-    // })
+    this.tutorialsService.searchTutorials(this.keywords).subscribe((data) => {
+      console.log(data);
+      this.tutorials = data;
+    })
   }
 
   goToTutorialDetails(tutorial) {
@@ -44,6 +44,7 @@ export class DashboardComponent implements OnInit {
         time: tutorial.time,
         calories: tutorial.calories,
         videoUrl: tutorial.videoUrl,
+        bigImageUrl: tutorial.bigImageUrl,
       }
     });
   }

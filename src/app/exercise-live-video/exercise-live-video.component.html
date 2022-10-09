@@ -2,8 +2,8 @@
   <app-bg-interfaces></app-bg-interfaces>
   <div class="title">
     <div class="video">
-      <video src="../../assets/{{videoUrl}}">
-      </video>
+      <video src="../../assets/{{tutorial.videoUrl}}" width=100%; height=100%; autoplay="autoplay"
+             controls="controls"></video>
     </div>
     <div class="text">
       <b><span>User exercising</span></b>
@@ -13,7 +13,7 @@
       <div class="r_img">
         <!-- 这里放图 -->
       </div>
-      <div class="r_div1"><span>{{audience.name}}</span></div>
+      <div class="r_div1"><span>{{audience.uname}}</span></div>
       <div class="r_div2"><b>{{audience.calories}}KCAL</b></div>
     </div>
     <div class="z" [style.display]='xian'>
