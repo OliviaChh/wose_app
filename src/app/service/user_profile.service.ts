@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 // final export place
 export class User_profile {
-    _id: number;
+    _id: string;
     email: string;
     uname: string;
     password: string;
@@ -95,8 +95,8 @@ export class User_profileService {
         // console.log(`[signIn] Token: ${localStorage.getItem('access_token')}`);
 
         // save user information to local storage after success
-        localStorage.setItem('user_email', user.email);
-        console.log(`[signIn] User_email: ${localStorage.getItem('user_email')}`);
+        localStorage.setItem('user_id', user._id);
+        console.log(`[signIn] User_id: ${localStorage.getItem('user_id')}`);
 
         this.getUser(res._id).subscribe((res) => {
           this.currentUser = res;
@@ -119,9 +119,9 @@ export class User_profileService {
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
     // remove the user info from localStorage
-    let removeUserInfo = localStorage.removeItem('user_email');
+    let removeUserInfo = localStorage.removeItem('user_id');
     console.log(`[LogOut] Token: ${localStorage.getItem('access_token')}`);
-    console.log(`[LogOut] Token: ${localStorage.getItem('user_email')}`);
+    console.log(`[LogOut] Token: ${localStorage.getItem('user_id')}`);
     if (removeToken == null && removeUserInfo == null) {
       this.router.navigate(['login']);
     }

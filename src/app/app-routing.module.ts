@@ -34,7 +34,7 @@ import { TestCreateComponent } from './test-create/test-create.component';
 import{ExerciseLiveVideoComponent}from'./exercise-live-video/exercise-live-video.component';
 
 var entry_route: string = "firstpage";
-if (localStorage.getItem('user_email') != null){ 
+if (localStorage.getItem('user_id') != null){ 
   entry_route = "dashboard";
 }
 
