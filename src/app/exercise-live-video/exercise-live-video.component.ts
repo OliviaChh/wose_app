@@ -16,7 +16,7 @@ export class ExerciseLiveVideoComponent implements OnInit {
   }
 
   ionViewWillLeave() {
-    this.tutorialsService.removeTutorialAudiences('6342bdf1ee85273f550ec75e')
+    this.tutorialsService.removeTutorialAudiences(localStorage.getItem('user_id'))
   }
 
   ngOnInit() {
@@ -26,7 +26,7 @@ export class ExerciseLiveVideoComponent implements OnInit {
       this.tutorial.calories = params['calories']
       this.tutorial.time = params['time']
     })
-    this.addAudience(this.tutorial.id, '6342bdf1ee85273f550ec75e')
+    this.addAudience(this.tutorial.id, localStorage.getItem('user_id'))
     this.getAudiences(this.tutorial.id);
   }
 

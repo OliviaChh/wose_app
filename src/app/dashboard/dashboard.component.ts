@@ -17,15 +17,17 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUserProfile('6342bdf1ee85273f550ec75e');
+    this.getUserProfile(localStorage.getItem('user_id'));
     this.searchTutorials();
   }
 
   getUserProfile(uid) {
-    // this.User_profileService.getUser(uid).subscribe((data) => {
-    //   this.userProfile = data[0];
-    //   this.userProfile.avatar = data?.avatar !== undefined && data?.avatar !== '' ? `data:image/jpg;base64,${data.avatar}` : '../../assets/image/dashboard/Ellipse 3.svg'
-    // });
+    this.User_profileService.getUser(uid).subscribe((data) => {
+      console.log("response: " + JSON.stringify(data));
+      const response: any = data;
+      this.userProfile = response;
+      this.userProfile.avatar = this.userProfile?.avatar !== undefined && this.userProfile?.avatar !== '' ? `data:image/jpg;base64,${this.userProfile.avatar}` : '../../assets/image/dashboard/Ellipse 3.svg'
+    });
   }
 
   searchTutorials() {
