@@ -89,8 +89,15 @@ export class User_profileService {
   signIn(user: User_profile){
     return this.httpClient.post<User_profile>('http://localhost:5000/userprofile/signin', user, this.httpOptions)
       .subscribe((res: any) => {
+        // save user information to local storage after success with token we don't use this now
         console.log(`[singIn]: Enter signIn ${user}`)
         localStorage.setItem('access_token', res.token);
+        // console.log(`[signIn] Token: ${localStorage.getItem('access_token')}`);
+
+        // save user information to local storage after success
+        localStorage.setItem('user_email', user.email);
+        console.log(`[signIn] User_email: ${localStorage.getItem('user_email')}`);
+
         this.getUser(res._id).subscribe((res) => {
           this.currentUser = res;
           this.router.navigate(['/dashboard']);
@@ -100,6 +107,7 @@ export class User_profileService {
 
   //keep login
   getToken() {
+    console.log(`[getToken]`)
     return localStorage.getItem('access_token');
   }
   get isLoggedIn(): boolean {
@@ -110,9 +118,14 @@ export class User_profileService {
   //logout
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
-    if (removeToken == null) {
+    // remove the user info from localStorage
+    let removeUserInfo = localStorage.removeItem('user_email');
+    console.log(`[LogOut] Token: ${localStorage.getItem('access_token')}`);
+    console.log(`[LogOut] Token: ${localStorage.getItem('user_email')}`);
+    if (removeToken == null && removeUserInfo == null) {
       this.router.navigate(['login']);
     }
+
   }
   
   //handle error

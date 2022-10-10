@@ -1,4 +1,4 @@
-import { importProvidersFrom, NgModule } from '@angular/core';
+import { importProvidersFrom, NgModule, OnInit } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 //backend
@@ -33,6 +33,11 @@ import { TestUpdateComponent } from './test-update/test-update.component';
 import { TestCreateComponent } from './test-create/test-create.component';
 import{ExerciseLiveVideoComponent}from'./exercise-live-video/exercise-live-video.component';
 
+var entry_route: string = "firstpage";
+if (localStorage.getItem('user_email') != null){ 
+  entry_route = "dashboard";
+}
+
 const routes: Routes = [
   {
     path:'exerciselivevideo',
@@ -45,7 +50,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'firstpage',
+    redirectTo: entry_route,
     pathMatch: 'full'
   },
   {
@@ -152,4 +157,8 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule implements OnInit {
+  ngOnInit(): void {
+    console.log(`Enter App!!!`);
+  }
+}
