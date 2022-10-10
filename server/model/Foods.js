@@ -12,4 +12,4 @@ let Foods = new Schema({
     collection: 'foods'
 })
 
-module.exports = mongoose.model('foods', Foods)
+module.exports = mongoose.model('Foods', Foods)
