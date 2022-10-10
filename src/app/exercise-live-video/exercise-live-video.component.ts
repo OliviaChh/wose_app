@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TutorialsService} from "../service/tutorials.service";
 import {ActivatedRoute, Params} from "@angular/router";
 import {User_profileService} from "../service/user_profile.service";
+import {UserFriendsService} from "../service/userFriends.service";
 
 @Component({
   selector: 'app-exercise-live-video',
@@ -11,12 +12,17 @@ import {User_profileService} from "../service/user_profile.service";
 export class ExerciseLiveVideoComponent implements OnInit {
   tutorial = {id: '', videoUrl: '', calories: '', time: ''};
   audiences = [];
+  audience = {uname: '', avatar: '', _id: ''};
+  friends = [];
 
-  constructor(private tutorialsService: TutorialsService, public activeRoute: ActivatedRoute, private userProfileService: User_profileService) {
+  constructor(private tutorialsService: TutorialsService, public activeRoute: ActivatedRoute, private userProfileService: User_profileService, private userFriendsService: UserFriendsService) {
   }
 
   ionViewWillLeave() {
-    this.tutorialsService.removeTutorialAudiences(localStorage.getItem('user_id'))
+    const uid = localStorage.getItem('user_id');
+    this.tutorialsService.removeTutorialAudiences(uid).subscribe(() => {
+      console.log(`User ${uid} leaved`);
+    })
   }
 
   ngOnInit() {
@@ -43,8 +49,12 @@ export class ExerciseLiveVideoComponent implements OnInit {
         this.userProfileService.getUser(d.uid).subscribe((data) => {
           const caloriesPerMin = parseInt(this.tutorial.calories) / parseInt(this.tutorial.time)
           const audiencesTime = (Date.now() - d.start_time) / 1000 / 60;
+          const user: any = data;
           audiences.push({
-            ...data,
+            ...user,
+            avatar: user?.avatar !== undefined && user?.avatar !== '' ? `
+      data:image / jpg;
+      base64,${user.avatar}` : '../../assets/image/dashboard/Ellipse 3.svg',
             calories: (audiencesTime * caloriesPerMin).toFixed(0)
           })
         })
@@ -53,32 +63,31 @@ export class ExerciseLiveVideoComponent implements OnInit {
     });
   }
 
-  public xian = 'none'
-  title = 'Eleaner Pena'
-  ttitle = ''
-  title1 = 'Theresa Webb'
+  getUserFriends() {
+    this.userFriendsService.getUserFriends(localStorage.getItem('user_id')).subscribe((data) => {
+      this.friends = data;
+    })
+  }
 
-  fun() {
+  isMyFriend(friendId) {
+    return this.friends.includes(friendId);
+  }
+
+  addFriend(friendId) {
+    this.userFriendsService.addUserFriend(localStorage.getItem('user_id'), friendId).subscribe(() => {
+      console.log("Add user friend succeed.")
+      this.getUserFriends();
+    })
+  }
+
+  public xian = 'none'
+
+  fun(audience) {
     this.xian = 'block'
-    this.ttitle = this.title
+    this.audience = audience
   }
 
   fun1() {
-    console.log(111);
-
     this.xian = 'none'
   }
-
-  fun2() {
-    console.log(111);
-    this.ttitle = this.title1
-    this.xian = 'block'
-  }
-
-  fun3() {
-    // console.log(111);
-    // this.ttitle = this.title1
-    this.xian = 'none'
-  }
-
 }

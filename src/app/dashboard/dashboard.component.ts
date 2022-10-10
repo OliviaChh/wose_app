@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    localStorage.setItem('user_id', '63441430fee7eabe36ace12b');
     this.getUserProfile(localStorage.getItem('user_id'));
     this.searchTutorials();
   }

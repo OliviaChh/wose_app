@@ -9,9 +9,9 @@
       <b><span>User exercising</span></b>
       <!-- 哈哈哈{title} -->
     </div>
-    <div *ngFor="let audience of audiences;" class="ren1" id="ren1" (click)="fun()">
+    <div *ngFor="let audience of audiences;" class="ren1" id="ren1" (click)="fun(audience)">
       <div class="r_img">
-        <!-- 这里放图 -->
+        <img src="{{audience.avatar}}">
       </div>
       <div class="r_div1"><span>{{audience.uname}}</span></div>
       <div class="r_div2"><b>{{audience.calories}}KCAL</b></div>
@@ -21,10 +21,10 @@
         X
       </div>
       <div class="z_img">
-
+        <img src="{{audience.avatar}}">
       </div>
       <div class="z_text">
-        {{ttitle}}
+        {{audience.uname}}
       </div>
       <div class="bb">
         <div>
@@ -44,10 +44,17 @@
         </div>
 
       </div>
-      <ion-button expand="block" color="warning" class="bbbtn">add friends</ion-button>
-
+      <div>
+        <ion-button *ngIf="!isMyFriend(audience._id)" expand="block" color="warning" class="bbbtn"
+                    (click)="addFriend(audience._id)">add friends
+        </ion-button>
+        <span *ngIf="isMyFriend(audience._id)"> {{audience.uname}} is your friend
+      </span>
+      </div>
     </div>
-    <app-navbar></app-navbar>
+    <div style="margin-top:10rem">
+      <app-navbar></app-navbar>
+    </div>
   </div>
 
 

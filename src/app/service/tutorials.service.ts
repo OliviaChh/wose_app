@@ -62,7 +62,7 @@ export class TutorialsService {
   }
 
   removeTutorialAudiences(uid: string): Observable<void> {
-    return this.httpClient.delete<void>(`${this.backendUrl}/audiences/delete/${uid}`, this.httpOptions)
+    return this.httpClient.delete<void>(`${this.backendUrl}/audiences/${uid}`, this.httpOptions)
       .pipe(
         catchError(this.handleError<void>('removeTutorialAudiences failed'))
       );
