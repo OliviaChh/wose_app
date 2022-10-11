@@ -21,24 +21,11 @@
       <div class="ddd" *ngFor="let tutorial of tutorialsByKeyword;">
         <div class="div2">
           <!-- 里面放图 -->
-          <img src="../../assets/{{tutorial.smallImageUrl}}" alt="" class="img2">
+          <img src="../../assets/{{tutorial.smallImageUrl}}" (click)="goToTutorialDetails(tutorial)" alt=""
+               class="img2">
         </div>
         <span class="span">{{tutorial.name}}</span>
       </div>
-<!--      <div class="ddd">-->
-<!--        <div class="div2">-->
-<!--          &lt;!&ndash; 里面放图 &ndash;&gt;-->
-<!--          <img src="../../assets/image/dashboard/Rectangle 30.svg" alt="" class="img2">-->
-<!--        </div>-->
-<!--        <span class="span">asasdsa</span>-->
-<!--      </div>-->
-<!--      <div class="ddd">-->
-<!--        <div class="div2">-->
-<!--          &lt;!&ndash; 里面放图 &ndash;&gt;-->
-<!--          <img src="../../assets/image/dashboard/Rectangle 31.svg" alt="" class="img2">-->
-<!--        </div>-->
-<!--        <span class="span">asasdsa</span>-->
-<!--      </div>-->
     </div>
 
     <br>

@@ -53,16 +53,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   searchTutorials(event?) {
+    const showTutorialsCount = 3;
     if (!event) {
       this.tutorialsService.searchTutorials().subscribe((data) => {
         console.log(data);
-        this.tutorials = data;
+        this.tutorials = data.slice(0, showTutorialsCount);
       })
     } else if (event && event.code === 'Enter') {
       console.log("keywords", this.keywords);
       this.tutorialsService.searchTutorials(this.keywords).subscribe((data) => {
         console.log(data);
-        this.tutorialsByKeyword = data
+        this.tutorialsByKeyword = data.slice(0, showTutorialsCount);
       })
     }
   }
