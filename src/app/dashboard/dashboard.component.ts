@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, LOCALE_ID, OnDestroy, OnInit} from '@angular/core';
 import {User_profileService} from "../service/user_profile.service";
 import {TutorialsService} from "../service/tutorials.service";
 import {NavController} from '@ionic/angular';
@@ -8,18 +8,35 @@ import {NavController} from '@ionic/angular';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
   userProfile = {uname: '', avatar: ''}
   tutorials = []
   keywords = ''
 
   constructor(public nav: NavController, private User_profileService: User_profileService, private tutorialsService: TutorialsService) {
   }
+  ngOnDestroy(): void {
+    console.log(`[Dashboard] Destroy!!`);
+  }
 
   ngOnInit() {
-    localStorage.setItem('user_id', '63441430fee7eabe36ace12b');
-    this.getUserProfile(localStorage.getItem('user_id'));
-    this.searchTutorials();
+    console.log(`[Dashboard] Init!!`);
+    this.User_profileService.getUsers().subscribe((response) => {
+      var users: any[];
+      var email: string = localStorage.getItem('user_email');
+      users = response;
+      for (var i = 0; i < users.length; i ++){
+        if (email == users[i].email){
+          localStorage.setItem('user_id', users[i]._id);
+          console.log(`GetUser: ${users[i]._id}`)
+        }
+      }
+
+      console.log(`[Dashboard]: user_id ${localStorage.getItem('user_id')}`);
+      this.getUserProfile(localStorage.getItem('user_id'));
+      this.searchTutorials();
+    });
+    
   }
 
   getUserProfile(uid) {
@@ -27,6 +44,7 @@ export class DashboardComponent implements OnInit {
       console.log("response: " + JSON.stringify(data));
       const response: any = data;
       this.userProfile = response;
+      console.log(`[Dashboard] getUserProfile: ${this.userProfile.uname}`)
       this.userProfile.avatar = this.userProfile?.avatar !== undefined && this.userProfile?.avatar !== '' ? `data:image/jpg;base64,${this.userProfile.avatar}` : '../../assets/image/dashboard/Ellipse 3.svg'
     });
   }
