@@ -30,6 +30,13 @@ export class CalculateComponent implements OnInit {
 
     await alert.present();
   }
+
+  async sendApiRequest() {
+    let APP_ID = "0e493536"
+    let API_KEY = "d60965463246b475a5af44cde2e2fdc1"
+    let response = await fetch(``);
+    console.log(response)
+  }
 }
 
 
