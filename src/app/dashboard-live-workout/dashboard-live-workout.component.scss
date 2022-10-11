@@ -1,78 +1,97 @@
-.btnn{ 
-    width: 100%;
-    height: 100%;
-    border-radius: 100px;
-    background-color: orange;
-    color: white;
-    /* 字体颜色color  背景颜色background  */
+.btnn {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background-color: orange;
+  color: white;
+  /* 字体颜色color  背景颜色background  */
 }
-.btn{
-    width: 90%;
-    height: 50px;
-    /* background-color: blue; */
-    margin-left: 20px;
-    /* border-radius: 20px; */
+
+.btn {
+  width: 90%;
+  height: 50px;
+  /* background-color: blue; */
+  margin-left: 20px;
+  /* border-radius: 20px; */
 }
-.text2{
-    width: 90%;
-    height: 50px;
-    /* background-color: blue; */
-    margin-left: 50px;
-    /* border-radius: 20px; */
+
+.text2 {
+  width: 90%;
+  height: 50px;
+  /* background-color: blue; */
+  margin-left: 50px;
+  /* border-radius: 20px; */
 }
-ul>li{
-    margin-top: 5px;
-    font-size: 25px;
+
+ul > li {
+  margin-top: 5px;
+  font-size: 25px;
 }
+
 .text {
-    width: 90%;
-    height: 180px;
-    /* background-color: blue; */
-    margin-left: 20px;
-    border-radius: 20px;
+  width: 90%;
+  height: 180px;
+  /* background-color: blue; */
+  margin-left: 20px;
+  border-radius: 20px;
 }
-.aadio{
-    /* 这里放视频的css */
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+
+.aadio {
+  /* 这里放视频的css */
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
-.adio{
-    width: 90%;
-    height: 200px;
-    background-color: grey;
-    margin-left: 20px;
-    border-radius: 20px;
+
+.play_button {
+  position: absolute;
+  z-index: 2;
+  left: 45%;
+  top: 38%;
 }
-.B_h1{
-width: 90%;
-height: 50px;
-// background-color: red;
-position: relative;
-top: 30px;
-left: 20px;
+
+.adio {
+  width: 90%;
+  height: 200px;
+  background-color: grey;
+  margin-left: 20px;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 1;
 }
-.body_h{
-    width: 90%;
-    height: 650px;
-    background-color: white;
-    margin-left: 15px;
-    border-radius: 20px;
+
+.B_h1 {
+  width: 90%;
+  height: 50px;
+  // background-color: red;
+  position: relative;
+  top: 30px;
+  left: 20px;
 }
- .ipt{
-    
-    width: 20rem;
-    height: 4.5rem;
-    /* background-color: blue; */
-    margin-left: 25px;
-    display: flex;
-    justify-content: center;
-    /* border-radius: 30%; */
+
+.body_h {
+  width: 90%;
+  height: 650px;
+  background-color: white;
+  margin-left: 15px;
+  border-radius: 20px;
 }
-.iipt{
-    margin-top: 20px;
-    width: 70%;
-    height: 50%;
-    border-radius: 40px;
+
+.ipt {
+
+  width: 20rem;
+  height: 4.5rem;
+  /* background-color: blue; */
+  margin-left: 25px;
+  display: flex;
+  justify-content: center;
+  /* border-radius: 30%; */
+}
+
+.iipt {
+  margin-top: 20px;
+  width: 70%;
+  height: 50%;
+  border-radius: 40px;
 
 }

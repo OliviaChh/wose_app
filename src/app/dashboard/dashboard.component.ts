@@ -12,21 +12,23 @@ export class DashboardComponent implements OnInit, OnDestroy {
   userProfile = {uname: '', avatar: ''}
   tutorials = []
   keywords = ''
+  tutorialsByKeyword = []
 
   constructor(public nav: NavController, private User_profileService: User_profileService, private tutorialsService: TutorialsService) {
   }
+
   ngOnDestroy(): void {
     console.log(`[Dashboard] Destroy!!`);
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     console.log(`[Dashboard] Init!!`);
     this.User_profileService.getUsers().subscribe((response) => {
-      var users: any[];
-      var email: string = localStorage.getItem('user_email');
+      let users: any[];
+      let email: string = localStorage.getItem('user_email');
       users = response;
-      for (var i = 0; i < users.length; i ++){
-        if (email == users[i].email){
+      for (let i = 0; i < users.length; i++) {
+        if (email == users[i].email) {
           localStorage.setItem('user_id', users[i]._id);
           console.log(`GetUser: ${users[i]._id}`)
         }
@@ -34,9 +36,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
       console.log(`[Dashboard]: user_id ${localStorage.getItem('user_id')}`);
       this.getUserProfile(localStorage.getItem('user_id'));
-      this.searchTutorials();
     });
-    
+
+    this.searchTutorials();
+    this.searchTutorials({code: 'Enter'});
   }
 
   getUserProfile(uid) {
@@ -49,11 +52,19 @@ export class DashboardComponent implements OnInit, OnDestroy {
     });
   }
 
-  searchTutorials() {
-    this.tutorialsService.searchTutorials(this.keywords).subscribe((data) => {
-      console.log(data);
-      this.tutorials = data;
-    })
+  searchTutorials(event?) {
+    if (!event) {
+      this.tutorialsService.searchTutorials().subscribe((data) => {
+        console.log(data);
+        this.tutorials = data;
+      })
+    } else if (event && event.code === 'Enter') {
+      console.log("keywords", this.keywords);
+      this.tutorialsService.searchTutorials(this.keywords).subscribe((data) => {
+        console.log(data);
+        this.tutorialsByKeyword = data
+      })
+    }
   }
 
   goToTutorialDetails(tutorial) {

@@ -28,8 +28,9 @@ export class TutorialsService {
   constructor(private httpClient: HttpClient) {
   }
 
-  searchTutorials(keywords: string): Observable<Tutorials[]> {
-    return this.httpClient.get<Tutorials[]>(`${this.backendUrl}/tutorials?keywords=${keywords}`, this.httpOptions)
+  searchTutorials(keywords?: string): Observable<Tutorials[]> {
+    const url = keywords ? `${this.backendUrl}/tutorials?keywords=${keywords}` : `${this.backendUrl}/tutorials`;
+    return this.httpClient.get<Tutorials[]>(url, this.httpOptions)
       .pipe(
         catchError(this.handleError<Tutorials[]>('searchTutorials failed'))
       );

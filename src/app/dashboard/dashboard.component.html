@@ -6,7 +6,7 @@
         <img src="{{userProfile.avatar}}" alt="" class="img">
       </div>
       <div class="ipt">
-        <input [(ngModel)]="keywords" (keyup)='searchTutorials()' type="text" class="iipt">
+        <input [(ngModel)]="keywords" (keyup)='searchTutorials($event)' type="text" class="iipt">
       </div>
     </div>
     <!-- <br> -->
@@ -18,27 +18,27 @@
 
       </div>
       <br/>
-      <div class="ddd">
+      <div class="ddd" *ngFor="let tutorial of tutorialsByKeyword;">
         <div class="div2">
           <!-- 里面放图 -->
-          <img src="../../assets/image/dashboard/Rectangle 29.svg" alt="" class="img2">
+          <img src="../../assets/{{tutorial.smallImageUrl}}" alt="" class="img2">
         </div>
-        <span class="span">asasdsa</span>
+        <span class="span">{{tutorial.name}}</span>
       </div>
-      <div class="ddd">
-        <div class="div2">
-          <!-- 里面放图 -->
-          <img src="../../assets/image/dashboard/Rectangle 30.svg" alt="" class="img2">
-        </div>
-        <span class="span">asasdsa</span>
-      </div>
-      <div class="ddd">
-        <div class="div2">
-          <!-- 里面放图 -->
-          <img src="../../assets/image/dashboard/Rectangle 31.svg" alt="" class="img2">
-        </div>
-        <span class="span">asasdsa</span>
-      </div>
+<!--      <div class="ddd">-->
+<!--        <div class="div2">-->
+<!--          &lt;!&ndash; 里面放图 &ndash;&gt;-->
+<!--          <img src="../../assets/image/dashboard/Rectangle 30.svg" alt="" class="img2">-->
+<!--        </div>-->
+<!--        <span class="span">asasdsa</span>-->
+<!--      </div>-->
+<!--      <div class="ddd">-->
+<!--        <div class="div2">-->
+<!--          &lt;!&ndash; 里面放图 &ndash;&gt;-->
+<!--          <img src="../../assets/image/dashboard/Rectangle 31.svg" alt="" class="img2">-->
+<!--        </div>-->
+<!--        <span class="span">asasdsa</span>-->
+<!--      </div>-->
     </div>
 
     <br>
@@ -50,7 +50,6 @@
       </div>
       <div *ngFor="let tutorial of tutorials;" class="Journalism">
         <div class="left_p">
-          <!-- 这里面放图片 -->
           <img src="../../assets/{{tutorial.bigImageUrl}}" (click)="goToTutorialDetails(tutorial)" alt="" class="imgx">
         </div>
         <div class="right_p">
@@ -62,33 +61,6 @@
         </div>
       </div>
       <br>
-      <!--      <div class="Journalism">-->
-      <!--        <div class="left_p">-->
-      <!--          &lt;!&ndash; 这里面放图片 &ndash;&gt;-->
-      <!--          <img src="../../assets/image/dashboard/Rectangle 33-1.svg" alt="" class="imgx">-->
-      <!--        </div>-->
-      <!--        <div class="right_p">-->
-      <!--          <span>HAHHAHAHA</span>-->
-      <!--          <br>-->
-      <!--          <img src="" alt=""><span>sadsadsadas</span>-->
-      <!--          <br>-->
-      <!--          <img src="" alt=""><span>asdsadsdasd</span>-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <!--      <br>-->
-      <!--      <div class="Journalism">-->
-      <!--        <div class="left_p">-->
-      <!--          &lt;!&ndash; 这里面放图片 &ndash;&gt;-->
-      <!--          <img src="../../assets/image/dashboard/Rectangle 33.svg" alt="" class="imgx">-->
-      <!--        </div>-->
-      <!--        <div class="right_p">-->
-      <!--          <span>HAHHAHAHA</span>-->
-      <!--          <br>-->
-      <!--          <img src="../../assets/image/dashboard/Vector-5.svg" alt="">&nbsp;<span>sadsadsadas</span>-->
-      <!--          <br>-->
-      <!--          <img src="" alt=""><span>asdsadsdasd</span>-->
-      <!--        </div>-->
-      <!--      </div>-->
     </div>
   </div>
 

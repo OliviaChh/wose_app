@@ -3,7 +3,9 @@ const tutorialsRoute = express.Router();
 const TutorialsModel = require('../model/Tutorials');
 
 tutorialsRoute.route('/').get((req, res) => {
-  TutorialsModel.find((error, data) => {
+  console.log("keywords", req.query.keywords);
+  const reg = new RegExp(req.query.keywords, 'i')
+  TutorialsModel.find({name: {$regex: reg}}, (error, data) => {
     if (!error) {
       console.log('Tutorials fetched succeed:', JSON.stringify(data))
       res.status(200).json(data);
