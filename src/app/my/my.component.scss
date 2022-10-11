@@ -84,3 +84,14 @@
 .achievement-name {
     margin: 1px;
 }
+
+#logout_button {
+    flex: 1;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+    font-size: large;
+      
+}
