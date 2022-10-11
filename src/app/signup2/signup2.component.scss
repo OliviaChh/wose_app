@@ -109,9 +109,15 @@
   }
  
   .genderbtn{
-    height: 10em;
-    width: 10em;
+    height: 7em;
+    width: 7em;
     padding: none;
     margin: none;
     --background:none;
+  }
+
+  ion-button {
+    --background-activated: #F19D6E;
+    --background-hover: none;
+    --background-focused: #F19D6E;
   }
