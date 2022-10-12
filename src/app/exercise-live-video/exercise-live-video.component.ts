@@ -1,8 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TutorialsService} from "../service/tutorials.service";
 import {ActivatedRoute, Params} from "@angular/router";
 import {User_profileService} from "../service/user_profile.service";
 import {UserFriendsService} from "../service/userFriends.service";
+import {NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-exercise-live-video',
@@ -14,8 +15,9 @@ export class ExerciseLiveVideoComponent implements OnInit {
   audiences = [];
   audience = {uname: '', avatar: '', _id: ''};
   friends = [];
+  startTime = 0;
 
-  constructor(private tutorialsService: TutorialsService, public activeRoute: ActivatedRoute, private userProfileService: User_profileService, private userFriendsService: UserFriendsService) {
+  constructor(private tutorialsService: TutorialsService, public activeRoute: ActivatedRoute, private userProfileService: User_profileService, private userFriendsService: UserFriendsService, public nav: NavController) {
   }
 
   ionViewWillLeave() {
@@ -25,15 +27,17 @@ export class ExerciseLiveVideoComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.activeRoute.queryParams.subscribe((params: Params) => {
       this.tutorial.id = params['id'];
       this.tutorial.videoUrl = params['videoUrl']
       this.tutorial.calories = params['calories']
       this.tutorial.time = params['time']
     })
-    this.addAudience(this.tutorial.id, localStorage.getItem('user_id'))
-    this.getAudiences(this.tutorial.id);
+    await this.addAudience(this.tutorial.id, localStorage.getItem('user_id'))
+    await this.getAudiences(this.tutorial.id);
+    await this.getUserFriends();
+    this.startTime = Date.now();
   }
 
   addAudience(id, uid) {
@@ -65,12 +69,9 @@ export class ExerciseLiveVideoComponent implements OnInit {
 
   getUserFriends() {
     this.userFriendsService.getUserFriends(localStorage.getItem('user_id')).subscribe((data) => {
-      this.friends = data;
+      this.friends = data.map((d) => d.friend_id);
+      console.log("User friends fetched:", data);
     })
-  }
-
-  isMyFriend(friendId) {
-    return this.friends.includes(friendId);
   }
 
   addFriend(friendId) {
@@ -78,6 +79,18 @@ export class ExerciseLiveVideoComponent implements OnInit {
       console.log("Add user friend succeed.")
       this.getUserFriends();
     })
+  }
+
+  goToExerciseFinishPage() {
+    const time = (Date.now() - this.startTime) / 1000 / 60;
+    const caloriesPerMin = parseInt(this.tutorial.calories) / parseInt(this.tutorial.time);
+    const calories = caloriesPerMin * time;
+    this.nav.navigateRoot(['dashboardexercisefinished'], {
+      queryParams: {
+        calories: calories.toFixed(2),
+        time: time.toFixed(2),
+      }
+    });
   }
 
   public xian = 'none'

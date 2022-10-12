@@ -5,9 +5,11 @@
       <video src="../../assets/{{tutorial.videoUrl}}" width=100%; height=100%; autoplay="autoplay"
              controls="controls"></video>
     </div>
+    <div class="btn">
+      <button class="btnn" (click)="goToExerciseFinishPage()">Finished</button>
+    </div>
     <div class="text">
       <b><span>User exercising</span></b>
-      <!-- 哈哈哈{title} -->
     </div>
     <div *ngFor="let audience of audiences;" class="ren1" id="ren1" (click)="fun(audience)">
       <div class="r_img">
@@ -45,11 +47,12 @@
 
       </div>
       <div>
-        <ion-button *ngIf="!isMyFriend(audience._id)" expand="block" color="warning" class="bbbtn"
+        <ion-button *ngIf="!friends.includes(audience._id)" expand="block" color="warning" class="bbbtn"
                     (click)="addFriend(audience._id)">add friends
         </ion-button>
-        <span *ngIf="isMyFriend(audience._id)"> {{audience.uname}} is your friend
-      </span>
+        <ion-button *ngIf="friends.includes(audience._id)" expand="block" color="warning" class="bbbtn" disabled="true">
+          {{audience.uname}} is your friend
+        </ion-button>
       </div>
     </div>
     <div style="margin-top:10rem">
