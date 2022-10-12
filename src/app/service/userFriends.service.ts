@@ -4,9 +4,14 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 
+class Friends {
+  friend_id: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserFriendsService {
 
   //backend
@@ -30,10 +35,10 @@ export class UserFriendsService {
       );
   }
 
-  getUserFriends(userId: string): Observable<[]> {
-    return this.httpClient.get<[]>(`${this.backendUrl}/user-friends/${userId}`, this.httpOptions)
+  getUserFriends(userId: string): Observable<Friends[]> {
+    return this.httpClient.get<Friends[]>(`${this.backendUrl}/user-friends/${userId}`, this.httpOptions)
       .pipe(
-        catchError(this.handleError<[]>('getUserFriends failed'))
+        catchError(this.handleError<Friends[]>('getUserFriends failed'))
       );
   }
 

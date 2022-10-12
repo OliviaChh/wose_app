@@ -32,9 +32,10 @@ import { TestListComponent } from './test-list/test-list.component';
 import { TestUpdateComponent } from './test-update/test-update.component';
 import { TestCreateComponent } from './test-create/test-create.component';
 import{ExerciseLiveVideoComponent}from'./exercise-live-video/exercise-live-video.component';
+import {DashboardExerciseFinishedComponent} from "./dashboard-exercise-finished/dashboard-exercise-finished.component";
 
 var entry_route: string = "firstpage";
-if (localStorage.getItem('user_email') != null){ 
+if (localStorage.getItem('user_email') != null){
   entry_route = "dashboard";
 }
 
@@ -88,6 +89,10 @@ const routes: Routes = [
   {
     path: 'dashboardliveworkout',
     component: DashboardLiveWorkoutComponent
+  },
+  {
+    path: 'dashboardexercisefinished',
+    component: DashboardExerciseFinishedComponent
   },
   {
     path: 'community',
