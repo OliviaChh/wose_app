@@ -2,8 +2,7 @@
   <app-bg-interfaces></app-bg-interfaces>
   <div class="title">
     <div class="video">
-      <video src="../../assets/{{tutorial.videoUrl}}" width=100%; height=100%; autoplay="autoplay"
-             controls="controls"></video>
+      <iframe width="100%" height="100%" [src]="safeUrl" allow="autoplay" allowfullscreen></iframe>
     </div>
     <div class="btn">
       <button class="btnn" (click)="goToExerciseFinishPage()">Finished</button>
@@ -47,10 +46,12 @@
 
       </div>
       <div>
-        <ion-button *ngIf="!friends.includes(audience._id)" expand="block" color="warning" class="bbbtn"
+        <ion-button *ngIf="!friends.includes(audience._id) && userId!==audience._id" expand="block" color="warning"
+                    class="bbbtn"
                     (click)="addFriend(audience._id)">add friends
         </ion-button>
-        <ion-button *ngIf="friends.includes(audience._id)" expand="block" color="warning" class="bbbtn" disabled="true">
+        <ion-button *ngIf="friends.includes(audience._id) && userId!==audience._id" expand="block" color="warning"
+                    class="bbbtn" disabled="true">
           {{audience.uname}} is your friend
         </ion-button>
       </div>
