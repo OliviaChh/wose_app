@@ -12,9 +12,9 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./exercise-live-video.component.scss'],
 })
 export class ExerciseLiveVideoComponent implements OnInit {
-  tutorial = {id: '', videoUrl: '', calories: '', time: ''};
-  audiences = [];
-  audience = {uname: '', avatar: '', _id: '', calories: ''};
+  tutorial = {id: '', videoUrl: '', calories: 0, time: ''};
+  audiences = [{uname: '', avatar: '', _id: '', calories: 0}];
+  audience = {uname: '', avatar: '', _id: '', calories: 0};
   friends = [];
   startTime = 0;
   safeUrl: any;
@@ -65,7 +65,7 @@ export class ExerciseLiveVideoComponent implements OnInit {
       let audiences = []
       for (let d of data) {
         this.userProfileService.getUser(d.uid).subscribe((data) => {
-          const caloriesPerMin = parseInt(this.tutorial.calories) / parseInt(this.tutorial.time)
+          const caloriesPerMin = this.tutorial.calories / parseInt(this.tutorial.time)
           const audiencesTime = (Date.now() - d.start_time) / 1000 / 60;
           const user: any = data;
           audiences.push({
@@ -97,12 +97,11 @@ export class ExerciseLiveVideoComponent implements OnInit {
 
   goToExerciseFinishPage() {
     const time = (Date.now() - this.startTime) / 1000 / 60;
-    const caloriesPerMin = parseInt(this.tutorial.calories) / parseInt(this.tutorial.time);
-    const calories = caloriesPerMin * time;
-    this.tutorialsService.addUserCalories(this.userId, parseInt(calories.toFixed(0))).subscribe(() => {
+    const calories = Number(this.audiences.find((a) => a._id = this.userId)?.calories).toFixed(2);
+    this.tutorialsService.addUserCalories(this.userId, parseInt(calories)).subscribe(() => {
       this.nav.navigateRoot(['dashboardexercisefinished'], {
         queryParams: {
-          calories: calories.toFixed(2),
+          calories: calories,
           time: time.toFixed(2),
         }
       });
