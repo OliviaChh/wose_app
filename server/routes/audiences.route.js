@@ -2,17 +2,18 @@ const express = require('express');
 const audiencesRoute = express.Router();
 const AudiencesModel = require('../model/Audiences');
 
-audiencesRoute.route('/').get((req, res, next) => {
-  AudiencesModel.find({'tid': req.query.tid}, (error, data) => {
-    if (!error) {
-      console.log('Tutorial audiences fetched succeed:', JSON.stringify(data))
-      res.status(200).json(data);
-    } else {
-      console.error(error);
-      res.status(500);
-      return next(error)
-    }
-  })
+const getAudiences = (tid) => AudiencesModel.find({'tid': tid})
+
+audiencesRoute.route('/').get(async (req, res, next) => {
+  try {
+    const data = await getAudiences(req.query.tid).clone();
+    console.log('Tutorial audiences fetched succeed:', JSON.stringify(data))
+    res.status(200).json(data);
+  } catch (e) {
+    console.error(e);
+    res.status(500);
+    return next(e)
+  }
 })
 
 audiencesRoute.route('/').post(async (req, res, next) => {

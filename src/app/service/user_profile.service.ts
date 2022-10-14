@@ -18,6 +18,7 @@ export class User_profile {
     weight: number;
     goal: number;
     avatar: string;
+    calories: number;
   }
 
   interface UserProfile{
@@ -28,7 +29,8 @@ export class User_profile {
     height: number,
     weight: number,
     goal: number,
-    avatar: string
+    avatar: string,
+    calories: number
   }
 
 @Injectable({
@@ -36,7 +38,7 @@ export class User_profile {
 })
 
 export class User_profileService {
-  
+
   private backendUrl = 'http://localhost:5000';
   userForm: FormGroup;
 
@@ -49,7 +51,8 @@ export class User_profileService {
     height: null,
     weight: null,
     goal: null,
-    avatar: ""
+    avatar: "",
+    calories: null
   }
 
   //backend
@@ -126,7 +129,7 @@ export class User_profileService {
     }
 
   }
-  
+
   //handle error
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -134,7 +137,7 @@ export class User_profileService {
       console.log(`${operation} failed: ${error.message}`);
       return of(result as T);
     };
-  } 
+  }
 
   // getUserProfile(uname: string): Observable<User_profile> {
   //   return this.httpClient.get<User_profile>(`${this.backendUrl}/userprofile/${uname}`, this.httpOptions)

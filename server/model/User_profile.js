@@ -28,6 +28,9 @@ let User_profile = new Schema({
   avatar: {
     type: String
   },
+  calories: {
+    type: Number
+  }
 }, {
   collection: 'user_profile'
 })

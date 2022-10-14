@@ -14,7 +14,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class ExerciseLiveVideoComponent implements OnInit {
   tutorial = {id: '', videoUrl: '', calories: '', time: ''};
   audiences = [];
-  audience = {uname: '', avatar: '', _id: ''};
+  audience = {uname: '', avatar: '', _id: '', calories: ''};
   friends = [];
   startTime = 0;
   safeUrl: any;
@@ -24,7 +24,6 @@ export class ExerciseLiveVideoComponent implements OnInit {
   }
 
   getSafeUrl() {
-    console.log('转了zzzzz', this.tutorial.videoUrl)
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.tutorial.videoUrl);
   }
 
@@ -35,7 +34,7 @@ export class ExerciseLiveVideoComponent implements OnInit {
     })
   }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.userId = localStorage.getItem('user_id')
     this.activeRoute.queryParams.subscribe((params: Params) => {
       this.tutorial.id = params['id'];
@@ -45,20 +44,23 @@ export class ExerciseLiveVideoComponent implements OnInit {
       this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.tutorial.videoUrl + "?autoplay=1");
     })
     console.log("Play tutorial video:", this.tutorial);
-    await this.addAudience(this.tutorial.id, this.userId)
-    await this.getUserFriends();
-    await this.getAudiences(this.tutorial.id);
+    this.addAudience(this.tutorial.id, this.userId);
+    this.getUserFriends();
     this.startTime = Date.now();
+    setTimeout(() => {
+      this.getAudiences(this.tutorial.id);
+    }, 500);
   }
 
   addAudience(id, uid) {
-    this.tutorialsService.addTutorialAudience(id, uid).subscribe(() => {
+    return this.tutorialsService.addTutorialAudience(id, uid).subscribe(() => {
       console.log(`Add current user ${uid} to audiences`);
+      this.getAudiences(id);
     })
   }
 
   getAudiences(id) {
-    this.tutorialsService.getTutorialAudiences(id).subscribe((data) => {
+    return this.tutorialsService.getTutorialAudiences(id).subscribe((data) => {
       console.log('Audiences fetched', JSON.stringify(data));
       let audiences = []
       for (let d of data) {
@@ -97,11 +99,13 @@ export class ExerciseLiveVideoComponent implements OnInit {
     const time = (Date.now() - this.startTime) / 1000 / 60;
     const caloriesPerMin = parseInt(this.tutorial.calories) / parseInt(this.tutorial.time);
     const calories = caloriesPerMin * time;
-    this.nav.navigateRoot(['dashboardexercisefinished'], {
-      queryParams: {
-        calories: calories.toFixed(2),
-        time: time.toFixed(2),
-      }
+    this.tutorialsService.addUserCalories(this.userId, parseInt(calories.toFixed(0))).subscribe(() => {
+      this.nav.navigateRoot(['dashboardexercisefinished'], {
+        queryParams: {
+          calories: calories.toFixed(2),
+          time: time.toFixed(2),
+        }
+      });
     });
   }
 

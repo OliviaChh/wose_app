@@ -69,6 +69,13 @@ export class TutorialsService {
       );
   }
 
+  addUserCalories(userId: string, calories: number): Observable<void> {
+    return this.httpClient.post<void>(`${this.backendUrl}/tutorials/add-calories`, {userId, calories}, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<void>('updateUserCalories failed'))
+      );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
