@@ -1,10 +1,10 @@
 <ion-content>
   <app-bg-interfaces></app-bg-interfaces>
-    <div class="title">
+  <!-- <div class="title">
       <br>
       <div class="header">
         <div class="h_png">
-            <!-- 这里面放图片 -->
+            
             <img src="../../assets/image/dashboard/Ellipse 3.svg" alt="" class="img">
         </div>
         <div class="ipt">
@@ -19,7 +19,7 @@
            
             <div class="png_head">
               <div class="img_h">
-                  <!-- 图片 -->
+                  
               </div>
               <div class="text_h">
                   <b><span>Jacob Jones</span></b>
@@ -28,7 +28,7 @@
             
             <div class="png_head">
               <div class="img_h">
-                  <!-- 图片 -->
+                  
               </div>
               <div class="text_h">
                   <b><span>Jacob Jones</span></b>
@@ -37,7 +37,7 @@
 
             <div class="png_head">
               <div class="img_h">
-                  <!-- 图片 -->
+                  
               </div>
               <div class="text_h">
                   <b><span>Jacob Jones</span></b>
@@ -46,7 +46,7 @@
 
             <div class="png_head">
               <div class="img_h">
-                  <!-- 图片 -->
+                  
               </div>
               <div class="text_h">
                   <b><span>Jacob Jones</span></b>
@@ -54,6 +54,26 @@
             </div>
         </div>
 
-    </div>
-    <app-navbar></app-navbar>
+    </div> -->
+
+  <ion-list>
+    <ion-item *ngFor="let user of Users">
+      <ion-label>
+        <h2>{{user.name}}</h2>
+        <h3>{{user.email}}</h3>
+        <h3>{{user.username}}</h3>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/test-update', user._id]">
+          <ion-icon name="create" style="zoom:1.5"></ion-icon>
+        </button>
+        <button ion-button clear (click)="removeUser(user, i)">
+          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <app-navbar></app-navbar>
 </ion-content>
