@@ -4,39 +4,42 @@
 
   <div class="container">
     <div class="title">Your daily intake</div>
-    <div class="kcal">{{kcalTop}} kcal</div>
-
+    <div class="kcal">{{totalK}} kcal</div>
+    <div id="cal"></div>
     <div class="title">Caluculate your calorie intake!</div>
 
     <div class="container2">
 
-
-      <div class="elements">
-        <div class="title2">Food name</div>
-        <ion-item lines="none" class="form-time">
-          <ion-input class="inputClass" type="text" placeholder=" ex: apple" required></ion-input>
-        </ion-item>
-      </div>
-
-      <div class="elements">
-        <div class="title2">Intake(g)</div>
-        <ion-item lines="none" class="form-cal">
-          <ion-input class="inputClass" type="number" placeholder=" ex: 500" required></ion-input>
-        </ion-item>
-      </div>
-
-      <div class="elements">
-        <input type="submit" value="confirm" id="confirm-button" (click)="sendApiRequest()">
-        <div class="popup" id="popup">
-          <div class="info"> Your calories intake is 265 kcal</div>
-          <button type="button" (click)="closePopup()">Back</button>
+      <form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
+        <div class="elements">
+          <div class="title2">Food name</div>
+          <ion-item lines="none" class="form-time">
+            <ion-input formControlName="foodName" class="inputClass" type="text" placeholder=" ex: apple" required>
+            </ion-input>
+          </ion-item>
         </div>
-      </div>
+
+        <div class="elements">
+          <div class="title2">Intake(g)</div>
+          <ion-item lines="none" class="form-cal">
+            <ion-input formControlName="intake" class="inputClass" type="number" placeholder=" ex: 500" required>
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div class="elements">
+          <!-- <input type="submit" value="confirm" id="confirm-button" (click)="sendApiRequest()"> -->
+          <ion-button class="but" type="submit" expend="block">NEXT</ion-button>
+        </div>
+      </form>
+
 
 
     </div>
   </div>
-
+  <div class="popup">
+    <p class="form-group">Your calorie intake is <span style="color:#527509" id="result"></span> kcal </p>
+  </div>
 
 
   <app-navbar></app-navbar>

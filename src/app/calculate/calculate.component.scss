@@ -115,3 +115,15 @@ ion-input {
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
 }
+
+.but {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: large;
+    background: #F19D6E;
+    border-color: #F19D6E;
+    color: white;
+    font-weight: bold;
+    --background: none;
+    border-radius: 20px;
+}

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -8,15 +9,27 @@ import { AlertController } from '@ionic/angular';
 })
 export class CalculateComponent implements OnInit {
 
-  constructor(private alertController: AlertController) {
+  foodForm: FormGroup;
+
+  constructor(
+    private alertController: AlertController,
+    public formBuilder: FormBuilder,
+    private zone: NgZone) {
+    this.foodForm = this.formBuilder.group({
+      foodName: [''],
+      intake: ['']
+    });
   }
 
   ngOnInit() {
   }
-  kcalTop = 0;
-  async presentAlert() {
+  totalK = 0;
+  kcal = 0;
+
+
+  async presentAlert(kcal) {
     const alert = await this.alertController.create({
-      header: 'Your calorie intake is 1000 kcal',
+      header: 'Your calorie intake is ' + kcal + ' kcal',
       cssClass: 'custom-alert',
       buttons: [
         {
@@ -26,6 +39,9 @@ export class CalculateComponent implements OnInit {
         {
           text: 'Add it',
           cssClass: 'alert-button-confirm',
+          handler: () => {
+            this.totalK += kcal;
+          }
         },
       ],
     });
@@ -33,26 +49,38 @@ export class CalculateComponent implements OnInit {
     await alert.present();
   }
 
-  async sendApiRequest() {
+  async sendApiRequest(foodName, intake) {
     const APP_ID = "0e493536"
     const APP_KEY = "d60965463246b475a5af44cde2e2fdc1"
-    const url = `https://api.edamam.com/api/food-database/v2/parser?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=pie`
+    const url = `https://api.edamam.com/api/food-database/v2/parser?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${foodName}`
     let response = await fetch(url);
     let JSON = await response.json();
-    console.log(JSON.hints[0].food);
-
+    // console.log(JSON.hints[0].food.nutrients.ENERC_KCAL);
+    let foodKcal = JSON.hints[0].food.nutrients.ENERC_KCAL;
+    let kcal = Number((foodKcal * (intake / 100)).toFixed(2));
+    console.log(kcal);
+    document.getElementById("result").innerHTML = kcal.toString();
+    this.presentAlert(kcal);
+    // this.showPopup();
   }
 
 
 
   addKcal() {
-    this.kcalTop += 1;
+    this.totalK += 1;
+  }
+
+  onSubmit() {
+    console.log(this.foodForm.value['foodName']);
+    this.sendApiRequest(this.foodForm.value['foodName'], this.foodForm.value['intake']);
   }
 
 
+  resultPopup = document.getElementById("popup");
+  showPopup() {
+    this.resultPopup.classList.add("open-popup");
 
-
-
+  }
 
 
 }
