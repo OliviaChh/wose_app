@@ -36,6 +36,12 @@
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    text-align: center;
+}
+
+.hours, .days, .points {
+    font-size: large;
+    font-weight: bolder;
 }
 
 
