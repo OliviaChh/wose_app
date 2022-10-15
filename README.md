@@ -1,6 +1,6 @@
 # Wose - Addressing obesity! Exercise with your friends ! Wose is an exercise vedio application to lose your weight. It is build based on the purpose to solve obesity problems. This product is made for DECO7381 course by Team MakkaPakka.
 
-## Technology Stack | Name | Stack | | ------ | ------ | | Front-end | Ionic Angular, Material UI, SCSS | | Back-end | Express.js (Node.js) | | Database | MongoDB | | Deployment | MongoDB Atlas
+## Technology Stack | Name | Stack | | ------ | ------ | | Front-end | Ionic Angular, Material UI, SCSS | | Back-end | Express.js (Node.js), Capacitor | | Database | MongoDB | | Deployment | MongoDB Atlas
 
 ## Repositories - [Front- end](https://github.com/OliviaChh/wose_app/tree/main/src/app) - Code base for Front-end on Github - [Back-end](https://github.com/OliviaChh/wose_app/tree/main/server) - Code base for Back-end on Github
 
@@ -9,7 +9,6 @@
 * Dashboard - See Video list (all Video or based on category) - Search Video - See Video detail -  Add friends - Personal avatar 
 * Community - See my friends list - Delete friends - Search friends
 * Calorie - Store my daily calorie intake using food's calorie API (https://developer.edamam.com/food-database-api-docs)
-* Plan - Plan your exercise
 * My - Meal suggestion, Achievement system, Update personal information
 
 ## Development Guide
