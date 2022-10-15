@@ -13,14 +13,13 @@
     <h1 class="h1">HELLO , {{userProfile.uname}}  </h1>
     <div class="ASYNC">
       <div class="Hhead">
-        <h2>&emsp;LIVES WORKOUT</h2>
+        <h2>&emsp;WORKOUT TOGETHER</h2>
         <br>
 
       </div>
       <br/>
       <div class="ddd" *ngFor="let tutorial of tutorialsByKeyword;">
         <div class="div2">
-          <!-- 里面放图 -->
           <img src="../../assets/{{tutorial.smallImageUrl}}" (click)="goToTutorialDetails(tutorial)" alt=""
                class="img2">
         </div>
@@ -40,11 +39,12 @@
           <img src="../../assets/{{tutorial.bigImageUrl}}" (click)="goToTutorialDetails(tutorial)" alt="" class="imgx">
         </div>
         <div class="right_p">
-          <span>{{tutorial.name}}</span>
+          <span style="font-weight: bold">{{tutorial.name}}</span>
           <br>
-          <img src="" alt=""><span>{{tutorial.coach}}</span>
           <br>
-          <img src="" alt=""><span>{{tutorial.time}} min</span>
+          <img src="../../assets/image/element/face.svg" alt=""><span> {{tutorial.coach}}</span>
+          <br>
+          <img src="../../assets/image/element/time.svg" alt=""><span> {{tutorial.time}} min</span>
         </div>
       </div>
       <br>
