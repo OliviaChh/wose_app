@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {AlertController} from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-calculate',
@@ -13,7 +13,7 @@ export class CalculateComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  kcalTop = 0;
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Your calorie intake is 1000 kcal',
@@ -36,10 +36,25 @@ export class CalculateComponent implements OnInit {
   async sendApiRequest() {
     const APP_ID = "0e493536"
     const APP_KEY = "d60965463246b475a5af44cde2e2fdc1"
-    const url = `https://api.edamam.com/api/food-database/v2/parser?app_id=${APP_ID}&app_key=${APP_KEY}`
+    const url = `https://api.edamam.com/api/food-database/v2/parser?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=pie`
     let response = await fetch(url);
-    console.log(response)
+    let JSON = await response.json();
+    console.log(JSON.hints[0].food);
+
   }
+
+
+
+  addKcal() {
+    this.kcalTop += 1;
+  }
+
+
+
+
+
+
+
 }
 
 
