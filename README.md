@@ -6,7 +6,7 @@
 
 ## Features
 ### 
-* Dashboard - See Video list (all Video or based on category) - Search Video - See Video detail -  Add friends - Personal avatar 
+* Dashboard - See Video list (all Video or based on category) - Search Video - See Video detail - workout with other user - Add friends
 * Community - See my friends list - Delete friends - Search friends
 * Calorie - Store my daily calorie intake using food's calorie API (https://developer.edamam.com/food-database-api-docs)
 * My - Meal suggestion, Achievement system, Update personal information
@@ -26,7 +26,7 @@ npm install mongoose body-parser express cors jsonwebtoken mongoose-unique-valid
 npm install nodemon --save-dev
 npm run dev
 ```
-3. Run the project
+3. Run the nodejs command to connect to database
 ```
 nodemon server
 ``` 
