@@ -57,21 +57,14 @@
     </div> -->
 
   <ion-list>
-    <ion-item *ngFor="let user of Users">
+    <ion-item *ngFor="let friend of Friends">
       <ion-label>
-        <h2>{{user.name}}</h2>
-        <h3>{{user.email}}</h3>
-        <h3>{{user.username}}</h3>
+        <h2>{{friend.user_id}}</h2>
+        <h3>{{friend.friend_id}}</h3>
+
       </ion-label>
 
-      <div class="item-note" item-end>
-        <button ion-button clear [routerLink]="['/test-update', user._id]">
-          <ion-icon name="create" style="zoom:1.5"></ion-icon>
-        </button>
-        <button ion-button clear (click)="removeUser(user, i)">
-          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
-        </button>
-      </div>
+
     </ion-item>
   </ion-list>
 

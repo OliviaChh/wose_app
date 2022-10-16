@@ -1,6 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { User_profileService } from '../service/user_profile.service';
 
 @Component({
   selector: 'app-calculate',
@@ -14,7 +15,8 @@ export class CalculateComponent implements OnInit {
   constructor(
     private alertController: AlertController,
     public formBuilder: FormBuilder,
-    private zone: NgZone) {
+    private zone: NgZone,
+    public user_profileService: User_profileService) {
     this.foodForm = this.formBuilder.group({
       foodName: [''],
       intake: ['']
@@ -41,6 +43,8 @@ export class CalculateComponent implements OnInit {
           cssClass: 'alert-button-confirm',
           handler: () => {
             this.totalK += kcal;
+
+
           }
         },
       ],
@@ -61,14 +65,9 @@ export class CalculateComponent implements OnInit {
     console.log(kcal);
     document.getElementById("result").innerHTML = kcal.toString();
     this.presentAlert(kcal);
-    // this.showPopup();
+
   }
 
-
-
-  addKcal() {
-    this.totalK += 1;
-  }
 
   onSubmit() {
     console.log(this.foodForm.value['foodName']);
@@ -76,12 +75,21 @@ export class CalculateComponent implements OnInit {
   }
 
 
-  resultPopup = document.getElementById("popup");
-  showPopup() {
-    this.resultPopup.classList.add("open-popup");
 
+  onSubmit2() {
+    // console.log(`[Goal]: ${this.user_profileService.userProfile.goal}`);
+
+    if (!this.user_profileService.userForm.valid) {
+      return false;
+    } else {
+      this.user_profileService.createUser(this.user_profileService.userForm.value)
+        .subscribe((response) => {
+          this.zone.run(() => {
+            this.user_profileService.userForm.reset();
+          })
+        });
+    }
   }
-
 
 }
 
