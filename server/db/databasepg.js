@@ -13,9 +13,6 @@ const client = new Client({
 
 client.connect();
 
-
-// testing code
-
 client.query(`select * from test_table`, (err, res)=>{
     if(!err){
         console.log(res.rows);

@@ -3,7 +3,6 @@ const app = express();
 const userRoute = express.Router();
 let UserModel = require('../model/User');
 
-
 userRoute.route('/').get((req, res) => {
   UserModel.find((error, user) => {
     if (error) {
@@ -15,7 +14,6 @@ userRoute.route('/').get((req, res) => {
   })
 });
 
-
 userRoute.route('/create-user').post((req, res, next) => {
   UserModel.create(req.body, (err, user) => {
     if (err) {
@@ -26,7 +24,6 @@ userRoute.route('/create-user').post((req, res, next) => {
     }
   })
 });
-
 
 userRoute.route('/fetch-user/:id').get((req, res) => {
   UserModel.findById(req.params.id, (err, user) => {

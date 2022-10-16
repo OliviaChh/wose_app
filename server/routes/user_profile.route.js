@@ -81,19 +81,4 @@ user_profileRoute.route('/fetch-user/:id').get((req, res) => {
   })
 });
 
-//get user by uname
-// user_profileRoute.route('/:uname').get((req, res) => {
-//   User_profileModel.findOne({'uname': req.params.uname}, (error, data) => {
-//     if (!error) {
-//       console.log('UsersProfile fetched succeed:', JSON.stringify(data))
-//       res.status(200).json(data);
-//     } else {
-//       res.json(user)
-//       console.log('User created!')
-//       console.error(error);
-//       res.status(500);
-//     }
-//   })
-// });
-
 module.exports = user_profileRoute;

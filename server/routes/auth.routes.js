@@ -108,7 +108,6 @@ router.route('/').get((req, res, next) => {
   })
 })
 
-
 // Get Single User
 router.route('/user-profile/:id').get(authorize, (req, res, next) => {
   userSchema.findById(req.params.id, (error, data) => {

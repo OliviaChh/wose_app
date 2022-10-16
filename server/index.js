@@ -41,7 +41,6 @@ app.use('/tutorials', tutorialsRoute)
 app.use('/user-friends', userFriendsRoute)
 app.use('/audiences', audiencesRoute)
 
-
 /**---------------------------------------------------------------- */
 
 const port = process.env.PORT || 5000;

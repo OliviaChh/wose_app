@@ -25,7 +25,6 @@ foodsRoute.route('/create-food').post((req, res, next) => {
     })
 });
 
-
 foodsRoute.route('/fetch-food/:id').get((req, res) => {
     FoodsModel.findById(req.params.id, (err, foods) => {
         if (err) {
@@ -36,4 +35,5 @@ foodsRoute.route('/fetch-food/:id').get((req, res) => {
         }
     })
 });
+
 module.exports = foodsRoute;
