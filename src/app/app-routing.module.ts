@@ -11,6 +11,7 @@ import { Signup2Component } from './signup2/signup2.component';
 import { Signup3Component } from './signup3/signup3.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { VerifyemailComponent } from './verifyemail/verifyemail.component';
+import { TeachingComponent } from './teaching/teaching.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardLiveWorkoutComponent } from './dashboard-live-workout/dashboard-live-workout.component';
@@ -153,6 +154,10 @@ const routes: Routes = [
   {
     path: 'test-create',
     component: TestCreateComponent
+  },
+  {
+    path: 'teaching',
+    component: TeachingComponent
   }
 ];
 

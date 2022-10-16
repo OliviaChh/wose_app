@@ -22,6 +22,7 @@ import { Signup3Component } from './signup3/signup3.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { VerifyemailComponent } from './verifyemail/verifyemail.component';
 import { ResetpwComponent } from './resetpw/resetpw.component';
+import { TeachingComponent } from './teaching/teaching.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardLiveWorkoutComponent } from './dashboard-live-workout/dashboard-live-workout.component';
@@ -53,12 +54,11 @@ import { TestCreateComponent } from './test-create/test-create.component';
 import{ExerciseLiveVideoComponent}from'./exercise-live-video/exercise-live-video.component';
 
 
-
 @NgModule({
 
   declarations: [AppComponent, FirstpageComponent, BgComponent, NavbarComponent, LoginComponent, SignupComponent, Signup2Component, Signup3Component, PrivacyPolicyComponent, VerifyemailComponent, ResetpwComponent, DashboardComponent, DashboardLiveWorkoutComponent, DashboardExerciseFinishedComponent, DashboardLiveWorkoutComponent, CommunityComponent, CommunitySearchFriendsComponent
     , PlanComponent, MyComponent, AchievementComponent, SuggestionsComponent, BgInterfacesComponent, AchievementPageComponent, BackComponent, MealComponent, BreakfastComponent, LunchComponent, DinnerComponent, SnackComponent, VideosComponent, SetGoalComponent, LeaderboardComponent, CalculateComponent,
-    SettingComponent, TestListComponent, TestUpdateComponent, TestCreateComponent,ExerciseLiveVideoComponent],
+    SettingComponent, TestListComponent, TestUpdateComponent, TestCreateComponent,ExerciseLiveVideoComponent, TeachingComponent],
 
   //provide: RouteReuseStrategy, useClass: IonicRouteStrategy, 
   
