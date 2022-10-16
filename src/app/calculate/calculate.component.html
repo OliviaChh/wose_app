@@ -1,7 +1,5 @@
 <ion-content class="body">
   <app-bg-interfaces></app-bg-interfaces>
-
-
   <div class="container">
     <div class="title">Your daily intake</div>
     <div class="kcal">{{totalK}} kcal</div>
@@ -9,7 +7,6 @@
     <div class="title">Caluculate your calorie intake!</div>
 
     <div class="container2">
-
       <form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
         <div class="elements">
           <div class="title2">Food name</div>
@@ -32,15 +29,10 @@
           <ion-button class="but" type="submit" expend="block">NEXT</ion-button>
         </div>
       </form>
-
-
-
     </div>
   </div>
   <div class="popup">
     <p class="form-group">Your calorie intake is <span style="color:#527509" id="result"></span> kcal </p>
   </div>
-
-
-  <app-navbar></app-navbar>
 </ion-content>
+<app-navbar></app-navbar>

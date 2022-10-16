@@ -1,32 +1,3 @@
-/*#container {
-    text-align: center;
-  
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  #container strong {
-    font-size: 20px;
-    line-height: 26px;
-  }
-  
-  #container p {
-    font-size: 16px;
-    line-height: 22px;
-  
-    color: #8c8c8c;
-  
-    margin: 0;
-  }
-  
-  #container a {
-    text-decoration: none;
-  }
-*/
-
 .firstpage_person{
   position: absolute;
   top: 0;
@@ -43,7 +14,6 @@
   width: 85%;
 }
 
-
 .firstpage_word{
   position: absolute;
   bottom: 25%;
@@ -54,13 +24,16 @@
   align-items: center;
   justify-content: center;
 }
+
 .firstpage_title{
   font-size: 25px;
   font-weight: bold;
 }
+
 .firstpage_p{
   margin: 5px;
 }
+
 .firstpage_button{
   position: absolute;
   bottom: 15%;
@@ -71,6 +44,7 @@
   align-items: center;
   justify-content: space-around;
 }
+
 .firstpage_button1{
   border-left: 50px solid;
   border-right: 50px solid;
@@ -83,6 +57,7 @@
   color: white;
   font-weight: bold;
 }
+
 .firstpage_button2{
   border-left: 50px solid;
   border-right: 50px solid;

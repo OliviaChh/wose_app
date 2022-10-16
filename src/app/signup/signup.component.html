@@ -1,4 +1,3 @@
-
 <form [formGroup]="this.user_profileService.userForm" (ngSubmit)="onSubmit()">
 <app-bg></app-bg>
 <div class="signup">
@@ -16,7 +15,7 @@
         <div id="signup_input_inside">
             <img src="../../assets/image/signup_login/email_icon.svg">
             <ion-item>
-            <ion-input formControlName="email" type="text" placeholder="Email ID" [(ngModel)]="this.user_profileService.userProfile.email"></ion-input>
+            <ion-input formControlName="email" type="email" ngModel [email]="true" placeholder="email@domain.com" [(ngModel)]="this.user_profileService.userProfile.email"></ion-input>
             </ion-item>
         </div>
         <div id="signup_input_inside">
@@ -28,7 +27,7 @@
         <div id="signup_input_inside">
             <img src="../../assets/image/signup_login/password_icon.svg">
             <ion-item>
-            <ion-input formControlName="password" type="text" placeholder="Password" [(ngModel)]="this.user_profileService.userProfile.password"></ion-input>
+            <ion-input formControlName="password" type="password" placeholder="Password" [(ngModel)]="this.user_profileService.userProfile.password"></ion-input>
             </ion-item>
         </div>
     </div>

@@ -28,7 +28,6 @@ export class CalculateComponent implements OnInit {
   totalK = 0;
   kcal = 0;
 
-
   async presentAlert(kcal) {
     const alert = await this.alertController.create({
       header: 'Your calorie intake is ' + kcal + ' kcal',
@@ -68,17 +67,13 @@ export class CalculateComponent implements OnInit {
 
   }
 
-
   onSubmit() {
     console.log(this.foodForm.value['foodName']);
     this.sendApiRequest(this.foodForm.value['foodName'], this.foodForm.value['intake']);
   }
 
-
-
   onSubmit2() {
     // console.log(`[Goal]: ${this.user_profileService.userProfile.goal}`);
-
     if (!this.user_profileService.userForm.valid) {
       return false;
     } else {
@@ -90,7 +85,6 @@ export class CalculateComponent implements OnInit {
         });
     }
   }
-
 }
 
 

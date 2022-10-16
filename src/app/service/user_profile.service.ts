@@ -150,13 +150,6 @@ export class User_profileService {
     };
   }
 
-  // getUserProfile(uname: string): Observable<User_profile> {
-  //   return this.httpClient.get<User_profile>(`${this.backendUrl}/userprofile/${uname}`, this.httpOptions)
-  //     .pipe(
-  //       catchError(this.handleError<User_profile>('getUserProfile failed'))
-  //     );
-  // }
-
   //  (method1) because we don't use local form so we bind to our form 
   createUserForm() {
     this.userForm = this.formBuilder.group({

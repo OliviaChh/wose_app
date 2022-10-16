@@ -1,5 +1,3 @@
-// .imgx{}
-
 .icon11 {
     position: absolute;
 }
@@ -20,16 +18,15 @@
 .right_p {
     width: 45%;
     height: 85%;
-    /* background: red; */
 }
 
 .Journalism {
     width: 100%;
     height: 25%;
-    /* background-color: blue; */
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin: 5px 0;
 
 }
 
@@ -50,7 +47,6 @@
 .body{
     width: 100%;
     height: 844px;
-    // background-color: #cccccc;
 }
 
 .img2 {
@@ -62,14 +58,12 @@
 .div2 {
     width: 100%;
     height: 70%;
-    /* background: red; */
 }
 
 .ddd {
     width: 100px;
     height: 140px;
-    margin-top: 10px;
-    /* background-color: blue; */
+    margin-top: 50px;
     border-radius: 10px;
     text-align: center;
 }
@@ -77,12 +71,9 @@
 .Hhead {
     width: 80%;
     height: 25px;
-
-    /* margin-top: 20px; */
     position: absolute;
     top: 150px;
     left: 20px;
-    /* background-color: white; */
 }
 
 .ASYNC {
@@ -96,11 +87,8 @@
     justify-content: space-around;
 }
 
-
-
 .h1 {
     margin-left: 5%;
-    /* background-image: linear-gradient(to right, red , blue) */
     background: linear-gradient(to right, red, green);
     background-clip: text;
     -o-background-clip: text;
@@ -114,32 +102,24 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-
 }
 
 .header {
-    /* background-color: salmon; */
-    /* margin-top: 2rem; */
     display: flex;
 }
 
 .h_png {
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
-    /* background-color: red; */
     margin-top: 50px;
     margin-left: 20px;
 }
 
 .ipt {
-
     width: 14rem;
     height: 4.5rem;
-    /* background-color: blue; */
     margin-left: 25px;
-
-    /* border-radius: 30%; */
 }
 
 .iipt {
@@ -148,4 +128,15 @@
     height: 50%;
     border-radius: 40px;
 
+}
+
+.dash_work_word{
+    position: relative;
+    top: 20px;
+}
+
+.dash_live_word{
+    position: relative;
+    top: 10px;
+    padding-bottom: 20px;
 }

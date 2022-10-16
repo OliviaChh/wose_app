@@ -1,5 +1,4 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { User_profileService } from '../service/user_profile.service';
@@ -19,9 +18,7 @@ export class SignupComponent implements OnInit {
     public formBuilder: FormBuilder,
     private zone: NgZone,
     public user_profileService: User_profileService  
-  ) {
-    
-    }
+  ) {}
 
   ngOnInit() {
     this.user_profileService.createUserForm();
@@ -31,16 +28,6 @@ export class SignupComponent implements OnInit {
     console.log(`[Email]: ${this.user_profileService.userProfile.email}`);
     console.log(`[Uname]: ${this.user_profileService.userProfile.uname}`);
     console.log(`[Passwd]: ${this.user_profileService.userProfile.password}`);
-    // if (!this.userForm.valid) {
-    //   return false;
-    // } else {
-    //   this.user_profileService.createUser(this.user_profileService.userForm.value)
-    //     .subscribe((response) => {
-    //       this.zone.run(() => {
-    //         this.userForm.reset();
-    //       })
-    //     });
-    // }
   }
 
 }

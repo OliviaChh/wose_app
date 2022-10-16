@@ -1,5 +1,4 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { User_profileService } from '../service/user_profile.service';
