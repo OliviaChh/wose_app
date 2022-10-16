@@ -91,6 +91,14 @@ export class User_profileService {
       );
   }
 
+  updateUser(id, user: User_profile): Observable<any> {
+    return this.httpClient.put('http://localhost:5000/api/update-user/' + id, user, this.httpOptions)
+      .pipe(
+        tap(_ => console.log(`User updated: ${id}`)),
+        catchError(this.handleError<User_profile[]>('Update user'))
+      );
+  }
+
   // Sign-in
   signIn(user: User_profile) {
     return this.httpClient.post<User_profile>('http://localhost:5000/userprofile/signin', user, this.httpOptions)
