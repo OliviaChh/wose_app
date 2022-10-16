@@ -27,7 +27,7 @@ export class MyComponent implements OnInit {
         }
       }
 
-      console.log(`[Dashboard]: user_id ${localStorage.getItem('user_id')}`);
+      console.log(`[MyPage]: user_id ${localStorage.getItem('user_id')}`);
       this.getUserProfile(localStorage.getItem('user_id'));
     });
   }
@@ -37,7 +37,7 @@ export class MyComponent implements OnInit {
       console.log("response: " + JSON.stringify(data));
       const response: any = data;
       this.userProfile = response;
-      console.log(`[Dashboard] getUserProfile: ${this.userProfile.uname}`)
+      console.log(`[MyPage] getUserProfile: ${this.userProfile.uname}`)
       this.userProfile.avatar = this.userProfile?.avatar !== undefined && this.userProfile?.avatar !== '' ? `data:image/jpg;base64,${this.userProfile.avatar}` : '../../assets/image/dashboard/Ellipse 3.svg'
     });
   }
