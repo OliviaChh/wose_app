@@ -37,3 +37,25 @@
     align-items: center;
     flex-direction: column;
 }
+
+.container {
+    display: flex;
+
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.achievement {
+    width: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 8px;
+    padding: 5px;
+    text-align: center;
+}
+
+.achievement-name {
+    margin: 1px;
+}

@@ -4,14 +4,88 @@
   <div class="my-ach">
     <p class="title">My achievements</p>
     <div class="achievements-container">
-      <app-achievement></app-achievement>
+      <div class="container">
+        <div class="achievement" *ngIf="bool_100">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 100 calories</div>
+          <!-- <p>{{bool_100}}</p>
+          <p>{{userProfile.calories}}</p>
+          <p>{{userProfile.uname}}</p> -->
+        </div>
+        <div class="achievement" *ngIf="bool_200">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 200 calories</div>
+        </div>
+        <div class="achievement" *ngIf="bool_500">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 500 calories</div>
+        </div>
+        <div class="achievement" *ngIf="bool_1000">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 1000 calories</div>
+        </div>
+        <div class="achievement" *ngIf="bool_2000">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 2000 calories</div>
+        </div>
+        <div class="achievement" *ngIf="bool_5000">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 5000 calories</div>
+        </div>
+        <div class="achievement" *ngIf="bool_10000">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 10000 calories</div>
+        </div>
+        <div class="achievement" *ngIf="bool_20000">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 20000 calories</div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="waiting">
     <p class="title">Waiting to be reached</p>
     <div class="achievements-container">
-      <app-achievement></app-achievement>
+      <div class="container">
+        <div class="achievement" *ngIf="!bool_100">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 100 calories</div>
+          <!-- <p>{{bool_100}}</p>
+          <p>{{userProfile.calories}}</p>
+          <p>{{userProfile.uname}}</p> -->
+
+        </div>
+        <div class="achievement" *ngIf="!bool_200">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 200 calories</div>
+        </div>
+        <div class="achievement" *ngIf="!bool_500">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 500 calories</div>
+        </div>
+        <div class="achievement" *ngIf="!bool_1000">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 1000 calories</div>
+        </div>
+        <div class="achievement" *ngIf="!bool_2000">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 2000 calories</div>
+        </div>
+        <div class="achievement" *ngIf="!bool_5000">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 5000 calories</div>
+        </div>
+        <div class="achievement" *ngIf="!bool_10000">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 10000 calories</div>
+        </div>
+        <div class="achievement" *ngIf="!bool_20000">
+          <img src="assets/image/element/image 2.svg" alt="achievement" class="achievement-img">
+          <div class="achievement-name">Burned 20000 calories</div>
+        </div>
+      
+      </div>
     </div>
   </div>
 
