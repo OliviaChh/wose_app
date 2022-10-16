@@ -12,60 +12,22 @@
       </div>
     </div>
 
-    <div class="card">
+     <div class="card">
       <div class="a_title">
         <b><span class="span1">FRIENDS</span></b>
       </div>
+      
 
-      <div class="png_head">
+      <div *ngFor="let friend of fr;" class="png_head">
         <div class="img_h">
-
+          <img src="{{friend.avatar}}">
         </div>
         <div class="text_h">
-          <b><span>Jacob Jones</span></b>
-        </div>
-      </div>
-
-      <div class="png_head">
-        <div class="img_h">
-
-        </div>
-        <div class="text_h">
-          <b><span>Jacob Jones</span></b>
-        </div>
-      </div>
-
-      <div class="png_head">
-        <div class="img_h">
-
-        </div>
-        <div class="text_h">
-          <b><span>Jacob Jones</span></b>
-        </div>
-      </div>
-
-      <div class="png_head">
-        <div class="img_h">
-
-        </div>
-        <div class="text_h">
-          <b><span>Jacob Jones</span></b>
+          <b><span>{{friend.uname}}</span></b>
         </div>
       </div>
     </div>
-
   </div>
 
-  <!-- <ion-list>
-    <ion-item *ngFor="let friend of Friends">
-      <ion-label>
-        <h2>{{friend.user_id}}</h2>
-        <h3>{{friend.friend_id}}</h3>
-
-      </ion-label>
-
-
-    </ion-item>
-  </ion-list> -->
 </ion-content>
 <app-navbar></app-navbar>

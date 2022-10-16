@@ -7,38 +7,52 @@ import { User_profileService } from '../service/user_profile.service';
   templateUrl: './community.component.html',
   styleUrls: ['./community.component.scss'],
 })
+
 export class CommunityComponent implements OnInit {
-  userProfile = { uname: '' }
   Friends: any = [];
-  i: any;
+  fr = [{avatar: '', uname: ''}];
+  userId = '';
 
   constructor(private userFriendsService: UserFriendsService,
-    private User_profileService: User_profileService) { }
-
-
-  ngOnInit() {
-    console.log(`[MyPage] Init!!`);
-    this.User_profileService.getUsers().subscribe((response) => {
-      let users: any[];
-      let email: string = localStorage.getItem('user_email');
-      users = response;
-      for (let i = 0; i < users.length; i++) {
-        if (email == users[i].email) {
-          localStorage.setItem('user_id', users[i]._id);
-          console.log(users[i]._id);
-        }
-      }
-
-      console.log(localStorage.getItem('user_id'));
-      this.ionViewDidEnter(localStorage.getItem('user_id'));
-
-    });
+    private User_profileService: User_profileService) {}
+  
+  ngOnDestroy(): void {
+    //console.log(`[Dashboard] Destroy!!`);
   }
 
-  ionViewDidEnter(uid) {
+  async ngOnInit() {
+    const uid = localStorage.getItem('user_id');
+    //this.getFriendList(uid);
+    this.getFriend(uid);
+  }
+
+  getFriendList(uid) {
     this.userFriendsService.getUserFriends(uid).subscribe((response) => {
       this.Friends = response;
     })
   }
 
+  getFriend(id) {
+    return this.userFriendsService.getUserFriends(id).subscribe((data) => {
+      let fr = [];
+      this.User_profileService.getUsers().subscribe((res) => {
+        console.log(`[getFriend]: ${res}`);
+        for (let j = 0; j < data.length; j ++){
+          for (let i = 0; i < res.length; i ++){
+            if (res[i]['_id'] == data[j]['friend_id']){
+              fr.push({
+                uname: res[i]['uname'],
+                avatar: res[i]['avatar'] !== undefined && res[i]['avatar'] !== '' ? `
+      data:image / jpg;
+      base64,${res[i]['avatar']}` : '../../assets/image/dashboard/Ellipse 3.svg',
+              });
+              break;
+            }
+          }
+        }
+      });
+      this.fr = fr;
+    });
+
+  }
 }
