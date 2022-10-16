@@ -30,6 +30,9 @@ let User_profile = new Schema({
   },
   calories: {
     type: Number
+  },
+  intake: {
+    type: Number
   }
 }, {
   collection: 'user_profile'
