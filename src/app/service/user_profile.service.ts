@@ -54,8 +54,8 @@ export class User_profileService {
     weight: null,
     goal: null,
     avatar: "",
-    calories: null,
-    intake: null
+    calories: 0,
+    intake: 0
   }
 
   //backend
@@ -68,7 +68,7 @@ export class User_profileService {
   //sign up
   createUser(user: User_profile): Observable<any> {
     console.log(`[createUser]: ${user.gender}`);
-    return this.httpClient.post<User_profile>('http://localhost:5000/userprofile/create-user', user, this.httpOptions)
+    return this.httpClient.post<User_profile>(`${this.backendUrl}/userprofile/create-user`, user, this.httpOptions)
       .pipe(
         catchError(this.handleError<User_profile>('create UserProfile failed'))
       );
@@ -76,7 +76,7 @@ export class User_profileService {
 
   //get userprofile
   getUser(id): Observable<User_profile[]> {
-    return this.httpClient.get<User_profile[]>('http://localhost:5000/userprofile/fetch-user/' + id)
+    return this.httpClient.get<User_profile[]>(`${this.backendUrl}/userprofile/fetch-user/` + id)
       .pipe(
         tap(_ => console.log(`User fetched: ${id}`)),
         catchError(this.handleError<User_profile[]>(`Get user id=${id}`))
@@ -84,7 +84,7 @@ export class User_profileService {
   }
 
   getUsers(): Observable<User_profile[]> {
-    return this.httpClient.get<User_profile[]>('http://localhost:5000/userprofile')
+    return this.httpClient.get<User_profile[]>(`${this.backendUrl}/userprofile`)
       .pipe(
         tap(users => console.log('Users retrieved!')),
         catchError(this.handleError<User_profile[]>('Get user', []))
@@ -92,7 +92,7 @@ export class User_profileService {
   }
 
   updateUser(id, user: User_profile): Observable<any> {
-    return this.httpClient.put('http://localhost:5000/api/update-user/' + id, user, this.httpOptions)
+    return this.httpClient.put(`${this.backendUrl}/api/update-user/` + id, user, this.httpOptions)
       .pipe(
         tap(_ => console.log(`User updated: ${id}`)),
         catchError(this.handleError<User_profile[]>('Update user'))
@@ -101,7 +101,7 @@ export class User_profileService {
 
   // Sign-in
   signIn(user: User_profile) {
-    return this.httpClient.post<User_profile>('http://localhost:5000/userprofile/signin', user, this.httpOptions)
+    return this.httpClient.post<User_profile>(`${this.backendUrl}/userprofile/signin`, user, this.httpOptions)
       .subscribe((res: any) => {
         // save user information to local storage after success with token we don't use this now
         //console.log(`[singIn]: Enter signIn ${user}`)
@@ -117,6 +117,15 @@ export class User_profileService {
           this.router.navigate(['/dashboard']);
         });
       });
+  }
+
+  addUserIntake(userId: string, intake: number): Observable<void> {
+    console.log(`Enter addUserIntake`);
+    console.log(`intake: ${intake}--${typeof(intake)}`);
+    return this.httpClient.post<void>(`${this.backendUrl}/userprofile/add-intake`, {userId, intake}, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<void>('updateUserIntake failed'))
+      );
   }
 
   //keep login
@@ -157,12 +166,12 @@ export class User_profileService {
       uname: [''],
       password: [''],
       gender: [''],
-      height: [''],
-      weight: [''],
-      goal: [''],
+      height: [0],
+      weight: [0],
+      goal: [0],
       avatar: [''],
-      calories: [''],
-      intake: ['']
+      calories: [0],
+      intake: [0]
     })
   }
 }

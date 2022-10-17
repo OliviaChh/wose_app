@@ -118,12 +118,12 @@ ion-input {
 
 .but {
     width: 100%;
+    height: 36px;
     margin-bottom: 10px;
     font-size: large;
-    background: #F19D6E;
-    border-color: #F19D6E;
     color: white;
     font-weight: bold;
-    --background: none;
-    border-radius: 20px;
+    --background:#F19D6E;
+    --background-focused: none !important;
+    --background-hover: none !important;
 }

@@ -96,9 +96,11 @@ export class ExerciseLiveVideoComponent implements OnInit {
   }
 
   goToExerciseFinishPage() {
+    console.log(`Enter goToExerciseFinishPage()`);
     const time = (Date.now() - this.startTime) / 1000 / 60;
     const calories = Number(this.audiences.find((a) => a._id = this.userId)?.calories).toFixed(2);
     this.tutorialsService.addUserCalories(this.userId, parseInt(calories)).subscribe(() => {
+      console.log(`Enter subscribe`);
       this.nav.navigateRoot(['dashboardexercisefinished'], {
         queryParams: {
           calories: calories,

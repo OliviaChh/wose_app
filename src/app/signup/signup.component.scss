@@ -14,13 +14,24 @@
     width: 85%;
   }
   
+  .sign_content{
+    overflow: scroll;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
   .signup_title{
     font-size: 40px;
     font-weight:800;
-    position: absolute;
-    bottom: 50%;
-    left: 0;
-    right: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,10 +39,6 @@
   }
 
   .signup_input{
-    position: absolute;
-    bottom: 22%;
-    left: 0;
-    right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,34 +52,23 @@
   }
 
   .firstpage_button{
-    position: absolute;
-    bottom: 8%;
-    flex: 1;
-    left: 0;
-    right: 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
   }
 
   .firstpage_button1{
-    border-left: 100px solid;
-    border-right: 100px solid;
-    border-top: 10px solid;
-    border-bottom: 10px solid;
-    border-radius: 18px;
-    font-size: large;
-    background: #F19D6E;
-    border-color: #F19D6E;
+    width: 300px;
+    height: 36px;
+    font-size: large; 
     color: white;
     font-weight: bold;
+    --background:#F19D6E;
+    --background-focused: none !important;
+    --background-hover: none !important;
   }
 
   .bottom_word{
-    position: absolute;
-    bottom: 18%;
-    left: 10%;
-    right: 10%;
     color: gray;
     font-size: 12px;
   }

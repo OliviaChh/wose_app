@@ -7,8 +7,8 @@
 
 .setting {
     position: relative;
-    top: 20px;
-    left: 330px;
+    top: 50px;
+    left: 350px;
     width: 30px;
     height: 30px;
 }
@@ -88,13 +88,15 @@
     margin: 1px;
 }
 
-#logout_button {
-    flex: 1;
-    left: 0;
-    right: 0;
+.logout_form{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout_button {
+    width: 300px;
+    height: 36px;
     margin-bottom: 100px;
     font-size: large;
-      
 }

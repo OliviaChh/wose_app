@@ -31,6 +31,19 @@ user_profileRoute.route('/create-user').post((req, res, next) => {
   })
 });
 
+user_profileRoute.route('/add-intake').post((req, res) => {
+  console.log(`Enter user_profileRoute!!!! (/add-intake)`);
+  User_profileModel.updateOne({'_id': req.body.userId}, {$inc: {'intake': req.body.intake}}, (error, data) => {
+    if (!error) {
+      console.log('User intake updated succeed:', JSON.stringify(data))
+      res.status(200).json(data);
+    } else {
+      console.error(error);
+      res.status(500);
+    }
+  })
+})
+
 // Sign-in
 user_profileRoute.route('/signin').post((req, res, next) => {
   let getUser;

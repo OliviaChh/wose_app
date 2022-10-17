@@ -54,17 +54,14 @@
   }
 
   .firstpage_button1{
-    border-left: 100px solid;
-    border-right: 100px solid;
-    border-top: 10px solid;
-    border-bottom: 10px solid;
-    border-radius: 18px;
-    font-size: large;
-    background: #F19D6E;
-    border-color: #F19D6E;
+    width: 300px;
+    height: 36px;
+    font-size: large; 
     color: white;
     font-weight: bold;
-    --background:none;
+    --background:#F19D6E;
+    --background-focused: none !important;
+    --background-hover: none !important;
   }
 
   ion-input{

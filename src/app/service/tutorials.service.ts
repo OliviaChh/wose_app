@@ -66,15 +66,18 @@ export class TutorialsService {
     return this.httpClient.delete<void>(`${this.backendUrl}/audiences/${uid}`, this.httpOptions)
       .pipe(
         catchError(this.handleError<void>('removeTutorialAudiences failed'))
-      );
+      ); 
   }
 
   addUserCalories(userId: string, calories: number): Observable<void> {
+    console.log(`Enter addUserCalories`);
+    console.log(`calories: ${calories}--${typeof(calories)}`);
     return this.httpClient.post<void>(`${this.backendUrl}/tutorials/add-calories`, {userId, calories}, this.httpOptions)
       .pipe(
         catchError(this.handleError<void>('updateUserCalories failed'))
       );
   }
+  
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

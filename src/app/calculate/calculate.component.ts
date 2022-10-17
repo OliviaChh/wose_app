@@ -42,8 +42,12 @@ export class CalculateComponent implements OnInit {
           cssClass: 'alert-button-confirm',
           handler: () => {
             this.totalK += kcal;
-
-
+            
+            this.user_profileService.addUserIntake(localStorage.getItem('user_id'), this.totalK).subscribe(() =>{
+              this.zone.run(() => {
+                // this.user_profileService.userForm.reset();
+              })
+            });
           }
         },
       ],
@@ -77,12 +81,11 @@ export class CalculateComponent implements OnInit {
     if (!this.user_profileService.userForm.valid) {
       return false;
     } else {
-      this.user_profileService.createUser(this.user_profileService.userForm.value)
-        .subscribe((response) => {
-          this.zone.run(() => {
-            this.user_profileService.userForm.reset();
-          })
-        });
+      this.user_profileService.addUserIntake(localStorage.getItem('user_id'), parseInt(this.user_profileService.userForm.value)).subscribe(() =>{
+        this.zone.run(() => {
+          this.user_profileService.userForm.reset();
+        })
+      });
     }
   }
 }

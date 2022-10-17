@@ -30,6 +30,7 @@ tutorialsRoute.route('/:id').get((req, res) => {
 })
 
 tutorialsRoute.route('/add-calories').post((req, res) => {
+  console.log(`Enter tutorialsRoute!!!! (/add-calories)`);
   UserProfileModel.updateOne({'_id': req.body.userId}, {$inc: {'calories': req.body.calories}}, (error, data) => {
     if (!error) {
       console.log('User calories updated succeed:', JSON.stringify(data))
