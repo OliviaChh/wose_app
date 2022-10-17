@@ -4,6 +4,7 @@ const user_profileRoute = express.Router();
 const User_profileModel = require('../model/User_profile');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const { unescapeLeadingUnderscores } = require('typescript');
 //const authorize = require('../middlewares/auth')
 //const { check, validationResult } = require('express-validator')
 
@@ -32,10 +33,22 @@ user_profileRoute.route('/create-user').post((req, res, next) => {
 });
 
 user_profileRoute.route('/add-intake').post((req, res) => {
-  console.log(`Enter user_profileRoute!!!! (/add-intake)`);
   User_profileModel.updateOne({'_id': req.body.userId}, {$inc: {'intake': req.body.intake}}, (error, data) => {
     if (!error) {
       console.log('User intake updated succeed:', JSON.stringify(data))
+      res.status(200).json(data);
+    } else {
+      console.error(error);
+      res.status(500);
+    }
+  })
+})
+
+user_profileRoute.route('/clear-intake').post((req, res) => {
+  User_profileModel.updateOne({'_id': req.body.userId}, {$inc: {'intake': req.body.intake}}, (error, data) => {
+    if (!error) {
+      console.log(`${req.body.intake}`)
+      console.log('User intake clear succeed:', JSON.stringify(data))
       res.status(200).json(data);
     } else {
       console.error(error);

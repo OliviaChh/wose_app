@@ -24,6 +24,20 @@ export class CalculateComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user_profileService.getUser(localStorage.getItem('user_id')).subscribe((res) => {
+      this.totalK = res['intake'];
+    });
+    let date: Date = new Date();
+    let date_info: string = `${date.getFullYear()}${date.getMonth()+1}${date.getDate()}`;
+    if ( date_info != localStorage.getItem('Intake_date') ){
+      this.totalK = 0;
+      this.user_profileService.getUser(localStorage.getItem('user_id')).subscribe((res) => {
+        this.user_profileService.addUserIntake(localStorage.getItem('user_id'), -res['intake']).subscribe(() =>{
+          localStorage.setItem('Intake_date', date_info);
+        }); 
+      }); 
+      
+    } 
   }
   totalK = 0;
   kcal = 0;
@@ -42,15 +56,16 @@ export class CalculateComponent implements OnInit {
           cssClass: 'alert-button-confirm',
           handler: () => {
             this.totalK += kcal;
-            
-            this.user_profileService.addUserIntake(localStorage.getItem('user_id'), this.totalK).subscribe(() =>{
+            let date: Date = new Date();
+            let date_info: string = `${date.getFullYear()}${date.getMonth()+1}${date.getDate()}`;
+            this.user_profileService.addUserIntake(localStorage.getItem('user_id'), kcal).subscribe(() =>{
               this.zone.run(() => {
-                // this.user_profileService.userForm.reset();
+                localStorage.setItem('Intake_date', date_info);
               })
-            });
+            }); 
           }
         },
-      ],
+      ], 
     });
 
     await alert.present();
@@ -74,19 +89,6 @@ export class CalculateComponent implements OnInit {
   onSubmit() {
     console.log(this.foodForm.value['foodName']);
     this.sendApiRequest(this.foodForm.value['foodName'], this.foodForm.value['intake']);
-  }
-
-  onSubmit2() {
-    // console.log(`[Goal]: ${this.user_profileService.userProfile.goal}`);
-    if (!this.user_profileService.userForm.valid) {
-      return false;
-    } else {
-      this.user_profileService.addUserIntake(localStorage.getItem('user_id'), parseInt(this.user_profileService.userForm.value)).subscribe(() =>{
-        this.zone.run(() => {
-          this.user_profileService.userForm.reset();
-        })
-      });
-    }
   }
 }
 

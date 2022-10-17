@@ -3,7 +3,7 @@
   <div class="body">
     <div class="header">
       <div class="h_png">
-        <img src="{{userProfile.avatar}}" alt="" class="img">
+        <img src="{{userProfile.avatar}}" alt="" class="img" [routerLink]="['/my']">
       </div>
       <div class="ipt">
         <input [(ngModel)]="keywords" (keyup)='searchTutorials($event)' type="text" class="iipt">

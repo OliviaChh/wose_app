@@ -120,12 +120,18 @@ export class User_profileService {
   }
 
   addUserIntake(userId: string, intake: number): Observable<void> {
-    console.log(`Enter addUserIntake`);
-    console.log(`intake: ${intake}--${typeof(intake)}`);
     return this.httpClient.post<void>(`${this.backendUrl}/userprofile/add-intake`, {userId, intake}, this.httpOptions)
       .pipe(
         catchError(this.handleError<void>('updateUserIntake failed'))
       );
+  }
+
+  clearUserIntake(userId: string): Observable<void> {
+    let intake = 0;
+    return this.httpClient.post<void>(`${this.backendUrl}/userprofile/clear-intake`, {userId, intake}, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<void>('clearUserIntake failed'))
+      ); 
   }
 
   //keep login
