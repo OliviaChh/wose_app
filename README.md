@@ -25,7 +25,6 @@ cd server
 npm install
 cd ../
 npm init -y
-npm run dev
 ```
 3. Run the nodejs command to connect to database
 ```
