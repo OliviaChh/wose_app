@@ -20,7 +20,6 @@ import { CommunityComponent } from './community/community.component';
 import { MyComponent } from './my/my.component';
 import { PlanComponent } from './plan/plan.component';
 import { AchievementPageComponent } from './achievement-page/achievement-page.component';
-import { MealComponent } from './meal/meal.component';
 import { BreakfastComponent } from './breakfast/breakfast.component';
 import { LunchComponent } from './lunch/lunch.component';
 import { DinnerComponent } from './dinner/dinner.component';
@@ -29,9 +28,6 @@ import { SetGoalComponent } from './set-goal/set-goal.component';
 import { CalculateComponent } from './calculate/calculate.component';
 import { SettingComponent } from './setting/setting.component';
 import { ResetpwComponent } from './resetpw/resetpw.component';
-import { TestListComponent } from './test-list/test-list.component';
-import { TestUpdateComponent } from './test-update/test-update.component';
-import { TestCreateComponent } from './test-create/test-create.component';
 import{ExerciseLiveVideoComponent}from'./exercise-live-video/exercise-live-video.component';
 import {DashboardExerciseFinishedComponent} from "./dashboard-exercise-finished/dashboard-exercise-finished.component";
 
@@ -112,10 +108,6 @@ const routes: Routes = [
     component: AchievementPageComponent
   },
   {
-    path: 'meal',
-    component: MealComponent
-  },
-  {
     path: 'breakfast',
     component: BreakfastComponent
   },
@@ -142,18 +134,6 @@ const routes: Routes = [
   {
     path: 'setting',
     component: SettingComponent
-  },
-  {
-    path: 'test-list',
-    component: TestListComponent
-  },
-  {
-    path: 'test-update',
-    component: TestUpdateComponent
-  },
-  {
-    path: 'test-create',
-    component: TestCreateComponent
   },
   {
     path: 'teaching',
