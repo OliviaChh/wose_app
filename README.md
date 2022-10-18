@@ -21,9 +21,10 @@ git clone https://github.com/OliviaChh/wose_app
 2. Install packages and dependencies
 ```
 npm install
+cd server
+npm install
+cd ../
 npm init -y
-npm install mongoose body-parser express cors jsonwebtoken mongoose-unique-validator bcrypt
-npm install nodemon --save-dev
 npm run dev
 ```
 3. Run the nodejs command to connect to database
