@@ -20,24 +20,30 @@
                 <ion-input formControlName="email" type="email" ngModel [email]="true" placeholder="email@domain.com" [(ngModel)]="this.user_profileService.userProfile.email"></ion-input>
                 </ion-item>
             </div>
+            <p *ngIf="this.user_profileService.userForm.controls.email.errors && this.user_profileService.userForm.controls.email.dirty" class="danger" padding>Email is invalid</p>
+
             <div id="signup_input_inside">
                 <img src="../../assets/image/signup_login/username_icon.svg">
                 <ion-item>
-                <ion-input formControlName="uname" type="text" placeholder="Username" [(ngModel)]="this.user_profileService.userProfile.uname"></ion-input>
+                <ion-input minlength="2" formControlName="uname" type="text" placeholder="Username" [(ngModel)]="this.user_profileService.userProfile.uname" required></ion-input>
                 </ion-item>
             </div>
+            <p *ngIf="this.user_profileService.userForm.controls.uname.errors && this.user_profileService.userForm.controls.uname.dirty" class="danger" padding>Username should be at least 2 characters</p>
+
             <div id="signup_input_inside">
                 <img src="../../assets/image/signup_login/password_icon.svg">
                 <ion-item>
-                <ion-input formControlName="password" type="password" placeholder="Password" [(ngModel)]="this.user_profileService.userProfile.password"></ion-input>
+                <ion-input minlength="8" formControlName="password" type="password" placeholder="Password" [(ngModel)]="this.user_profileService.userProfile.password" required></ion-input>
                 </ion-item>
             </div>
+            <p *ngIf="this.user_profileService.userForm.controls.password.errors && this.user_profileService.userForm.controls.password.dirty" class="danger" padding>Password should be at least 8 number</p>
+
         </div>
         <div class="bottom_word">By signing up, you’re agree to our 
             <a [routerLink]="['/privacypolicy']" >Terms & Conditions</a> and <a [routerLink]="['/privacypolicy']">Privacy Policy</a>
         </div>
         <div class="firstpage_button">
-            <ion-button shape="round" type="submit" class="firstpage_button1" fill="clear" [routerLink]="['/signup2']">NEXT</ion-button>
+            <ion-button shape="round" type="submit" class="firstpage_button1" fill="clear" [disabled]="!this.user_profileService.userForm.valid"  [routerLink]="['/signup2']">NEXT</ion-button>
         </div>
     </div>
 </div>

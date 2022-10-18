@@ -1,7 +1,8 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
 import { User_profileService } from '../service/user_profile.service';
+import { Validators } from '@angular/forms';
 
 
 @Component({
@@ -18,7 +19,14 @@ export class SignupComponent implements OnInit {
     public formBuilder: FormBuilder,
     private zone: NgZone,
     public user_profileService: User_profileService  
-  ) {}
+  ){
+    this.userForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      uname: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)])
+     });
+  }
+  
 
   ngOnInit() {
     this.user_profileService.createUserForm();
